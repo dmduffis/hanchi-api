@@ -575,6 +575,8 @@ async function main() {
       id: "seed-user-1",
       email: "explorer@sinta.app",
       displayName: "Sinta Explorer",
+      intents: ["explore"],
+      cultures: ["kr"],
     },
   });
 
