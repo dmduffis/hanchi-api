@@ -24,6 +24,10 @@ model User {
   id          String         @id @default(cuid())
   email       String         @unique
   displayName String
+  /// Zero or more of: explore | home | learn | bite
+  intents     String[]       @default([])
+  /// 1–2 ISO country codes the user feels at home with (e.g. ["kr","mx"]).
+  cultures    String[]       @default([])
   createdAt   DateTime       @default(now())
   stamps      Stamp[]
   journal     JournalEntry[]
