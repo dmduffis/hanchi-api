@@ -77,6 +77,7 @@ export async function findCommunitiesNear(
       ) AS distance_meters
     FROM "Community" c
     WHERE c.boundary IS NOT NULL
+      AND EXISTS (SELECT 1 FROM "Poi" p WHERE p."communityId" = c.id)
       AND ST_DWithin(
         c.boundary::geography,
         ST_SetSRID(ST_MakePoint($1, $2), 4326)::geography,
@@ -90,12 +91,14 @@ export async function findCommunitiesNear(
   );
 }
 
+/** List communities that have at least one restaurant/POI (hides foodless enclaves). */
 export async function listCommunities(): Promise<CommunityRow[]> {
   return prisma.$queryRawUnsafe<CommunityRow[]>(
     `
     SELECT
       ${COMMUNITY_SELECT}
     FROM "Community" c
+    WHERE EXISTS (SELECT 1 FROM "Poi" p WHERE p."communityId" = c.id)
     ORDER BY c.name ASC
     `,
   );

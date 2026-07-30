@@ -1,6 +1,10 @@
 import { prisma } from "./prisma";
 import { ethnicitiesFromYelp } from "./ethnicities";
 import {
+  WIKI_COMMUNITY_ETHNICITIES,
+  WIKI_COMMUNITY_SEARCH_TERMS,
+} from "../data/wikipediaYelpMeta";
+import {
   formatYelpAddress,
   formatYelpCategory,
   searchYelpBusinesses,
@@ -78,6 +82,13 @@ const COMMUNITY_SEARCH_TERMS: Record<string, string | string[]> = {
     "shawarma",
   ],
   "little-saigon-westminster": ["vietnamese", "pho", "banh mi"],
+  "japantown-sf": ["japanese", "ramen", "sushi"],
+  "calle-24-sf": ["mexican", "salvadoran", "latin"],
+  "soma-pilipinas-sf": ["filipino", "lumpia"],
+  "sunset-chinese-sf": ["chinese", "dim sum"],
+  "african-american-arts-sf": ["soul food", "southern", "creole"],
+  "pacific-islander-sf": ["samoan", "hawaiian", "pacific islander"],
+  "american-indian-sf": "restaurants",
 };
 
 /** Ethnicity ids that "belong" to an enclave — used to reclaim misplaced Yelp POIs. */
@@ -138,6 +149,12 @@ const COMMUNITY_ETHNICITIES: Record<string, string[]> = {
     "middle_eastern",
   ],
   "little-saigon-westminster": ["vietnamese"],
+  "japantown-sf": ["japanese"],
+  "calle-24-sf": ["mexican", "salvadoran"],
+  "soma-pilipinas-sf": ["filipino"],
+  "sunset-chinese-sf": ["chinese"],
+  "african-american-arts-sf": ["caribbean", "jamaican"],
+  "pacific-islander-sf": ["hawaiian"],
 };
 
 async function getCommunityCentroid(
@@ -206,7 +223,9 @@ function ethnicityMatchesCommunity(
   communityId: string,
   ethnicities: string[],
 ): boolean {
-  const preferred = COMMUNITY_ETHNICITIES[communityId];
+  const preferred =
+    COMMUNITY_ETHNICITIES[communityId] ??
+    WIKI_COMMUNITY_ETHNICITIES[communityId];
   if (!preferred?.length) return false;
   return ethnicities.some((e) => preferred.includes(e));
 }
@@ -434,7 +453,10 @@ export async function syncYelpForCommunity(
   }
 
   const termOpt =
-    opts?.term ?? COMMUNITY_SEARCH_TERMS[communityId] ?? "restaurants";
+    opts?.term ??
+    COMMUNITY_SEARCH_TERMS[communityId] ??
+    WIKI_COMMUNITY_SEARCH_TERMS[communityId] ??
+    "restaurants";
   const terms = Array.isArray(termOpt) ? termOpt : [termOpt];
 
   const seen = new Set<string>();
