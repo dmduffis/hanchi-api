@@ -1,0 +1,3190 @@
+{
+  "alafaya-florida": {
+    "lat": 28.5114497,
+    "lng": -81.1874393,
+    "displayName": "Alafaya, Orlando, Orange County, Florida, 32828, United States",
+    "at": "2026-07-29T16:30:25.693Z"
+  },
+  "alameda-california": {
+    "lat": 37.6090291,
+    "lng": -121.899142,
+    "displayName": "Alameda County, California, United States",
+    "at": "2026-07-29T16:30:27.550Z"
+  },
+  "allentown-pennsylvania": {
+    "lat": 40.6022552,
+    "lng": -75.4716115,
+    "displayName": "Allentown, Lehigh County, Pennsylvania, United States",
+    "at": "2026-07-29T16:30:30.528Z"
+  },
+  "altus-oklahoma": {
+    "lat": 34.6381255,
+    "lng": -99.3339754,
+    "displayName": "Altus, Jackson County, Oklahoma, 73521, United States",
+    "at": "2026-07-29T16:30:32.157Z"
+  },
+  "anaheim-california": {
+    "lat": 33.8347516,
+    "lng": -117.911732,
+    "displayName": "Anaheim, Orange County, California, United States",
+    "at": "2026-07-29T16:30:33.713Z"
+  },
+  "annandale-virginia": {
+    "lat": 38.838703,
+    "lng": -77.1951755,
+    "displayName": "Annandale, Fairfax County, Virginia, United States",
+    "at": "2026-07-29T16:30:36.969Z"
+  },
+  "argyle-chicago-illinois": {
+    "lat": 41.973396,
+    "lng": -87.658555,
+    "displayName": "Argyle, 1118, West Argyle Street, Asia on Argyle, Uptown, Chicago, Lake View Township, Cook County, Illinois, 60640, United States",
+    "at": "2026-07-29T16:30:40.142Z"
+  },
+  "arlington-texas": {
+    "lat": 32.7355816,
+    "lng": -97.1071186,
+    "displayName": "Arlington, Tarrant County, Texas, United States",
+    "at": "2026-07-29T16:30:41.782Z"
+  },
+  "artesia-california": {
+    "lat": 33.8690197,
+    "lng": -118.0796195,
+    "displayName": "Artesia, Los Angeles County, California, 90703, United States",
+    "at": "2026-07-29T16:30:43.146Z"
+  },
+  "astoria-queens-new-york": {
+    "lat": 40.7720145,
+    "lng": -73.9302673,
+    "displayName": "Astoria, Queens, Queens County, New York, 11102, United States",
+    "at": "2026-07-29T16:30:44.650Z"
+  },
+  "astoria-queens-new-york-city-new-york": {
+    "lat": 40.7720145,
+    "lng": -73.9302673,
+    "displayName": "Astoria, Queens, Queens County, New York, 11102, United States",
+    "at": "2026-07-29T16:30:47.824Z"
+  },
+  "aurora-colorado": {
+    "lat": 39.7401441,
+    "lng": -104.8733376,
+    "displayName": "Aurora, Adams County, Colorado, United States",
+    "at": "2026-07-29T16:30:51.162Z"
+  },
+  "bakersfield-california": {
+    "lat": 35.3738712,
+    "lng": -119.019463,
+    "displayName": "Bakersfield, Kern County, California, United States",
+    "at": "2026-07-29T16:30:54.090Z"
+  },
+  "bay-st-louis-mississippi": {
+    "lat": 30.3105666,
+    "lng": -89.3275482,
+    "displayName": "Bay St. Louis, Hancock County, Mississippi, United States",
+    "at": "2026-07-29T16:31:00.552Z"
+  },
+  "bedford-texas": {
+    "lat": 32.844017,
+    "lng": -97.1430671,
+    "displayName": "Bedford, Tarrant County, Texas, United States",
+    "at": "2026-07-29T16:31:03.881Z"
+  },
+  "bellevue-washington": {
+    "lat": 47.6144219,
+    "lng": -122.192337,
+    "displayName": "Bellevue, King County, Washington, United States",
+    "at": "2026-07-29T16:31:05.843Z"
+  },
+  "bennett-valley-santa-rosa-california": {
+    "lat": 38.4254354,
+    "lng": -122.6649553,
+    "displayName": "Bennett Valley, Santa Rosa, Sonoma County, California, 95405, United States",
+    "at": "2026-07-29T16:31:07.208Z"
+  },
+  "berkeley-california": {
+    "lat": 37.8708393,
+    "lng": -122.272863,
+    "displayName": "Berkeley, Alameda County, California, United States",
+    "at": "2026-07-29T16:31:08.916Z"
+  },
+  "beverly-hills-california": {
+    "lat": 34.0696501,
+    "lng": -118.3963062,
+    "displayName": "Beverly Hills, Los Angeles County, California, United States",
+    "at": "2026-07-29T16:31:10.567Z"
+  },
+  "biloxi-mississippi": {
+    "lat": 30.4007626,
+    "lng": -88.8893818,
+    "displayName": "Biloxi, Harrison County, Mississippi, United States",
+    "at": "2026-07-29T16:31:12.091Z"
+  },
+  "binghamton-new-york": {
+    "lat": 42.098698,
+    "lng": -75.9125187,
+    "displayName": "City of Binghamton, Broome County, New York, 13905, United States",
+    "at": "2026-07-29T16:31:13.486Z"
+  },
+  "blue-hills-connecticut": {
+    "lat": 41.81449,
+    "lng": -72.6978356,
+    "displayName": "Blue Hills, Bloomfield, Capitol Planning Region, Connecticut, United States",
+    "at": "2026-07-29T16:31:15.063Z"
+  },
+  "boise-idaho": {
+    "lat": 43.6166163,
+    "lng": -116.200886,
+    "displayName": "Boise, Ada County, Idaho, United States",
+    "at": "2026-07-29T16:31:16.492Z"
+  },
+  "bolingbrook-illinois": {
+    "lat": 41.7003302,
+    "lng": -88.0717708,
+    "displayName": "Bolingbrook, Will County, Illinois, United States",
+    "at": "2026-07-29T16:31:18.027Z"
+  },
+  "boston-massachusetts": {
+    "lat": 42.3588336,
+    "lng": -71.0578303,
+    "displayName": "Boston, Suffolk County, Massachusetts, United States",
+    "at": "2026-07-29T16:31:19.772Z"
+  },
+  "bothell-washington": {
+    "lat": 47.7623204,
+    "lng": -122.2054035,
+    "displayName": "Bothell, King County, Washington, United States",
+    "at": "2026-07-29T16:31:21.254Z"
+  },
+  "boyle-heights-los-angeles-california": {
+    "lat": 34.0436892,
+    "lng": -118.2097684,
+    "displayName": "Boyle Heights, Los Angeles, Los Angeles County, California, 90033, United States",
+    "at": "2026-07-29T16:31:22.772Z"
+  },
+  "brampton-ontario": {
+    "lat": 43.685832,
+    "lng": -79.7599366,
+    "displayName": "Brampton, Peel Region, Golden Horseshoe, Ontario, Canada",
+    "at": "2026-07-29T16:31:24.743Z"
+  },
+  "brentwood-california": {
+    "lat": 37.9317766,
+    "lng": -121.696026,
+    "displayName": "Brentwood, Contra Costa County, California, 94513, United States",
+    "at": "2026-07-29T16:31:26.270Z"
+  },
+  "broadmoor-california": {
+    "lat": 37.6910683,
+    "lng": -122.4824564,
+    "displayName": "Broadmoor, San Mateo County, California, United States",
+    "at": "2026-07-29T16:31:30.828Z"
+  },
+  "broward-county-florida": {
+    "lat": 26.1598074,
+    "lng": -80.4623642,
+    "displayName": "Broward County, Florida, United States",
+    "at": "2026-07-29T16:31:32.368Z"
+  },
+  "buena-park-california": {
+    "lat": 33.870413,
+    "lng": -117.9962165,
+    "displayName": "Buena Park, Orange County, California, United States",
+    "at": "2026-07-29T16:31:33.937Z"
+  },
+  "buffalo-new-york": {
+    "lat": 42.8864163,
+    "lng": -78.8781493,
+    "displayName": "Buffalo, Erie County, New York, United States",
+    "at": "2026-07-29T16:31:35.704Z"
+  },
+  "burnaby-british-columbia": {
+    "lat": 49.2433804,
+    "lng": -122.972545,
+    "displayName": "Burnaby, Metro Vancouver Regional District, British Columbia, Canada",
+    "at": "2026-07-29T16:31:37.325Z"
+  },
+  "butte-montana": {
+    "lat": 46.0131505,
+    "lng": -112.536508,
+    "displayName": "Butte, Silver Bow County, Montana, United States",
+    "at": "2026-07-29T16:31:39.079Z"
+  },
+  "calexico-california": {
+    "lat": 32.6713154,
+    "lng": -115.4927113,
+    "displayName": "Calexico, Imperial County, California, 92231, United States",
+    "at": "2026-07-29T16:31:41.798Z"
+  },
+  "cambodia-town-long-beach-california": {
+    "lat": 33.7826054,
+    "lng": -118.172553,
+    "displayName": "Cambodia Town, Long Beach, Los Angeles County, California, United States",
+    "at": "2026-07-29T16:31:43.471Z"
+  },
+  "cambodia-town-lowell-massachusetts": {
+    "lat": 42.6379684,
+    "lng": -71.3213616,
+    "displayName": "Cambodia Town, The Acre, Lowell, Middlesex County, Massachusetts, 01854, United States",
+    "at": "2026-07-29T16:31:44.943Z"
+  },
+  "cambridge-ma": {
+    "lat": 42.3656347,
+    "lng": -71.1040018,
+    "displayName": "Cambridge, Middlesex County, Massachusetts, United States",
+    "at": "2026-07-29T16:31:47.979Z"
+  },
+  "campbell-ohio": {
+    "lat": 41.0761424,
+    "lng": -80.5932556,
+    "displayName": "Campbell, Mahoning County, Ohio, 44405, United States",
+    "at": "2026-07-29T16:31:49.517Z"
+  },
+  "campello-brockton-massachusetts": {
+    "lat": 42.0609911,
+    "lng": -71.0111112,
+    "displayName": "Campello, Riverside Avenue, Campello, Brockton, Plymouth County, Massachusetts, 02303, United States",
+    "at": "2026-07-29T16:31:50.887Z"
+  },
+  "carson-california": {
+    "lat": 33.8322043,
+    "lng": -118.2517547,
+    "displayName": "Carson, Los Angeles County, California, United States",
+    "at": "2026-07-29T16:31:56.211Z"
+  },
+  "centennial-colorado": {
+    "lat": 39.579155,
+    "lng": -104.8769227,
+    "displayName": "Centennial, Arapahoe County, Colorado, United States",
+    "at": "2026-07-29T16:31:57.833Z"
+  },
+  "central-corona-california": {
+    "lat": 33.8753663,
+    "lng": -117.5885971,
+    "displayName": "Central Church of Christ, West 8th Street, Corona, Riverside County, California, 92882, United States",
+    "at": "2026-07-29T16:31:59.643Z"
+  },
+  "cerritos-california": {
+    "lat": 33.8644291,
+    "lng": -118.0539323,
+    "displayName": "Cerritos, Los Angeles County, California, 90715, United States",
+    "at": "2026-07-29T16:32:01.240Z"
+  },
+  "chinatown-baltimore-maryland": {
+    "lat": 39.2935003,
+    "lng": -76.618161,
+    "displayName": "Chinatown, Downtown, Baltimore, Maryland, 21201, United States",
+    "at": "2026-07-29T16:32:08.617Z"
+  },
+  "chinatown-boston-massachusetts": {
+    "lat": 42.3513291,
+    "lng": -71.0626228,
+    "displayName": "Chinatown, Boston, Suffolk County, Massachusetts, United States",
+    "at": "2026-07-29T16:32:10.212Z"
+  },
+  "chinatown-calgary-alberta": {
+    "lat": 51.0506542,
+    "lng": -114.0626107,
+    "displayName": "Chinatown, Calgary, Alberta, Canada",
+    "at": "2026-07-29T16:32:13.268Z"
+  },
+  "chinatown-chamblee-georgia": {
+    "lat": 33.8905437,
+    "lng": -84.2996252,
+    "displayName": "Atlanta Chinatown, 5383, New Peachtree Road, Chamblee, DeKalb County, Georgia, 30341, United States",
+    "at": "2026-07-29T16:32:14.826Z"
+  },
+  "chinatown-chicago-illinois": {
+    "lat": 41.8516579,
+    "lng": -87.6331383,
+    "displayName": "Chinatown, Armour Square, Chicago, South Chicago Township, Cook County, Illinois, 60616, United States",
+    "at": "2026-07-29T16:32:16.425Z"
+  },
+  "chinatown-edmonton-alberta": {
+    "lat": 53.5231669,
+    "lng": -113.6240478,
+    "displayName": "Chinatown, 90 Avenue NW, West Edmonton Mall, West Jasper Place, Edmonton, Alberta, T5T 4M2, Canada",
+    "at": "2026-07-29T16:32:17.971Z"
+  },
+  "chinatown-fresno-california": {
+    "lat": 36.7315862,
+    "lng": -119.7965063,
+    "displayName": "The Monarch at Chinatown, 1101, F Street, Fresno, Fresno County, California, 93706, United States",
+    "at": "2026-07-29T16:32:21.206Z"
+  },
+  "chinatown-honolulu-hawaii": {
+    "lat": 21.3129031,
+    "lng": -157.8628003,
+    "displayName": "Chinatown, Honolulu, Honolulu County, Hawaii, 96808, United States",
+    "at": "2026-07-29T16:32:22.692Z"
+  },
+  "chinatown-houston-texas": {
+    "lat": 29.7135765,
+    "lng": -95.5478431,
+    "displayName": "Chinatown, Westchase, Houston, Harris County, Texas, United States",
+    "at": "2026-07-29T16:32:24.159Z"
+  },
+  "chinatown-los-angeles-california": {
+    "lat": 34.0638402,
+    "lng": -118.2358676,
+    "displayName": "Chinatown, Los Angeles, Los Angeles County, California, 90086, United States",
+    "at": "2026-07-29T16:32:25.733Z"
+  },
+  "chinatown-manhattan": {
+    "lat": 40.7164913,
+    "lng": -73.9962504,
+    "displayName": "Chinatown, Lower Manhattan, Manhattan, New York County, New York, 10013, United States",
+    "at": "2026-07-29T16:32:28.982Z"
+  },
+  "chinatown-monterey-park-california": {
+    "lat": 36.6808602,
+    "lng": -121.64843,
+    "displayName": "Chinatown, Oldtown Salinas, Salinas, Monterey County, California, United States",
+    "at": "2026-07-29T16:32:32.127Z"
+  },
+  "chinatown-montreal-quebec": {
+    "lat": 45.5079409,
+    "lng": -73.5601888,
+    "displayName": "Quartier Chinois, Ville-Marie, Montréal, Agglomération de Montréal, Montréal (région administrative), Québec, H2Z 1J9, Canada",
+    "at": "2026-07-29T16:32:33.704Z"
+  },
+  "chinatown-philadelphia-pennsylvania": {
+    "lat": 39.9554027,
+    "lng": -75.1558906,
+    "displayName": "Chinatown, Center City, Philadelphia, Philadelphia County, Pennsylvania, 19105, United States",
+    "at": "2026-07-29T16:32:35.123Z"
+  },
+  "chinatown-quincy-massachusetts": {
+    "lat": 42.2730508,
+    "lng": -71.025359,
+    "displayName": "East Chinatown Restaurant, 415, Hancock Street, Norfolk Downs, Wollaston, North Quincy, Quincy, Norfolk County, Massachusetts, 02171, United States",
+    "at": "2026-07-29T16:32:38.496Z"
+  },
+  "chinatown-sacramento-california": {
+    "lat": 38.5828696,
+    "lng": -121.5008803,
+    "displayName": "Chinatown Mall, Downtown, Sacramento, Sacramento County, California, United States",
+    "at": "2026-07-29T16:32:41.128Z"
+  },
+  "chinatown-seattle-washington": {
+    "lat": 47.5975121,
+    "lng": -122.3250774,
+    "displayName": "Chinatown, Chinatown International District, Seattle, King County, Washington, United States",
+    "at": "2026-07-29T16:32:45.576Z"
+  },
+  "chinatown-sf": {
+    "lat": 37.7943011,
+    "lng": -122.4063757,
+    "displayName": "Chinatown, South of Market, San Francisco, California, United States",
+    "at": "2026-07-29T16:32:47.115Z"
+  },
+  "chinatown-toronto-ontario": {
+    "lat": 43.6529237,
+    "lng": -79.3980316,
+    "displayName": "Chinatown, Downtown, Toronto, Golden Horseshoe, Ontario, M5T 2E6, Canada",
+    "at": "2026-07-29T16:32:49.825Z"
+  },
+  "chinatown-vancouver-british-columbia": {
+    "lat": 49.2803671,
+    "lng": -123.1010541,
+    "displayName": "Chinatown, Downtown, Vancouver, Metro Vancouver Regional District, British Columbia, Canada",
+    "at": "2026-07-29T16:32:51.523Z"
+  },
+  "chinatown-washington-d-c": {
+    "lat": 38.900327,
+    "lng": -77.0211969,
+    "displayName": "Chinatown, Ward 2, Washington, District of Columbia, United States",
+    "at": "2026-07-29T16:32:53.097Z"
+  },
+  "chinatown-west-montreal-quebec": {
+    "lat": 45.5087103,
+    "lng": -73.5613073,
+    "displayName": "West Chinatown Gate, Boulevard Saint-Laurent, Quartier Chinois, Ville-Marie, Montréal, Agglomération de Montréal, Montréal (région administrative), Québec, H2Z 1J5, Canada",
+    "at": "2026-07-29T16:32:54.413Z"
+  },
+  "chino-hills-california": {
+    "lat": 33.9926803,
+    "lng": -117.760056,
+    "displayName": "Chino Hills, San Bernardino County, California, United States",
+    "at": "2026-07-29T16:32:58.530Z"
+  },
+  "chollas-view-san-diego-california": {
+    "lat": 32.7131076,
+    "lng": -117.0911414,
+    "displayName": "Chollas View, San Diego, San Diego County, California, 92105, United States",
+    "at": "2026-07-29T16:32:59.813Z"
+  },
+  "cinco-ranch-texas": {
+    "lat": 29.7302118,
+    "lng": -95.7751,
+    "displayName": "Cinco Ranch, Fort Bend County, Texas, 25826, United States",
+    "at": "2026-07-29T16:33:04.115Z"
+  },
+  "cleveland-ohio": {
+    "lat": 41.4996574,
+    "lng": -81.6936772,
+    "displayName": "Cleveland, Cuyahoga County, Ohio, United States",
+    "at": "2026-07-29T16:33:05.759Z"
+  },
+  "coachella-california": {
+    "lat": 33.6794956,
+    "lng": -116.17628,
+    "displayName": "Coachella, Riverside County, California, 92236, United States",
+    "at": "2026-07-29T16:33:10.187Z"
+  },
+  "columbia-maryland": {
+    "lat": 39.1938429,
+    "lng": -76.8646092,
+    "displayName": "Columbia, Howard County, Maryland, United States",
+    "at": "2026-07-29T16:33:11.971Z"
+  },
+  "columbus-ohio": {
+    "lat": 39.9622601,
+    "lng": -83.0007065,
+    "displayName": "Columbus, Sharon, Franklin County, Ohio, United States",
+    "at": "2026-07-29T16:33:13.608Z"
+  },
+  "coppell-texas": {
+    "lat": 32.9552598,
+    "lng": -97.0155703,
+    "displayName": "Coppell, Dallas County, Texas, 75019, United States",
+    "at": "2026-07-29T16:33:15.113Z"
+  },
+  "corona-california": {
+    "lat": 33.8752945,
+    "lng": -117.566444,
+    "displayName": "Corona, Riverside County, California, United States",
+    "at": "2026-07-29T16:33:16.705Z"
+  },
+  "cupertino-california": {
+    "lat": 37.3228934,
+    "lng": -122.0322895,
+    "displayName": "Cupertino, Santa Clara County, California, 95014, United States",
+    "at": "2026-07-29T16:33:24.284Z"
+  },
+  "d-iberville-mississippi": {
+    "lat": 30.4263092,
+    "lng": -88.8908638,
+    "displayName": "D'Iberville, Harrison County, Mississippi, 39540, United States",
+    "at": "2026-07-29T16:33:25.740Z"
+  },
+  "daly-city-california": {
+    "lat": 37.6904826,
+    "lng": -122.47267,
+    "displayName": "Daly City, San Mateo County, California, United States",
+    "at": "2026-07-29T16:33:28.741Z"
+  },
+  "daybreak-south-jordan-utah": {
+    "lat": 40.5530694,
+    "lng": -112.007464,
+    "displayName": "Daybreak, South Jordan, Salt Lake County, Utah, 84009, United States",
+    "at": "2026-07-29T16:33:30.319Z"
+  },
+  "albany-new-york": {
+    "lat": 41.9410874,
+    "lng": -74.0477648,
+    "displayName": "New York State Police Troop F SP Kingston, 1791, Clayton 'Peg Leg' Bates Highway, City of Kingston, Town of Ulster, Ulster County, New York, 12401, United States",
+    "at": "2026-07-29T16:33:43.430Z"
+  },
+  "anaheim-hills-in-anaheim-california": {
+    "lat": 36.7014631,
+    "lng": -118.755997,
+    "displayName": "California, United States",
+    "at": "2026-07-29T16:33:47.097Z"
+  },
+  "apple-mountain-lake-virginia-and-other-areas-in-northern-virginia": {
+    "lat": 30.6972412,
+    "lng": -88.1892334,
+    "displayName": "University of South Alabama, 307, North University Boulevard, Park Forest, Mobile City Council District 7, Mobile, Mobile County, Alabama, 36688, United States",
+    "at": "2026-07-29T16:33:51.496Z"
+  },
+  "bangladesh-boulevard-paterson-new-jersey": {
+    "lat": 40.9168,
+    "lng": -74.171,
+    "displayName": "Paterson, New Jersey",
+    "at": "2026-07-29T16:40:52.918Z",
+    "source": "centroid"
+  },
+  "bangladesh-street-jackson-heights-queens-new-york-city-new-york": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "cambodia-town-philadelphia-pennsylvania": {
+    "lat": 39.9526,
+    "lng": -75.1652,
+    "displayName": "Philadelphia, Pennsylvania",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chambodia-chamblee-georgia": {
+    "lat": 33.8923,
+    "lng": -84.2988,
+    "displayName": "Chamblee, Georgia",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-allston-boston-massachusetts": {
+    "lat": 42.3601,
+    "lng": -71.0589,
+    "displayName": "Boston, Massachusetts",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-brossard-quebec": {
+    "lat": 45.4457,
+    "lng": -73.463,
+    "displayName": "Brossard, Quebec",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-flushing": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-malden-massachusetts": {
+    "lat": 42.4251,
+    "lng": -71.0662,
+    "displayName": "Malden, Massachusetts",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-markham-ontario": {
+    "lat": 43.8561,
+    "lng": -79.337,
+    "displayName": "Markham, Ontario",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-plaza-spring-valley-nevada": {
+    "lat": 36.108,
+    "lng": -115.245,
+    "displayName": "Spring Valley, Nevada",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-richmond-hill-ontario": {
+    "lat": 43.8828,
+    "lng": -79.4403,
+    "displayName": "Richmond Hill, Ontario",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-salt-lake-city-utah": {
+    "lat": 40.7608,
+    "lng": -111.891,
+    "displayName": "Salt Lake City, Utah",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-scarborough-toronto-ontario": {
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "displayName": "Toronto, Ontario",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-sunset-park": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chinatown-windsor-ontario": {
+    "lat": 42.3149,
+    "lng": -83.0364,
+    "displayName": "Windsor, Ontario",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "chindianapolis-southport-indiana": {
+    "lat": 39.665,
+    "lng": -86.126,
+    "displayName": "Southport, Indiana",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "cid-east-bellevue-washington": {
+    "lat": 47.6101,
+    "lng": -122.2015,
+    "displayName": "Bellevue, Washington",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "dearborn-michigan": {
+    "lat": 42.3223,
+    "lng": -83.1763,
+    "displayName": "Dearborn, Michigan",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "detroit-michigan": {
+    "lat": 42.3314,
+    "lng": -83.0458,
+    "displayName": "Detroit, Michigan",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "dfw-china-town-richardson-texas": {
+    "lat": 32.9483,
+    "lng": -96.7299,
+    "displayName": "Richardson, Texas",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "duluth-georgia": {
+    "lat": 34.0029,
+    "lng": -84.1446,
+    "displayName": "Duluth, Georgia",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "east-chinatown-toronto-ontario": {
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "displayName": "Toronto, Ontario",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "east-oakland-oakland-california-especially-fruitvale": {
+    "lat": 37.8044,
+    "lng": -122.2712,
+    "displayName": "Oakland, California",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "edison-new-jersey": {
+    "lat": 40.5187,
+    "lng": -74.4121,
+    "displayName": "Edison, New Jersey",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "edmonton-alberta": {
+    "lat": 53.5461,
+    "lng": -113.4938,
+    "displayName": "Edmonton, Alberta",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "ellicott-city-maryland": {
+    "lat": 39.2673,
+    "lng": -76.7983,
+    "displayName": "Ellicott City, Maryland",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "etobicoke-toronto-ontario": {
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "displayName": "Toronto, Ontario",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "excelsior-district-san-francisco-california": {
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "displayName": "San Francisco, California",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "fall-river-massachusetts": {
+    "lat": 41.7015,
+    "lng": -71.155,
+    "displayName": "Fall River, Massachusetts",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "farmington-hills-michigan": {
+    "lat": 42.49899,
+    "lng": -83.3677,
+    "displayName": "Farmington Hills, Michigan",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "feltonville-philadelphia-pennsylvania": {
+    "lat": 39.9526,
+    "lng": -75.1652,
+    "displayName": "Philadelphia, Pennsylvania",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "folsom-california": {
+    "lat": 38.678,
+    "lng": -121.176,
+    "displayName": "Folsom, California",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "fontana-california": {
+    "lat": 34.0922,
+    "lng": -117.435,
+    "displayName": "Fontana, California",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "fort-lee-new-jersey": {
+    "lat": 40.8509,
+    "lng": -73.9701,
+    "displayName": "Fort Lee, New Jersey",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "fort-myers-florida": {
+    "lat": 26.6406,
+    "lng": -81.8723,
+    "displayName": "Fort Myers, Florida",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "foster-city-california": {
+    "lat": 37.5585,
+    "lng": -122.2711,
+    "displayName": "Foster City, California",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "fremont-california": {
+    "lat": 37.5485,
+    "lng": -121.9886,
+    "displayName": "Fremont, California",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "fresno-california": {
+    "lat": 36.7378,
+    "lng": -119.7871,
+    "displayName": "Fresno, California",
+    "at": "2026-07-29T16:40:52.919Z",
+    "source": "centroid"
+  },
+  "fresno-stockton-sacramento-oroville-california": {
+    "lat": 39.5138,
+    "lng": -121.5564,
+    "displayName": "Oroville, California",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "frisco-texas": {
+    "lat": 33.1507,
+    "lng": -96.8236,
+    "displayName": "Frisco, Texas",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "frogtown-saint-paul-minnesota": {
+    "lat": 44.9537,
+    "lng": -93.09,
+    "displayName": "Saint Paul, Minnesota",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "fullerton-california": {
+    "lat": 33.8704,
+    "lng": -117.9242,
+    "displayName": "Fullerton, California",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "gallia-county-ohio": {
+    "lat": 38.827,
+    "lng": -82.316,
+    "displayName": "Gallia County, Ohio",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "gardena-california": {
+    "lat": 33.8883,
+    "lng": -118.3089,
+    "displayName": "Gardena, California",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "gimli-manitoba-canada": {
+    "lat": 50.6322,
+    "lng": -96.9907,
+    "displayName": "Gimli, Manitoba",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "glendale-california": {
+    "lat": 34.1425,
+    "lng": -118.2551,
+    "displayName": "Glendale, California",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "grass-valley-california": {
+    "lat": 39.2191,
+    "lng": -121.061,
+    "displayName": "Grass Valley, California",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "great-neck-new-york": {
+    "lat": 40.8007,
+    "lng": -73.7285,
+    "displayName": "Great Neck, New York",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "greektown-montreal-quebec": {
+    "lat": 45.5017,
+    "lng": -73.5673,
+    "displayName": "Montreal, Quebec",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "greektown-vancouver-british-columbia": {
+    "lat": 49.2827,
+    "lng": -123.1207,
+    "displayName": "Vancouver, British Columbia",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "greenwood-indiana": {
+    "lat": 39.6137,
+    "lng": -86.1067,
+    "displayName": "Greenwood, Indiana",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "gresham-oregon": {
+    "lat": 45.4982,
+    "lng": -122.4302,
+    "displayName": "Gresham, Oregon",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "hamtramck-michigan": {
+    "lat": 42.3928,
+    "lng": -83.0496,
+    "displayName": "Hamtramck, Michigan",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "historic-filipinotown-los-angeles-california": {
+    "lat": 34.0522,
+    "lng": -118.2437,
+    "displayName": "Los Angeles, California",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "honolulu-hawaii": {
+    "lat": 21.3069,
+    "lng": -157.8583,
+    "displayName": "Honolulu, Hawaii",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "indianapolis-indiana-especially-perry-township-marion-county": {
+    "lat": 39.7684,
+    "lng": -86.1581,
+    "displayName": "Indianapolis, Indiana",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "international-boulevard-oakland-california": {
+    "lat": 37.8044,
+    "lng": -122.2712,
+    "displayName": "Oakland, California",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "irvine-california": {
+    "lat": 33.6846,
+    "lng": -117.8265,
+    "displayName": "Irvine, California",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "jacksonville-florida": {
+    "lat": 30.3322,
+    "lng": -81.6557,
+    "displayName": "Jacksonville, Florida",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "koreatown-ellicott-city-maryland": {
+    "lat": 39.2673,
+    "lng": -76.7983,
+    "displayName": "Ellicott City, Maryland",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "koreatown-la": {
+    "lat": 34.0522,
+    "lng": -118.2437,
+    "displayName": "Los Angeles, California",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "lapskaus-boulevard-brooklyn-new-york-city-new-york": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "las-vegas-nevada": {
+    "lat": 36.1699,
+    "lng": -115.1398,
+    "displayName": "Las Vegas, Nevada",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "little-africa-bronx": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "little-africa-si": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "little-arabia-anaheim-california": {
+    "lat": 33.8366,
+    "lng": -117.9143,
+    "displayName": "Anaheim, California",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "little-asia-plano-texas": {
+    "lat": 33.0198,
+    "lng": -96.6989,
+    "displayName": "Plano, Texas",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "little-bangladesh-jamaica-queens-new-york-city-new-york": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "little-bangladesh-kensington-brooklyn-new-york-city-new-york": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.920Z",
+    "source": "centroid"
+  },
+  "little-bangladesh-los-angeles-california": {
+    "lat": 34.0522,
+    "lng": -118.2437,
+    "displayName": "Los Angeles, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-burma-fort-wayne-indiana": {
+    "lat": 41.0793,
+    "lng": -85.1394,
+    "displayName": "Fort Wayne, Indiana",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-cambodia-the-bronx-new-york-city-new-york": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-ethiopia-alexandria-virginia": {
+    "lat": 38.8048,
+    "lng": -77.0469,
+    "displayName": "Alexandria, Virginia",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-ethiopia-la": {
+    "lat": 34.0522,
+    "lng": -118.2437,
+    "displayName": "Los Angeles, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-ethiopia-shaw-washington-d-c": {
+    "lat": 38.9072,
+    "lng": -77.0369,
+    "displayName": "Washington, D.C.",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-ethiopia-silver-spring-maryland": {
+    "lat": 38.9907,
+    "lng": -77.0261,
+    "displayName": "Silver Spring, Maryland",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-italy-los-angeles-california": {
+    "lat": 34.0522,
+    "lng": -118.2437,
+    "displayName": "Los Angeles, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-kabul-chicago-illinois": {
+    "lat": 41.8781,
+    "lng": -87.6298,
+    "displayName": "Chicago, Illinois",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-kabul-fremont-california": {
+    "lat": 37.5485,
+    "lng": -121.9886,
+    "displayName": "Fremont, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-lagos-houston-texas": {
+    "lat": 29.7604,
+    "lng": -95.3698,
+    "displayName": "Houston, Texas",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-mogadishu-minneapolis-minnesota": {
+    "lat": 44.9778,
+    "lng": -93.265,
+    "displayName": "Minneapolis, Minnesota",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-saigon-oklahoma-city-oklahoma": {
+    "lat": 35.4676,
+    "lng": -97.5164,
+    "displayName": "Oklahoma City, Oklahoma",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-saigon-vancouver-british-columbia": {
+    "lat": 49.2827,
+    "lng": -123.1207,
+    "displayName": "Vancouver, British Columbia",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-senegal": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-seoul-garden-grove-california": {
+    "lat": 33.7739,
+    "lng": -117.9414,
+    "displayName": "Garden Grove, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-seoul-newport-news-virginia": {
+    "lat": 37.0871,
+    "lng": -76.473,
+    "displayName": "Newport News, Virginia",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-taipei-rowland-heights-california": {
+    "lat": 33.9761,
+    "lng": -117.9053,
+    "displayName": "Rowland Heights, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "little-tuscany-palm-springs-california": {
+    "lat": 33.8303,
+    "lng": -116.5453,
+    "displayName": "Palm Springs, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "logan-heights-san-diego-california": {
+    "lat": 32.7157,
+    "lng": -117.1611,
+    "displayName": "San Diego, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "long-beach-california": {
+    "lat": 33.7701,
+    "lng": -118.1937,
+    "displayName": "Long Beach, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "los-serranos-chino-hills-california": {
+    "lat": 33.9898,
+    "lng": -117.7326,
+    "displayName": "Chino Hills, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "lowell-massachusetts": {
+    "lat": 42.6334,
+    "lng": -71.3162,
+    "displayName": "Lowell, Massachusetts",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "marion-hickory-morganton-north-carolina": {
+    "lat": 35.7454,
+    "lng": -81.6848,
+    "displayName": "Morganton, North Carolina",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "markham-ontario": {
+    "lat": 43.8561,
+    "lng": -79.337,
+    "displayName": "Markham, Ontario",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "meadowview-sacramento-california": {
+    "lat": 38.5816,
+    "lng": -121.4944,
+    "displayName": "Sacramento, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "mississauga-chinese-centre-mississauga-ontario": {
+    "lat": 43.589,
+    "lng": -79.6441,
+    "displayName": "Mississauga, Ontario",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "mississauga-ontario": {
+    "lat": 43.589,
+    "lng": -79.6441,
+    "displayName": "Mississauga, Ontario",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "nashville-tennessee": {
+    "lat": 36.1627,
+    "lng": -86.7816,
+    "displayName": "Nashville, Tennessee",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "new-chinatown-richmond-district-san-francisco-california": {
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "displayName": "San Francisco, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "new-chinatown-rockville-maryland": {
+    "lat": 39.084,
+    "lng": -77.1528,
+    "displayName": "Rockville, Maryland",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "new-orleans-louisiana": {
+    "lat": 29.9511,
+    "lng": -90.0715,
+    "displayName": "New Orleans, Louisiana",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "northgate-and-gardenland-sacramento-california": {
+    "lat": 38.5816,
+    "lng": -121.4944,
+    "displayName": "Sacramento, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "oakland-chinatown-oakland-california": {
+    "lat": 37.8044,
+    "lng": -122.2712,
+    "displayName": "Oakland, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "ontario-california": {
+    "lat": 34.0633,
+    "lng": -117.6509,
+    "displayName": "Ontario, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "over-the-rhine-cincinnati-ohio": {
+    "lat": 39.1031,
+    "lng": -84.512,
+    "displayName": "Cincinnati, Ohio",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "pelham-parkway-bronx-new-york-city-new-york": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "phoenix-arizona": {
+    "lat": 33.4484,
+    "lng": -112.074,
+    "displayName": "Phoenix, Arizona",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "plano-texas": {
+    "lat": 33.0198,
+    "lng": -96.6989,
+    "displayName": "Plano, Texas",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "polish-downtown-chicago-illinois": {
+    "lat": 41.8781,
+    "lng": -87.6298,
+    "displayName": "Chicago, Illinois",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "portland-oregon": {
+    "lat": 45.5152,
+    "lng": -122.6784,
+    "displayName": "Portland, Oregon",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "providence-rhode-island": {
+    "lat": 41.824,
+    "lng": -71.4128,
+    "displayName": "Providence, Rhode Island",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "pueblo-colorado": {
+    "lat": 38.2544,
+    "lng": -104.6091,
+    "displayName": "Pueblo, Colorado",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "raleigh-north-carolina": {
+    "lat": 35.7796,
+    "lng": -78.6382,
+    "displayName": "Raleigh, North Carolina",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "richmond-hill-ontario": {
+    "lat": 43.8828,
+    "lng": -79.4403,
+    "displayName": "Richmond Hill, Ontario",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "ridgewood-queens-new-york": {
+    "lat": 40.7282,
+    "lng": -73.7949,
+    "displayName": "Queens, New York",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "riverside-california": {
+    "lat": 33.9806,
+    "lng": -117.3755,
+    "displayName": "Riverside, California",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "saddle-ridge-calgary-alberta": {
+    "lat": 51.0447,
+    "lng": -114.0719,
+    "displayName": "Calgary, Alberta",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "salem-oregon": {
+    "lat": 44.9429,
+    "lng": -123.0351,
+    "displayName": "Salem, Oregon",
+    "at": "2026-07-29T16:40:52.921Z",
+    "source": "centroid"
+  },
+  "salinas-california": {
+    "lat": 36.6777,
+    "lng": -121.6555,
+    "displayName": "Salinas, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "salt-lake-city-utah": {
+    "lat": 40.7608,
+    "lng": -111.891,
+    "displayName": "Salt Lake City, Utah",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "san-antonio-texas": {
+    "lat": 29.4241,
+    "lng": -98.4936,
+    "displayName": "San Antonio, Texas",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "san-jose-california": {
+    "lat": 37.3382,
+    "lng": -121.8863,
+    "displayName": "San Jose, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "santa-ana-california": {
+    "lat": 33.7455,
+    "lng": -117.8677,
+    "displayName": "Santa Ana, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "santa-clara-california": {
+    "lat": 37.3541,
+    "lng": -121.9552,
+    "displayName": "Santa Clara, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "scarborough-toronto-ontario": {
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "displayName": "Toronto, Ontario",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "south-boston-boston-massachusetts": {
+    "lat": 42.3601,
+    "lng": -71.0589,
+    "displayName": "Boston, Massachusetts",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "south-dallas-dallas-texas": {
+    "lat": 32.7767,
+    "lng": -96.797,
+    "displayName": "Dallas, Texas",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "sterling-heights-michigan": {
+    "lat": 42.5803,
+    "lng": -83.0302,
+    "displayName": "Sterling Heights, Michigan",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "stockton-california": {
+    "lat": 37.9577,
+    "lng": -121.2908,
+    "displayName": "Stockton, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "sunnyside-queens-new-york": {
+    "lat": 40.7282,
+    "lng": -73.7949,
+    "displayName": "Queens, New York",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "sunnyvale-california": {
+    "lat": 37.3688,
+    "lng": -122.0363,
+    "displayName": "Sunnyvale, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "sunset-park-brooklyn-new-york-city-new-york": {
+    "lat": 40.7128,
+    "lng": -74.006,
+    "displayName": "New York City, New York",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "surrey-british-columbia": {
+    "lat": 49.1913,
+    "lng": -122.849,
+    "displayName": "Surrey, British Columbia",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "thai-town-la": {
+    "lat": 34.0522,
+    "lng": -118.2437,
+    "displayName": "Los Angeles, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "thorncliffe-park-toronto-ontario": {
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "displayName": "Toronto, Ontario",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "toronto-ontario-canada": {
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "displayName": "Toronto, Ontario",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "tulsa-oklahoma": {
+    "lat": 36.154,
+    "lng": -95.9928,
+    "displayName": "Tulsa, Oklahoma",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "turlock-california": {
+    "lat": 37.4947,
+    "lng": -120.8466,
+    "displayName": "Turlock, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "washington-d-c-and-nearby-maryland-and-northern-virginia-suburbs-formerly-known-": {
+    "lat": 38.9072,
+    "lng": -77.0369,
+    "displayName": "Washington, D.C.",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "weed-california": {
+    "lat": 41.4226,
+    "lng": -122.3861,
+    "displayName": "Weed, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "west-covina-california-centered-on-manila-way-on-amar-rd-and-azusa-ave": {
+    "lat": 34.0686,
+    "lng": -117.939,
+    "displayName": "West Covina, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "west-oakland-oakland-california": {
+    "lat": 37.8044,
+    "lng": -122.2712,
+    "displayName": "Oakland, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "westwood-los-angeles-california": {
+    "lat": 34.0522,
+    "lng": -118.2437,
+    "displayName": "Los Angeles, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "wilmington-los-angeles-california": {
+    "lat": 34.0522,
+    "lng": -118.2437,
+    "displayName": "Los Angeles, California",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "windsor-ontario": {
+    "lat": 42.3149,
+    "lng": -83.0364,
+    "displayName": "Windsor, Ontario",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "winnipeg-manitoba": {
+    "lat": 49.8951,
+    "lng": -97.1384,
+    "displayName": "Winnipeg, Manitoba",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "yonge-street-in-north-york-toronto-ontario": {
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "displayName": "Toronto, Ontario",
+    "at": "2026-07-29T16:40:52.922Z",
+    "source": "centroid"
+  },
+  "astoria-queens-new-york-city": {
+    "error": "not-found",
+    "at": "2026-07-29T16:41:10.212Z"
+  },
+  "atlanta-georgia-area": {
+    "error": "not-found",
+    "at": "2026-07-29T16:42:02.885Z"
+  },
+  "aurora-colorado-and-other-parts-of-greater-denver": {
+    "error": "not-found",
+    "at": "2026-07-29T17:35:55.283Z"
+  },
+  "bay-ridge-brooklyn-new-york-city": {
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "displayName": "New York, United States",
+    "at": "2026-07-29T17:36:37.002Z",
+    "source": "nominatim"
+  },
+  "beacon-hill-and-rainier-valley-in-seattle-washington": {
+    "error": "not-found",
+    "at": "2026-07-29T18:37:10.472Z"
+  },
+  "bridgeview-illinois-and-other-parts-of-chicagoland": {
+    "error": "not-found",
+    "at": "2026-07-29T18:37:14.233Z"
+  },
+  "brighton-beach-new-york-in-the-brooklyn-area": {
+    "error": "not-found",
+    "at": "2026-07-29T18:37:18.342Z"
+  },
+  "cabrillo-28-palms-sundale-and-some-parts-of-irvington-in-fremont-california": {
+    "error": "not-found",
+    "at": "2026-07-29T18:37:26.083Z"
+  },
+  "canal-district-san-rafael-california": {
+    "error": "not-found",
+    "at": "2026-07-29T18:38:02.467Z"
+  },
+  "capital-hill-oklahoma-city": {
+    "error": "not-found",
+    "at": "2026-07-29T18:39:18.654Z"
+  },
+  "cerritos-california-and-artesia-california": {
+    "error": "not-found",
+    "at": "2026-07-29T19:18:08.171Z"
+  },
+  "chicago-illinois": {
+    "error": "not-found",
+    "at": "2026-07-29T19:45:11.249Z"
+  },
+  "cicero-illinois-and-little-village-chicago-chicagoland-has-one-of-largest-mexica": {
+    "error": "not-found",
+    "at": "2026-07-29T20:46:13.233Z"
+  },
+  "cleveland-ohio-parma": {
+    "lat": 41.3798835,
+    "lng": -81.7385925,
+    "displayName": "Parma Post Office, 7801, Day Drive, Parma, Cuyahoga County, Ohio, 44129, United States",
+    "at": "2026-07-29T20:46:54.239Z",
+    "source": "nominatim"
+  },
+  "clinton-indiana-also-holds-one-of-the-largest-italian-cultural-festivals-in-the-": {
+    "error": "not-found",
+    "at": "2026-07-29T20:46:56.194Z"
+  },
+  "corona-queens-new-york-spanish-harlem-manhattan-parts-of-long-island-new-york": {
+    "error": "not-found",
+    "at": "2026-07-29T21:47:14.028Z"
+  },
+  "cortez-colorado-and-pueblo-colorado": {
+    "lat": 38.3210303,
+    "lng": -104.7311178,
+    "displayName": "Pueblo West Colorado: Parks and Recreation, East Hahns Peak Court, Pueblo West, Pueblo County, Colorado, 81007, United States",
+    "at": "2026-07-29T21:47:18.491Z",
+    "source": "nominatim"
+  },
+  "covina-california-area-with-a-sri-lankan-community-center-in-west-covina-califor": {
+    "error": "not-found",
+    "at": "2026-07-29T21:47:20.205Z"
+  },
+  "cumming-georgia-and-parts-of-rural-georgia-some-of-metro-atlanta": {
+    "error": "not-found",
+    "at": "2026-07-29T21:47:23.794Z"
+  },
+  "dallas-texas-and-its-metro-area": {
+    "error": "not-found",
+    "at": "2026-07-29T21:47:27.394Z"
+  },
+  "deadwood-south-dakota": {
+    "lat": 44.3743812,
+    "lng": -103.7290723,
+    "displayName": "Deadwood, Lawrence County, South Dakota, United States",
+    "at": "2026-07-29T21:47:29.085Z",
+    "source": "nominatim"
+  },
+  "dearborn-heights-michigan": {
+    "lat": 42.3369816,
+    "lng": -83.2732627,
+    "displayName": "Dearborn Heights, Wayne County, Michigan, United States",
+    "at": "2026-07-29T21:47:31.029Z",
+    "source": "nominatim"
+  },
+  "decoto-union-city-california": {
+    "lat": 37.6025883,
+    "lng": -122.0214108,
+    "displayName": "Decoto, Union City, Alameda County, California, 94587, United States",
+    "at": "2026-07-29T21:47:32.883Z",
+    "source": "nominatim"
+  },
+  "delano-california": {
+    "lat": 35.7688425,
+    "lng": -119.247053,
+    "displayName": "Delano, Kern County, California, 93215, United States",
+    "at": "2026-07-29T21:47:34.861Z",
+    "source": "nominatim"
+  },
+  "delavan-wisconsin-parts-of-racine-wi-and-beloit-wi": {
+    "error": "not-found",
+    "at": "2026-07-29T21:47:38.495Z"
+  },
+  "denver-colorado-and-aurora-sherrelwood-and-lakewood": {
+    "error": "not-found",
+    "at": "2026-07-29T21:47:55.055Z"
+  },
+  "des-moines-iowa-perry-iowa-some-parts-of-rural-iowa-as-well-like-west-liberty-io": {
+    "error": "not-found",
+    "at": "2026-07-29T22:48:20.179Z"
+  },
+  "deutschtown-pittsburgh-pennsylvania": {
+    "lat": 40.4550552,
+    "lng": -79.9974072,
+    "displayName": "East Allegheny, Pittsburgh, Allegheny County, Pennsylvania, United States",
+    "at": "2026-07-29T22:48:26.647Z",
+    "source": "nominatim"
+  },
+  "devon-avenue-in-chicago-illinois": {
+    "error": "not-found",
+    "at": "2026-07-29T22:48:43.810Z"
+  },
+  "diablo-valley-in-contra-costa-county-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:20:33.209Z"
+  },
+  "doctor-philips-florida": {
+    "error": "not-found",
+    "at": "2026-07-29T23:21:18.942Z"
+  },
+  "downey-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:31:13.183Z"
+  },
+  "dublin-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:32:35.599Z"
+  },
+  "duluth-mn-and-the-twin-cities-region": {
+    "error": "not-found",
+    "at": "2026-07-29T23:33:58.673Z"
+  },
+  "east-and-south-bakersfield-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:35:21.621Z"
+  },
+  "east-los-angeles-california": {
+    "lat": 34.0239015,
+    "lng": -118.172015,
+    "displayName": "East Los Angeles, Compton, Los Angeles County, California, United States",
+    "at": "2026-07-29T23:36:23.771Z",
+    "source": "nominatim"
+  },
+  "east-oakland-california": {
+    "lat": 37.7746667,
+    "lng": -122.2118121,
+    "displayName": "East Oakland, Oakland, Alameda County, California, 94601, United States",
+    "at": "2026-07-29T23:36:25.718Z",
+    "source": "nominatim"
+  },
+  "east-palo-alto-california": {
+    "lat": 37.4688273,
+    "lng": -122.141075,
+    "displayName": "East Palo Alto, San Mateo County, California, United States",
+    "at": "2026-07-29T23:36:27.721Z",
+    "source": "nominatim"
+  },
+  "east-utica-new-york": {
+    "lat": 42.9111074,
+    "lng": -78.853053,
+    "displayName": "East Utica Street, East Side, Buffalo, Erie County, New York, 14208, United States",
+    "at": "2026-07-29T23:36:29.758Z",
+    "source": "nominatim"
+  },
+  "eastvale-california": {
+    "lat": 33.9747067,
+    "lng": -117.566541,
+    "displayName": "Eastvale, Riverside County, California, 92880, United States",
+    "at": "2026-07-29T23:36:31.461Z",
+    "source": "nominatim"
+  },
+  "eden-prairie-minnesota": {
+    "lat": 44.8546856,
+    "lng": -93.470786,
+    "displayName": "Eden Prairie, Hennepin County, Minnesota, United States",
+    "at": "2026-07-29T23:36:33.555Z",
+    "source": "nominatim"
+  },
+  "el-paso-texas": {
+    "lat": 31.7601001,
+    "lng": -106.4870476,
+    "displayName": "El Paso, El Paso County, Texas, United States",
+    "at": "2026-07-29T23:36:35.410Z",
+    "source": "nominatim"
+  },
+  "elk-horn-iowa": {
+    "lat": 41.591655,
+    "lng": -95.0603232,
+    "displayName": "Elk Horn, Clay Township, Shelby County, Iowa, United States",
+    "at": "2026-07-29T23:36:37.993Z",
+    "source": "nominatim"
+  },
+  "elko-nevada": {
+    "lat": 41.1958128,
+    "lng": -115.3272864,
+    "displayName": "Elko County, Nevada, United States",
+    "at": "2026-07-29T23:36:39.903Z",
+    "source": "nominatim"
+  },
+  "eveleth-minnesota": {
+    "lat": 47.462761,
+    "lng": -92.538824,
+    "displayName": "Eveleth, Saint Louis County, Minnesota, United States",
+    "at": "2026-07-29T23:36:41.786Z",
+    "source": "nominatim"
+  },
+  "fairfax-county-virginia": {
+    "lat": 38.8156356,
+    "lng": -77.2836849,
+    "displayName": "Fairfax County, Virginia, United States",
+    "at": "2026-07-29T23:36:43.725Z",
+    "source": "nominatim"
+  },
+  "fort-wayne-indiana-gary-indiana-parts-of-indianapolis": {
+    "error": "not-found",
+    "at": "2026-07-29T23:36:47.646Z"
+  },
+  "fredericksburg-texas-and-the-texas-hill-country": {
+    "error": "not-found",
+    "at": "2026-07-29T23:36:52.426Z"
+  },
+  "fresno-california-and-nearby-agricultural-communities": {
+    "error": "not-found",
+    "at": "2026-07-29T23:36:56.117Z"
+  },
+  "glendale-california-and-nearby-atwater-village-los-angeles-see-also-distribution": {
+    "error": "not-found",
+    "at": "2026-07-29T23:36:58.030Z"
+  },
+  "greater-austin-texas": {
+    "lat": 30.2660355,
+    "lng": -97.6501253,
+    "displayName": "Greater Austin, Texas, United States",
+    "at": "2026-07-29T23:36:59.766Z",
+    "source": "nominatim"
+  },
+  "greater-vancouver-british-columbia": {
+    "lat": 49.2618661,
+    "lng": -122.9555509,
+    "displayName": "Metro Vancouver Regional District, British Columbia, Canada",
+    "at": "2026-07-29T23:37:01.867Z",
+    "source": "nominatim"
+  },
+  "greek-town-omaha-nebraska": {
+    "lat": 41.2587459,
+    "lng": -95.9383758,
+    "displayName": "Omaha, Douglas County, Nebraska, United States",
+    "at": "2026-07-29T23:37:06.057Z",
+    "source": "nominatim"
+  },
+  "greektown-tarpon-springs-florida": {
+    "lat": 28.1470965,
+    "lng": -82.756367,
+    "displayName": "Tarpon Springs, Pinellas County, Florida, 34689, United States",
+    "at": "2026-07-29T23:37:09.797Z",
+    "source": "nominatim"
+  },
+  "greektown-toronto": {
+    "lat": 43.6534817,
+    "lng": -79.3839347,
+    "displayName": "Toronto, Golden Horseshoe, Ontario, Canada",
+    "at": "2026-07-29T23:37:13.415Z",
+    "source": "nominatim"
+  },
+  "greeley-colorado": {
+    "lat": 40.4233142,
+    "lng": -104.7091322,
+    "displayName": "Greeley, Weld County, Colorado, United States",
+    "at": "2026-07-29T23:37:15.368Z",
+    "source": "nominatim"
+  },
+  "greenpoint-new-york-city": {
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "displayName": "New York, United States",
+    "at": "2026-07-29T23:37:19.416Z",
+    "source": "nominatim"
+  },
+  "guymon-oklahoma": {
+    "lat": 36.6814131,
+    "lng": -101.4814241,
+    "displayName": "Guymon, Texas County, Oklahoma, United States",
+    "at": "2026-07-29T23:37:21.283Z",
+    "source": "nominatim"
+  },
+  "hanover-pennsylvania": {
+    "lat": 39.8005316,
+    "lng": -76.9832568,
+    "displayName": "Hanover, York County, Pennsylvania, 17331, United States",
+    "at": "2026-07-29T23:37:23.090Z",
+    "source": "nominatim"
+  },
+  "hayward-california": {
+    "lat": 37.6688205,
+    "lng": -122.080796,
+    "displayName": "Hayward, Alameda County, California, United States",
+    "at": "2026-07-29T23:37:25.047Z",
+    "source": "nominatim"
+  },
+  "hemet-california": {
+    "lat": 33.7475203,
+    "lng": -116.9719684,
+    "displayName": "Hemet, Riverside County, California, United States",
+    "at": "2026-07-29T23:37:26.931Z",
+    "source": "nominatim"
+  },
+  "hermann-missouri": {
+    "lat": 38.7042119,
+    "lng": -91.4373845,
+    "displayName": "Hermann, Gasconade County, Missouri, United States",
+    "at": "2026-07-29T23:37:28.898Z",
+    "source": "nominatim"
+  },
+  "hicksville-new-york": {
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "displayName": "New York, United States",
+    "at": "2026-07-29T23:37:32.924Z",
+    "source": "nominatim"
+  },
+  "highlands-ranch-colorado": {
+    "lat": 39.538565,
+    "lng": -104.9725904,
+    "displayName": "Highlands Ranch, Douglas County, Colorado, United States",
+    "at": "2026-07-29T23:37:34.888Z",
+    "source": "nominatim"
+  },
+  "houston-texas": {
+    "lat": 29.7589382,
+    "lng": -95.3676974,
+    "displayName": "Houston, Harris County, Texas, United States",
+    "at": "2026-07-29T23:37:36.964Z",
+    "source": "nominatim"
+  },
+  "houston-texas-and-its-eastern-southern-suburbs": {
+    "error": "not-found",
+    "at": "2026-07-29T23:37:40.697Z"
+  },
+  "huntington-park-california": {
+    "lat": 33.9805731,
+    "lng": -118.2252073,
+    "displayName": "Huntington Park, Los Angeles County, California, 90255, United States",
+    "at": "2026-07-29T23:37:42.645Z",
+    "source": "nominatim"
+  },
+  "indio-california": {
+    "lat": 33.7192808,
+    "lng": -116.2188054,
+    "displayName": "Indio, Riverside County, California, United States",
+    "at": "2026-07-29T23:37:44.599Z",
+    "source": "nominatim"
+  },
+  "inkster-michigan": {
+    "lat": 42.2942045,
+    "lng": -83.3099303,
+    "displayName": "Inkster, Wayne County, Michigan, United States",
+    "at": "2026-07-29T23:37:46.483Z",
+    "source": "nominatim"
+  },
+  "irvine-california-and-south-orange-county": {
+    "lat": 33.7846251,
+    "lng": -117.8883058,
+    "displayName": "Superior Court of California for and in the County of Orange, 341, The City Drive South, Orange, Orange County, California, 92868, United States",
+    "at": "2026-07-29T23:37:50.820Z",
+    "source": "nominatim"
+  },
+  "irving-texas": {
+    "lat": 32.8295183,
+    "lng": -96.9442177,
+    "displayName": "Irving, Dallas County, Texas, United States",
+    "at": "2026-07-29T23:37:52.624Z",
+    "source": "nominatim"
+  },
+  "italian-canadians-in-greater-montreal-la-petite-italie-saint-leonard-riviere-des": {
+    "error": "not-found",
+    "at": "2026-07-29T23:37:57.266Z"
+  },
+  "italian-canadians-in-the-greater-toronto-area-little-italy-corso-italia": {
+    "lat": 43.677954,
+    "lng": -79.4430828,
+    "displayName": "Corso Italia, Davenport, Toronto, Golden Horseshoe, Ontario, M6E 1B2, Canada",
+    "at": "2026-07-29T23:38:01.363Z",
+    "source": "nominatim"
+  },
+  "jackson-heights-queens-new-york-city": {
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "displayName": "New York, United States",
+    "at": "2026-07-29T23:38:04.916Z",
+    "source": "nominatim"
+  },
+  "jasper-indiana": {
+    "lat": 41.0321808,
+    "lng": -87.1066598,
+    "displayName": "Jasper County, Indiana, United States",
+    "at": "2026-07-29T23:38:06.880Z",
+    "source": "nominatim"
+  },
+  "jewtown-port-richmond-staten-island-nyc": {
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "displayName": "New York, United States",
+    "at": "2026-07-29T23:38:10.752Z",
+    "source": "nominatim"
+  },
+  "jurupa-valley-california": {
+    "lat": 33.9798472,
+    "lng": -117.4515754,
+    "displayName": "Jurupa Valley, Riverside County, California, United States",
+    "at": "2026-07-29T23:38:12.498Z",
+    "source": "nominatim"
+  },
+  "kansas-city-missouri": {
+    "lat": 39.100105,
+    "lng": -94.5781416,
+    "displayName": "Kansas City, Jackson County, Missouri, United States",
+    "at": "2026-07-29T23:38:14.514Z",
+    "source": "nominatim"
+  },
+  "katy-texas": {
+    "lat": 29.7857853,
+    "lng": -95.8243956,
+    "displayName": "Katy, Fort Bend County, Texas, United States",
+    "at": "2026-07-29T23:38:16.366Z",
+    "source": "nominatim"
+  },
+  "kent-washington": {
+    "lat": 47.3826903,
+    "lng": -122.2270272,
+    "displayName": "Kent, King County, Washington, United States",
+    "at": "2026-07-29T23:38:18.258Z",
+    "source": "nominatim"
+  },
+  "kimballton-iowa": {
+    "lat": 41.6288968,
+    "lng": -95.0728596,
+    "displayName": "Kimballton, Sharon Township, Audubon County, Iowa, United States",
+    "at": "2026-07-29T23:38:20.123Z",
+    "source": "nominatim"
+  },
+  "kiryas-joel-new-york-near-monroe-new-york": {
+    "error": "not-found",
+    "at": "2026-07-29T23:38:23.954Z"
+  },
+  "lackawanna-new-york": {
+    "lat": 42.8257735,
+    "lng": -78.823648,
+    "displayName": "City of Lackawanna, Erie County, New York, 14218, United States",
+    "at": "2026-07-29T23:38:25.937Z",
+    "source": "nominatim"
+  },
+  "lake-worth-beach-florida": {
+    "lat": 26.6159698,
+    "lng": -80.0569927,
+    "displayName": "Lake Worth Beach, Palm Beach County, Florida, 33460, United States",
+    "at": "2026-07-29T23:38:27.960Z",
+    "source": "nominatim"
+  },
+  "lakewood-new-jersey": {
+    "lat": 40.0940995,
+    "lng": -74.2149889,
+    "displayName": "Lakewood Township, Ocean County, New Jersey, 08701, United States",
+    "at": "2026-07-29T23:38:29.780Z",
+    "source": "nominatim"
+  },
+  "laredo-texas": {
+    "lat": 27.5079211,
+    "lng": -99.5069834,
+    "displayName": "Laredo, Webb County, Texas, United States",
+    "at": "2026-07-29T23:38:31.760Z",
+    "source": "nominatim"
+  },
+  "lathrop-california": {
+    "lat": 37.8227046,
+    "lng": -121.27661,
+    "displayName": "Lathrop, San Joaquin County, California, United States",
+    "at": "2026-07-29T23:38:33.662Z",
+    "source": "nominatim"
+  },
+  "linden-alabama": {
+    "lat": 32.3062535,
+    "lng": -87.7980665,
+    "displayName": "Linden, Marengo County, Alabama, United States",
+    "at": "2026-07-29T23:38:35.442Z",
+    "source": "nominatim"
+  },
+  "little-armenia-in-los-angeles-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:38:39.501Z"
+  },
+  "little-canada-minnesota-argyle-minnesota-northern-minnesota-french-canadian-main": {
+    "lat": 48.3330251,
+    "lng": -96.8207052,
+    "displayName": "Argyle, Marshall County, Minnesota, United States",
+    "at": "2026-07-29T23:38:43.258Z",
+    "source": "nominatim"
+  },
+  "little-india-artesia-california-pioneer-boulevard-between-183rd-st-and-south-st-": {
+    "lat": 33.8690197,
+    "lng": -118.0796195,
+    "displayName": "Artesia, Los Angeles County, California, 90703, United States",
+    "at": "2026-07-29T23:38:47.080Z",
+    "source": "nominatim"
+  },
+  "little-italy-in-erie-pennsylvania-has-the-largest-italian-american-population-in": {
+    "error": "not-found",
+    "at": "2026-07-29T23:38:48.843Z"
+  },
+  "little-italy-manhattan-new-york-city-and-much-of-long-island-and-rochester": {
+    "error": "not-found",
+    "at": "2026-07-29T23:38:53.015Z"
+  },
+  "little-italy-san-diego-california": {
+    "lat": 32.723274,
+    "lng": -117.1682733,
+    "displayName": "Little Italy, San Diego, San Diego County, California, United States",
+    "at": "2026-07-29T23:38:54.943Z",
+    "source": "nominatim"
+  },
+  "little-pakistan-in-flatbush-brooklyn-new-york-city": {
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "displayName": "New York, United States",
+    "at": "2026-07-29T23:38:58.282Z",
+    "source": "nominatim"
+  },
+  "little-portugal-newark-new-jersey": {
+    "lat": 40.735657,
+    "lng": -74.1723667,
+    "displayName": "Newark, Essex County, New Jersey, United States",
+    "at": "2026-07-29T23:39:02.301Z",
+    "source": "nominatim"
+  },
+  "little-portugal-toronto": {
+    "lat": 43.6534817,
+    "lng": -79.3839347,
+    "displayName": "Toronto, Golden Horseshoe, Ontario, Canada",
+    "at": "2026-07-29T23:39:05.650Z",
+    "source": "nominatim"
+  },
+  "little-rock-arkansas": {
+    "lat": 34.7465071,
+    "lng": -92.2896267,
+    "displayName": "Little Rock, Big Rock Township, Pulaski County, Arkansas, United States",
+    "at": "2026-07-29T23:39:07.489Z",
+    "source": "nominatim"
+  },
+  "little-russia-richmond-district-san-francisco-california-small-part-of-san-franc": {
+    "error": "not-found",
+    "at": "2026-07-29T23:39:09.396Z"
+  },
+  "little-saigon-business-district-on-federal-in-denver-colorado": {
+    "error": "not-found",
+    "at": "2026-07-29T23:39:13.468Z"
+  },
+  "little-saigon-orange-county-california": {
+    "lat": 33.7448252,
+    "lng": -117.968351,
+    "displayName": "Little Saigon, Westminster, Orange County, California, 92655, United States",
+    "at": "2026-07-29T23:39:15.523Z",
+    "source": "nominatim"
+  },
+  "little-saigons-in-massachusetts": {
+    "error": "not-found",
+    "at": "2026-07-29T23:39:18.913Z"
+  },
+  "little-sri-lanka-tompkinsville-staten-island-new-york-city": {
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "displayName": "New York, United States",
+    "at": "2026-07-29T23:39:22.186Z",
+    "source": "nominatim"
+  },
+  "little-yemen-the-bronx-new-york-city": {
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "displayName": "New York, United States",
+    "at": "2026-07-29T23:39:25.768Z",
+    "source": "nominatim"
+  },
+  "lorain-ohio": {
+    "lat": 41.2633554,
+    "lng": -82.1734746,
+    "displayName": "Lorain County, Ohio, United States",
+    "at": "2026-07-29T23:39:27.618Z",
+    "source": "nominatim"
+  },
+  "los-angeles-california": {
+    "lat": 34.0536909,
+    "lng": -118.242766,
+    "displayName": "Los Angeles, Los Angeles County, California, United States",
+    "at": "2026-07-29T23:39:29.729Z",
+    "source": "nominatim"
+  },
+  "louisville-kentucky-the-40213-zip-code-and-to-a-much-lesser-extent-40214": {
+    "error": "not-found",
+    "at": "2026-07-29T23:39:33.570Z"
+  },
+  "lower-east-side-manhattan-new-york-city": {
+    "lat": 40.7127281,
+    "lng": -74.0060152,
+    "displayName": "New York, United States",
+    "at": "2026-07-29T23:39:37.219Z",
+    "source": "nominatim"
+  },
+  "lower-mainland-british-columbia": {
+    "lat": 49.1624262,
+    "lng": -122.8834231,
+    "displayName": "BC Hydro Lower Mainland Transmission, Newton, Surrey, Metro Vancouver Regional District, British Columbia, Canada",
+    "at": "2026-07-29T23:39:39.328Z",
+    "source": "nominatim"
+  },
+  "madawaska-maine-and-lewiston-maine-and-northern-maine": {
+    "error": "not-found",
+    "at": "2026-07-29T23:39:43.104Z"
+  },
+  "malheur-county-oregon": {
+    "lat": 43.1023481,
+    "lng": -117.6916892,
+    "displayName": "Malheur County, Oregon, United States",
+    "at": "2026-07-29T23:39:44.839Z",
+    "source": "nominatim"
+  },
+  "manchester-new-hampshire-and-northern-new-hampshire": {
+    "lat": 42.9956397,
+    "lng": -71.4547891,
+    "displayName": "Manchester, Hillsborough County, New Hampshire, United States",
+    "at": "2026-07-29T23:39:46.850Z",
+    "source": "nominatim"
+  },
+  "manhattan-new-york": {
+    "lat": 40.7579554,
+    "lng": -73.9855319,
+    "displayName": "Manhattan, New York County, New York, United States",
+    "at": "2026-07-29T23:39:48.792Z",
+    "source": "nominatim"
+  },
+  "markham-ontario-near-toronto-ontario-in-canada": {
+    "error": "not-found",
+    "at": "2026-07-29T23:39:52.645Z"
+  },
+  "mcalester-oklahoma-krebs-oklahoma-in-historic-choctaw-nation": {
+    "error": "not-found",
+    "at": "2026-07-29T23:39:56.975Z"
+  },
+  "mckinney-texas": {
+    "lat": 33.1976496,
+    "lng": -96.6154471,
+    "displayName": "McKinney, Collin County, Texas, United States",
+    "at": "2026-07-29T23:39:59.070Z",
+    "source": "nominatim"
+  },
+  "merced-california": {
+    "lat": 37.1641544,
+    "lng": -120.7678602,
+    "displayName": "Merced County, California, United States",
+    "at": "2026-07-29T23:40:01.170Z",
+    "source": "nominatim"
+  },
+  "metairie-louisiana": {
+    "lat": 29.9899926,
+    "lng": -90.1505426,
+    "displayName": "Metairie, Jefferson Parish, Louisiana, United States",
+    "at": "2026-07-29T23:40:03.269Z",
+    "source": "nominatim"
+  },
+  "miami-dade-county-florida": {
+    "lat": 25.6364246,
+    "lng": -80.4989467,
+    "displayName": "Miami-Dade County, Florida, United States",
+    "at": "2026-07-29T23:40:05.200Z",
+    "source": "nominatim"
+  },
+  "mid-cities-texas": {
+    "lat": 26.2121546,
+    "lng": -98.1982838,
+    "displayName": "Mid Cities Drive, Pharr, Hidalgo County, Texas, 78502, United States",
+    "at": "2026-07-29T23:40:07.743Z",
+    "source": "nominatim"
+  },
+  "milton-ontario": {
+    "lat": 43.513671,
+    "lng": -79.882817,
+    "displayName": "Milton, Halton Region, Golden Horseshoe, Ontario, Canada",
+    "at": "2026-07-29T23:40:09.870Z",
+    "source": "nominatim"
+  },
+  "mineral-point-wisconsin": {
+    "lat": 42.8601132,
+    "lng": -90.1797688,
+    "displayName": "Mineral Point, Iowa County, Wisconsin, United States",
+    "at": "2026-07-29T23:40:11.790Z",
+    "source": "nominatim"
+  },
+  "missouri-city-texas": {
+    "lat": 29.6185669,
+    "lng": -95.5377215,
+    "displayName": "Missouri City, Fort Bend County, Texas, United States",
+    "at": "2026-07-29T23:40:13.753Z",
+    "source": "nominatim"
+  },
+  "modesto-california": {
+    "lat": 37.6393419,
+    "lng": -120.9968892,
+    "displayName": "Modesto, Stanislaus County, California, United States",
+    "at": "2026-07-29T23:40:15.856Z",
+    "source": "nominatim"
+  },
+  "montgomery-county-maryland": {
+    "lat": 39.1406267,
+    "lng": -77.2075612,
+    "displayName": "Montgomery County, Maryland, United States",
+    "at": "2026-07-29T23:40:17.942Z",
+    "source": "nominatim"
+  },
+  "monument-corridor-and-ellis-lake-in-concord-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:40:22.149Z"
+  },
+  "moreno-valley-california": {
+    "lat": 33.9375177,
+    "lng": -117.2305791,
+    "displayName": "Moreno Valley, Riverside County, California, United States",
+    "at": "2026-07-29T23:40:24.242Z",
+    "source": "nominatim"
+  },
+  "morrisville-north-carolina": {
+    "lat": 35.824341,
+    "lng": -78.8300321,
+    "displayName": "Morrisville, Wake County, North Carolina, 27650, United States",
+    "at": "2026-07-29T23:40:26.349Z",
+    "source": "nominatim"
+  },
+  "mountain-house-california": {
+    "lat": 37.7832614,
+    "lng": -121.542726,
+    "displayName": "Mountain House, San Joaquin County, California, 95391, United States",
+    "at": "2026-07-29T23:40:28.319Z",
+    "source": "nominatim"
+  },
+  "much-of-berkeley-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:40:32.328Z"
+  },
+  "much-of-irving-texas": {
+    "error": "not-found",
+    "at": "2026-07-29T23:40:35.994Z"
+  },
+  "much-of-newark-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:40:39.976Z"
+  },
+  "much-of-santa-rosa-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:40:44.057Z"
+  },
+  "much-of-union-city-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:40:48.211Z"
+  },
+  "naperville-illinois": {
+    "lat": 41.7728699,
+    "lng": -88.1479278,
+    "displayName": "Naperville, Naperville Township, DuPage County, Illinois, United States",
+    "at": "2026-07-29T23:40:50.130Z",
+    "source": "nominatim"
+  },
+  "new-britain-connecticut-largest-polish-community-percentage-wise-in-the-u-s": {
+    "error": "not-found",
+    "at": "2026-07-29T23:40:51.897Z"
+  },
+  "new-smyrna-beach-florida": {
+    "lat": 29.0258132,
+    "lng": -80.9271271,
+    "displayName": "New Smyrna Beach, Volusia County, Florida, United States",
+    "at": "2026-07-29T23:40:53.624Z",
+    "source": "nominatim"
+  },
+  "new-tampa-florida": {
+    "lat": 28.1446297,
+    "lng": -82.3262,
+    "displayName": "New Tampa Little League Park, Pebble Creek, Hillsborough County, Florida, United States",
+    "at": "2026-07-29T23:40:55.569Z",
+    "source": "nominatim"
+  },
+  "niles-illinois": {
+    "lat": 42.0289319,
+    "lng": -87.8122348,
+    "displayName": "Niles, Maine Township, Cook County, Illinois, 60714, United States",
+    "at": "2026-07-29T23:40:57.341Z",
+    "source": "nominatim"
+  },
+  "norcross-georgia": {
+    "lat": 33.9412127,
+    "lng": -84.2135309,
+    "displayName": "Norcross, Gwinnett County, Georgia, 30071, United States",
+    "at": "2026-07-29T23:40:59.219Z",
+    "source": "nominatim"
+  },
+  "north-carolina-has-a-prevalent-greek-community-especially-in-asheville-charlotte": {
+    "lat": 41.4490215,
+    "lng": -72.6604503,
+    "displayName": "Durham Rod And Gun Club, Durham, Lower Connecticut River Valley Planning Region, Connecticut, United States",
+    "at": "2026-07-29T23:41:03.294Z",
+    "source": "nominatim"
+  },
+  "north-charleston-south-carolina": {
+    "lat": 32.8546197,
+    "lng": -79.9748103,
+    "displayName": "North Charleston, Charleston County, South Carolina, United States",
+    "at": "2026-07-29T23:41:05.138Z",
+    "source": "nominatim"
+  },
+  "north-delta-delta-british-columbia": {
+    "lat": 49.1378833,
+    "lng": -122.911231,
+    "displayName": "North Delta, Delta, Metro Vancouver Regional District, British Columbia, Canada",
+    "at": "2026-07-29T23:41:07.326Z",
+    "source": "nominatim"
+  },
+  "north-fair-oaks-california": {
+    "lat": 37.4752116,
+    "lng": -122.2014304,
+    "displayName": "North Fair Oaks, San Mateo County, California, United States",
+    "at": "2026-07-29T23:41:09.190Z",
+    "source": "nominatim"
+  },
+  "north-olmsted-ohio-and-other-areas-in-greater-cleveland": {
+    "error": "not-found",
+    "at": "2026-07-29T23:41:13.054Z"
+  },
+  "north-side-chicago-illinois": {
+    "lat": 41.8999648,
+    "lng": -87.6345914,
+    "displayName": "Near North Side, Chicago, North Chicago Township, Cook County, Illinois, United States",
+    "at": "2026-07-29T23:41:15.200Z",
+    "source": "nominatim"
+  },
+  "north-york-toronto-and-other-areas-of-toronto-and-the-greater-toronto-area": {
+    "error": "not-found",
+    "at": "2026-07-29T23:41:17.074Z"
+  },
+  "north-york-toronto-canada-growing-mexican-salvadoran-colombian-and-ecuadorean-po": {
+    "error": "not-found",
+    "at": "2026-07-29T23:41:18.758Z"
+  },
+  "northeast-calgary-alberta-and-certain-areas-in-suburban-northwest-and-southwest-": {
+    "error": "not-found",
+    "at": "2026-07-29T23:41:20.634Z"
+  },
+  "northern-fresno-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:41:25.088Z"
+  },
+  "northern-san-diego-california": {
+    "lat": 33.2439531,
+    "lng": -117.4153369,
+    "displayName": "San Diego Northern Railway, 1, Oceanside, San Diego County, California, 92051, United States",
+    "at": "2026-07-29T23:41:27.193Z",
+    "source": "nominatim"
+  },
+  "novato-california": {
+    "lat": 38.1061979,
+    "lng": -122.5681191,
+    "displayName": "Novato, Marin County, California, United States",
+    "at": "2026-07-29T23:41:29.248Z",
+    "source": "nominatim"
+  },
+  "oakland-california-etimated-10-000-yemenis": {
+    "error": "not-found",
+    "at": "2026-07-29T23:41:32.635Z"
+  },
+  "oakland-topeka-kansas": {
+    "lat": 39.0666667,
+    "lng": -95.6363691,
+    "displayName": "Oakland, Topeka, Shawnee County, Kansas, 66616, United States",
+    "at": "2026-07-29T23:41:34.575Z",
+    "source": "nominatim"
+  },
+  "oakville-ontario": {
+    "lat": 43.447436,
+    "lng": -79.666672,
+    "displayName": "Oakville, Halton Region, Golden Horseshoe, Ontario, Canada",
+    "at": "2026-07-29T23:41:36.608Z",
+    "source": "nominatim"
+  },
+  "old-world-village-huntington-beach-california": {
+    "lat": 33.7346027,
+    "lng": -117.9970214,
+    "displayName": "Old World Village, Boulevard Gardens, Huntington Beach, Orange County, California, United States",
+    "at": "2026-07-29T23:41:39.124Z",
+    "source": "nominatim"
+  },
+  "orange-county-california": {
+    "lat": 33.750631,
+    "lng": -117.8722311,
+    "displayName": "Orange County, California, United States",
+    "at": "2026-07-29T23:41:40.913Z",
+    "source": "nominatim"
+  },
+  "orange-park-florida-in-the-jacksonville-florida-area": {
+    "lat": 24.7290953,
+    "lng": -81.0529213,
+    "displayName": "Florida Keys Wildlife and Environmental Area, Marathon Shores, Marathon, Monroe County, Florida, United States",
+    "at": "2026-07-29T23:41:45.152Z",
+    "source": "nominatim"
+  },
+  "orchard-lake-village-michigan": {
+    "lat": 42.58914,
+    "lng": -83.3734509,
+    "displayName": "Orchard Lake Village, Oakland County, Michigan, 48324, United States",
+    "at": "2026-07-29T23:41:47.121Z",
+    "source": "nominatim"
+  },
+  "overland-park-kansas": {
+    "lat": 38.9742502,
+    "lng": -94.6851702,
+    "displayName": "Overland Park, Johnson County, Kansas, United States",
+    "at": "2026-07-29T23:41:49.054Z",
+    "source": "nominatim"
+  },
+  "palm-desert-california": {
+    "lat": 33.7288179,
+    "lng": -116.382571,
+    "displayName": "Palm Desert, Riverside County, California, United States",
+    "at": "2026-07-29T23:41:50.863Z",
+    "source": "nominatim"
+  },
+  "paramount-california": {
+    "lat": 33.898917,
+    "lng": -118.171005,
+    "displayName": "Paramount, Los Angeles County, California, 90723, United States",
+    "at": "2026-07-29T23:41:52.811Z",
+    "source": "nominatim"
+  },
+  "perris-california": {
+    "lat": 33.7818729,
+    "lng": -117.2298477,
+    "displayName": "Perris, Riverside County, California, 92571, United States",
+    "at": "2026-07-29T23:41:54.907Z",
+    "source": "nominatim"
+  },
+  "petaluma-california": {
+    "lat": 38.2325829,
+    "lng": -122.636465,
+    "displayName": "Petaluma, Sonoma County, California, United States",
+    "at": "2026-07-29T23:41:56.868Z",
+    "source": "nominatim"
+  },
+  "philly-pino-town-philadelphia-pennsylvania": {
+    "error": "not-found",
+    "at": "2026-07-29T23:42:00.743Z"
+  },
+  "pittsburg-california": {
+    "lat": 38.0267711,
+    "lng": -121.8853861,
+    "displayName": "Pittsburg, Contra Costa County, California, 94565, United States",
+    "at": "2026-07-29T23:42:02.653Z",
+    "source": "nominatim"
+  },
+  "plainsboro-township-new-jersey": {
+    "lat": 40.3334409,
+    "lng": -74.6004341,
+    "displayName": "Plainsboro Township, Middlesex County, New Jersey, United States",
+    "at": "2026-07-29T23:42:04.414Z",
+    "source": "nominatim"
+  },
+  "pleasanton-california": {
+    "lat": 37.6624312,
+    "lng": -121.8746789,
+    "displayName": "Pleasanton, Alameda County, California, United States",
+    "at": "2026-07-29T23:42:06.275Z",
+    "source": "nominatim"
+  },
+  "plymouth-minnesota": {
+    "lat": 45.0065149,
+    "lng": -93.46651,
+    "displayName": "Plymouth, Hennepin County, Minnesota, United States",
+    "at": "2026-07-29T23:42:08.291Z",
+    "source": "nominatim"
+  },
+  "port-washington-wisconsin": {
+    "lat": 43.3885538,
+    "lng": -87.8692845,
+    "displayName": "Port Washington, Ozaukee County, Wisconsin, 53074, United States",
+    "at": "2026-07-29T23:42:10.303Z",
+    "source": "nominatim"
+  },
+  "portland-oregon-area": {
+    "lat": 43.5527116,
+    "lng": -124.2244844,
+    "displayName": "Oregon Dunes National Recreation Area, Lakeside, Coos County, Oregon, United States",
+    "at": "2026-07-29T23:42:14.803Z",
+    "source": "nominatim"
+  },
+  "queensborough-new-westminster-british-columbia": {
+    "lat": 49.185898,
+    "lng": -122.9458379,
+    "displayName": "Queensborough, New Westminster, Metro Vancouver Regional District, British Columbia, Canada",
+    "at": "2026-07-29T23:42:16.720Z",
+    "source": "nominatim"
+  },
+  "rancho-cucamonga-california": {
+    "lat": 34.1033192,
+    "lng": -117.575173,
+    "displayName": "Rancho Cucamonga, San Bernardino County, California, United States",
+    "at": "2026-07-29T23:42:18.574Z",
+    "source": "nominatim"
+  },
+  "reading-pennsylvania": {
+    "lat": 40.335345,
+    "lng": -75.9279495,
+    "displayName": "Reading, Berks County, Pennsylvania, United States",
+    "at": "2026-07-29T23:42:20.507Z",
+    "source": "nominatim"
+  },
+  "redlands-california": {
+    "lat": 34.0550328,
+    "lng": -117.1827445,
+    "displayName": "Redlands, San Bernardino County, California, United States",
+    "at": "2026-07-29T23:42:22.406Z",
+    "source": "nominatim"
+  },
+  "redmond-washington": {
+    "lat": 47.6694141,
+    "lng": -122.1238767,
+    "displayName": "Redmond, King County, Washington, 98052, United States",
+    "at": "2026-07-29T23:42:24.206Z",
+    "source": "nominatim"
+  },
+  "regina-saskatchewan": {
+    "lat": 50.4479733,
+    "lng": -104.6158764,
+    "displayName": "Regina, Saskatchewan, Canada",
+    "at": "2026-07-29T23:42:26.096Z",
+    "source": "nominatim"
+  },
+  "reno-and-north-las-vegas-nevada": {
+    "error": "not-found",
+    "at": "2026-07-29T23:42:30.104Z"
+  },
+  "reno-nevada": {
+    "lat": 39.5261788,
+    "lng": -119.812658,
+    "displayName": "Reno, Washoe County, Nevada, United States",
+    "at": "2026-07-29T23:42:32.170Z",
+    "source": "nominatim"
+  },
+  "research-triangle-north-carolina": {
+    "lat": 35.875259,
+    "lng": -78.7751271,
+    "displayName": "Research Triangle, Wake County, North Carolina, 27617, United States",
+    "at": "2026-07-29T23:42:34.155Z",
+    "source": "nominatim"
+  },
+  "reynoldston-new-york-in-franklin-county-new-york-facing-quebec-canada": {
+    "lat": -11.743613,
+    "lng": -67.1366534,
+    "displayName": "Canada, Canton Bolivar, Municipio Sena, Provincia de Madre de Dios, Pando, Bolivia",
+    "at": "2026-07-29T23:42:37.931Z",
+    "source": "nominatim"
+  },
+  "richmond-hill-queens-new-york-city": {
+    "lat": 40.736942,
+    "lng": -73.863448,
+    "displayName": "Canada, 97-20, 57th Avenue, Queens, Queens County, New York, 11368, United States",
+    "at": "2026-07-29T23:42:42.133Z",
+    "source": "nominatim"
+  },
+  "rockland-county-new-york": {
+    "lat": 41.1519319,
+    "lng": -74.0357266,
+    "displayName": "Rockland County, New York, United States",
+    "at": "2026-07-29T23:42:44.136Z",
+    "source": "nominatim"
+  },
+  "roseville-california": {
+    "lat": 38.7521235,
+    "lng": -121.2880059,
+    "displayName": "Roseville, Placer County, California, United States",
+    "at": "2026-07-29T23:42:46.045Z",
+    "source": "nominatim"
+  },
+  "salt-lake-valley-utah": {
+    "lat": 40.67467,
+    "lng": -111.92061,
+    "displayName": "Salt Lake Valley, Levoy Drive, Meadowbrook, Taylorsville, Salt Lake County, Utah, 84123, United States",
+    "at": "2026-07-29T23:42:48.121Z",
+    "source": "nominatim"
+  },
+  "san-antonio-uvalde-texas-areas": {
+    "error": "not-found",
+    "at": "2026-07-29T23:42:52.092Z"
+  },
+  "san-bernardino-california": {
+    "lat": 34.8253019,
+    "lng": -116.0833144,
+    "displayName": "San Bernardino County, California, United States",
+    "at": "2026-07-29T23:42:54.184Z",
+    "source": "nominatim"
+  },
+  "san-bruno-california": {
+    "lat": 37.6248536,
+    "lng": -122.4145986,
+    "displayName": "San Bruno, San Mateo County, California, 94066, United States",
+    "at": "2026-07-29T23:42:56.180Z",
+    "source": "nominatim"
+  },
+  "san-diego-california-metro-area": {
+    "error": "not-found",
+    "at": "2026-07-29T23:43:00.872Z"
+  },
+  "san-diego-county-california": {
+    "lat": 32.9637838,
+    "lng": -116.7706277,
+    "displayName": "San Diego County, California, United States",
+    "at": "2026-07-29T23:43:02.919Z",
+    "source": "nominatim"
+  },
+  "san-fernando-valley-california": {
+    "lat": 34.2148853,
+    "lng": -118.4998204,
+    "displayName": "San Fernando Valley, Los Angeles, Los Angeles County, California, 91329, United States",
+    "at": "2026-07-29T23:43:04.694Z",
+    "source": "nominatim"
+  },
+  "san-jose-california-campbell-california": {
+    "lat": 37.2717971,
+    "lng": -121.9373266,
+    "displayName": "Residence Inn by Marriott San Jose Campbell, 2761, South Bascom Avenue, Campbell, Santa Clara County, California, 95008, United States",
+    "at": "2026-07-29T23:43:06.290Z",
+    "source": "nominatim"
+  },
+  "san-juan-capistrano-california": {
+    "lat": 33.5016932,
+    "lng": -117.6625509,
+    "displayName": "San Juan Capistrano, Orange County, California, United States",
+    "at": "2026-07-29T23:43:08.244Z",
+    "source": "nominatim"
+  },
+  "san-ramon-california": {
+    "lat": 37.7648021,
+    "lng": -121.9544387,
+    "displayName": "San Ramon, Contra Costa County, California, United States",
+    "at": "2026-07-29T23:43:09.917Z",
+    "source": "nominatim"
+  },
+  "santa-barbara-california-ventura-county-california-region-in-southern-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:43:15.472Z"
+  },
+  "santa-clara-county-california-contains-several-koreatown-districts-in-santa-clar": {
+    "error": "not-found",
+    "at": "2026-07-29T23:43:17.401Z"
+  },
+  "santa-monica-california": {
+    "lat": 34.0194704,
+    "lng": -118.491227,
+    "displayName": "Santa Monica, Los Angeles County, California, United States",
+    "at": "2026-07-29T23:43:19.388Z",
+    "source": "nominatim"
+  },
+  "sarnia-ontario-canada": {
+    "lat": 42.9743821,
+    "lng": -82.403533,
+    "displayName": "Sarnia, Lambton County, Southwestern Ontario, Ontario, Canada",
+    "at": "2026-07-29T23:43:21.156Z",
+    "source": "nominatim"
+  },
+  "saskatoon-saskatchewan-citation-needed": {
+    "error": "not-found",
+    "at": "2026-07-29T23:43:24.773Z"
+  },
+  "scarborough-toronto": {
+    "lat": 43.6534817,
+    "lng": -79.3839347,
+    "displayName": "Toronto, Golden Horseshoe, Ontario, Canada",
+    "at": "2026-07-29T23:43:28.343Z",
+    "source": "nominatim"
+  },
+  "seattle-other-parts-of-western-washington-especially-olympia-and-bremerton": {
+    "error": "not-found",
+    "at": "2026-07-29T23:43:30.251Z"
+  },
+  "serbin-texas": {
+    "lat": 30.1277176,
+    "lng": -96.9988725,
+    "displayName": "Serbin, Lee County, Texas, United States",
+    "at": "2026-07-29T23:43:32.174Z",
+    "source": "nominatim"
+  },
+  "sharon-pennsylvania": {
+    "lat": 41.232947,
+    "lng": -80.5078056,
+    "displayName": "Sharon, Mercer County, Pennsylvania, 16146, United States",
+    "at": "2026-07-29T23:43:34.030Z",
+    "source": "nominatim"
+  },
+  "skokie-illinois": {
+    "lat": 42.0262972,
+    "lng": -87.7521069,
+    "displayName": "Skokie, Niles Township, Cook County, Illinois, United States",
+    "at": "2026-07-29T23:43:35.937Z",
+    "source": "nominatim"
+  },
+  "small-sections-of-scottsdale-arizona": {
+    "error": "not-found",
+    "at": "2026-07-29T23:43:39.497Z"
+  },
+  "solvang-california": {
+    "lat": 34.5960743,
+    "lng": -120.1383736,
+    "displayName": "Solvang, Santa Barbara County, California, 93464, United States",
+    "at": "2026-07-29T23:43:41.021Z",
+    "source": "nominatim"
+  },
+  "some-communities-in-oakland-and-pittsburg-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:43:44.516Z"
+  },
+  "south-milwaukee-wi": {
+    "lat": 42.9105722,
+    "lng": -87.8606367,
+    "displayName": "South Milwaukee, Milwaukee County, Wisconsin, 53172, United States",
+    "at": "2026-07-29T23:43:46.046Z",
+    "source": "nominatim"
+  },
+  "south-san-francisco-california": {
+    "lat": 37.6535403,
+    "lng": -122.4168664,
+    "displayName": "South San Francisco, San Mateo County, California, United States",
+    "at": "2026-07-29T23:43:47.664Z",
+    "source": "nominatim"
+  },
+  "spanish-fork-utah": {
+    "lat": 40.1150133,
+    "lng": -111.6547774,
+    "displayName": "Spanish Fork, Utah County, Utah, 84660, United States",
+    "at": "2026-07-29T23:43:49.284Z",
+    "source": "nominatim"
+  },
+  "spartanburg-sc": {
+    "lat": 34.9498007,
+    "lng": -81.9320157,
+    "displayName": "Spartanburg, Spartanburg County, South Carolina, United States",
+    "at": "2026-07-29T23:43:50.978Z",
+    "source": "nominatim"
+  },
+  "springdale-arkansas": {
+    "lat": 36.1867442,
+    "lng": -94.1288142,
+    "displayName": "Springdale, Washington County, Arkansas, United States",
+    "at": "2026-07-29T23:43:52.515Z",
+    "source": "nominatim"
+  },
+  "st-donatus-iowa": {
+    "lat": 42.3606125,
+    "lng": -90.5392291,
+    "displayName": "St. Donatus, Jackson County, Iowa, United States",
+    "at": "2026-07-29T23:43:54.072Z",
+    "source": "nominatim"
+  },
+  "st-louis-missouri": {
+    "lat": 38.7604815,
+    "lng": -92.5617875,
+    "displayName": "Missouri, United States",
+    "at": "2026-07-29T23:43:57.665Z",
+    "source": "nominatim"
+  },
+  "st-marys-pennsylvania": {
+    "lat": 41.4280432,
+    "lng": -78.5611275,
+    "displayName": "Saint Marys, Elk County, Pennsylvania, 15857, United States",
+    "at": "2026-07-29T23:43:59.202Z",
+    "source": "nominatim"
+  },
+  "st-paul-minnesota-some-areas": {
+    "error": "not-found",
+    "at": "2026-07-29T23:44:02.653Z"
+  },
+  "stafford-texas": {
+    "lat": 29.6160671,
+    "lng": -95.5577221,
+    "displayName": "Stafford, Fort Bend County, Texas, 77477, United States",
+    "at": "2026-07-29T23:44:04.577Z",
+    "source": "nominatim"
+  },
+  "stanton-township-michigan": {
+    "lat": 47.1005513,
+    "lng": -88.7841319,
+    "displayName": "Stanton Township, Houghton County, Michigan, United States",
+    "at": "2026-07-29T23:44:06.536Z",
+    "source": "nominatim"
+  },
+  "suburban-san-diego-california": {
+    "lat": 33.1121848,
+    "lng": -117.0513553,
+    "displayName": "Suburban Hills Drive, San Diego County, California, 92025, United States",
+    "at": "2026-07-29T23:44:08.496Z",
+    "source": "nominatim"
+  },
+  "sugar-land-texas": {
+    "lat": 29.6196787,
+    "lng": -95.6349463,
+    "displayName": "Sugar Land, Fort Bend County, Texas, United States",
+    "at": "2026-07-29T23:44:10.519Z",
+    "source": "nominatim"
+  },
+  "superior-colorado": {
+    "lat": 39.9527634,
+    "lng": -105.1685977,
+    "displayName": "Superior, Boulder County, Colorado, United States",
+    "at": "2026-07-29T23:44:12.564Z",
+    "source": "nominatim"
+  },
+  "tangier-island-virginia": {
+    "lat": 37.8284595,
+    "lng": -75.9918812,
+    "displayName": "Tangier Island, Tangier, Accomack County, Virginia, 23440, United States",
+    "at": "2026-07-29T23:44:14.477Z",
+    "source": "nominatim"
+  },
+  "teterboro-new-jersey": {
+    "lat": 40.8598219,
+    "lng": -74.0593075,
+    "displayName": "Teterboro, Bergen County, New Jersey, 07608, United States",
+    "at": "2026-07-29T23:44:16.364Z",
+    "source": "nominatim"
+  },
+  "the-junction-toronto-ontario-little-malta-is-in-the-western-part-of-this-toronto": {
+    "error": "not-found",
+    "at": "2026-07-29T23:44:18.081Z"
+  },
+  "the-kimmeytown-neighborhood-in-georgetown-delaware": {
+    "error": "not-found",
+    "at": "2026-07-29T23:44:21.702Z"
+  },
+  "the-triangle-north-carolina": {
+    "lat": 35.875259,
+    "lng": -78.7751271,
+    "displayName": "Research Triangle, Wake County, North Carolina, 27617, United States",
+    "at": "2026-07-29T23:44:23.638Z",
+    "source": "nominatim"
+  },
+  "there-are-french-communities-throughout-california-and-louisiana-especially-the-": {
+    "error": "not-found",
+    "at": "2026-07-29T23:44:27.327Z"
+  },
+  "thunder-bay-ontario-canada": {
+    "lat": 48.406414,
+    "lng": -89.259796,
+    "displayName": "Thunder Bay, Thunder Bay District, Northwestern Ontario, Ontario, Canada",
+    "at": "2026-07-29T23:44:29.360Z",
+    "source": "nominatim"
+  },
+  "tigard-oregon": {
+    "lat": 45.4307473,
+    "lng": -122.771933,
+    "displayName": "Tigard, Washington County, Oregon, 97223, United States",
+    "at": "2026-07-29T23:44:31.250Z",
+    "source": "nominatim"
+  },
+  "tontitown-arkansas": {
+    "lat": 36.1778565,
+    "lng": -94.2335396,
+    "displayName": "Tontitown, Washington County, Arkansas, 72770, United States",
+    "at": "2026-07-29T23:44:33.112Z",
+    "source": "nominatim"
+  },
+  "toronto-canada": {
+    "lat": 47.5949428,
+    "lng": -52.7114055,
+    "displayName": "Toronto Street/Edmonton Place Park, Little Canada, St. John's, Newfoundland, Newfoundland and Labrador, Canada",
+    "at": "2026-07-29T23:44:35.116Z",
+    "source": "nominatim"
+  },
+  "toronto-on": {
+    "lat": 43.6534817,
+    "lng": -79.3839347,
+    "displayName": "Toronto, Golden Horseshoe, Ontario, Canada",
+    "at": "2026-07-29T23:44:37.005Z",
+    "source": "nominatim"
+  },
+  "torrance-california": {
+    "lat": 33.8371392,
+    "lng": -118.3413606,
+    "displayName": "Torrance, Los Angeles County, California, United States",
+    "at": "2026-07-29T23:44:38.938Z",
+    "source": "nominatim"
+  },
+  "tracy-california": {
+    "lat": 37.7385507,
+    "lng": -121.420139,
+    "displayName": "Tracy, San Joaquin County, California, United States",
+    "at": "2026-07-29T23:44:40.919Z",
+    "source": "nominatim"
+  },
+  "tri-cities-washington": {
+    "lat": 46.3327354,
+    "lng": -119.2672371,
+    "displayName": "Washington State University - Tri-Cities, 2710, Crimson Way, Tri-Cities Research District, Richland, Benton County, Washington, 99354, United States",
+    "at": "2026-07-29T23:44:43.109Z",
+    "source": "nominatim"
+  },
+  "troy-michigan": {
+    "lat": 42.6055893,
+    "lng": -83.1499304,
+    "displayName": "Troy, Oakland County, Michigan, United States",
+    "at": "2026-07-29T23:44:44.931Z",
+    "source": "nominatim"
+  },
+  "turlock-california-assyrians-make-up-the-majority-of-the-iranian-diaspora-in-tur": {
+    "error": "not-found",
+    "at": "2026-07-29T23:44:46.821Z"
+  },
+  "twin-cities-minnesota": {
+    "lat": 44.9863418,
+    "lng": -93.1794451,
+    "displayName": "University of Minnesota, Twin Cities Campus, Hoyt Avenue West, Falcon Heights, Ramsey County, Minnesota, 55455, United States",
+    "at": "2026-07-29T23:44:49.078Z",
+    "source": "nominatim"
+  },
+  "tyler-minnesota": {
+    "lat": 44.2783,
+    "lng": -96.134755,
+    "displayName": "Tyler, Lincoln County, Minnesota, United States",
+    "at": "2026-07-29T23:44:51.089Z",
+    "source": "nominatim"
+  },
+  "union-city-california": {
+    "lat": 37.5872576,
+    "lng": -122.0215737,
+    "displayName": "Union City, Alameda County, California, 94857, United States",
+    "at": "2026-07-29T23:44:53.102Z",
+    "source": "nominatim"
+  },
+  "university-city-missouri": {
+    "lat": 38.6569083,
+    "lng": -90.3103443,
+    "displayName": "University City, Saint Louis County, Missouri, 63130, United States",
+    "at": "2026-07-29T23:44:55.063Z",
+    "source": "nominatim"
+  },
+  "upper-darby-township-pennsylvania": {
+    "lat": 39.9283632,
+    "lng": -75.2737099,
+    "displayName": "Upper Darby, Delaware County, Pennsylvania, United States",
+    "at": "2026-07-29T23:44:56.868Z",
+    "source": "nominatim"
+  },
+  "valdese-north-carolina-charlotte": {
+    "lat": 35.2188289,
+    "lng": -80.8056064,
+    "displayName": "United States Army Reserve Center, 1330, Plaza Midwood, Charlotte, Mecklenburg County, North Carolina, 28205, United States",
+    "at": "2026-07-29T23:45:00.179Z",
+    "source": "nominatim"
+  },
+  "vancouver-b-c": {
+    "lat": 49.2889066,
+    "lng": -123.1160773,
+    "displayName": "Vancouver Convention Centre West, 1055, Canada Place, Financial District, Downtown, Vancouver, Metro Vancouver Regional District, British Columbia, V6C 0C3, Canada",
+    "at": "2026-07-29T23:45:01.703Z",
+    "source": "nominatim"
+  },
+  "vaughan-ontario": {
+    "lat": 43.7941544,
+    "lng": -79.5268023,
+    "displayName": "Vaughan, York Region, Golden Horseshoe, Ontario, Canada",
+    "at": "2026-07-29T23:45:03.741Z",
+    "source": "nominatim"
+  },
+  "ventura-county-california": {
+    "lat": 34.4458248,
+    "lng": -119.0779359,
+    "displayName": "Ventura County, California, United States",
+    "at": "2026-07-29T23:45:05.273Z",
+    "source": "nominatim"
+  },
+  "via-italia-san-pedro-california": {
+    "lat": 33.7358518,
+    "lng": -118.2922934,
+    "displayName": "San Pedro, Los Angeles, Los Angeles County, California, 90732, United States",
+    "at": "2026-07-29T23:45:09.874Z",
+    "source": "nominatim"
+  },
+  "walnut-creek-california": {
+    "lat": 37.9020731,
+    "lng": -122.0618702,
+    "displayName": "Walnut Creek, Contra Costa County, California, United States",
+    "at": "2026-07-29T23:45:11.677Z",
+    "source": "nominatim"
+  },
+  "washington-island-wisconsin": {
+    "lat": 45.3758358,
+    "lng": -86.899672,
+    "displayName": "Washington Island, Town of Washington, Door County, Wisconsin, 54246, United States",
+    "at": "2026-07-29T23:45:13.652Z",
+    "source": "nominatim"
+  },
+  "waterbury-connecticut": {
+    "lat": 41.5541144,
+    "lng": -73.0435615,
+    "displayName": "Waterbury, Naugatuck Valley Planning Region, Connecticut, United States",
+    "at": "2026-07-29T23:45:15.555Z",
+    "source": "nominatim"
+  },
+  "waterloo-ontario": {
+    "lat": 43.4652699,
+    "lng": -80.5222961,
+    "displayName": "Waterloo, Region of Waterloo, Southwestern Ontario, Ontario, Canada",
+    "at": "2026-07-29T23:45:17.486Z",
+    "source": "nominatim"
+  },
+  "watertown-massachusetts": {
+    "lat": 42.3652576,
+    "lng": -71.1843234,
+    "displayName": "Watertown, Middlesex County, Massachusetts, United States",
+    "at": "2026-07-29T23:45:19.432Z",
+    "source": "nominatim"
+  },
+  "watertown-massachusetts-suburb-of-boston": {
+    "lat": 42.3652576,
+    "lng": -71.1843234,
+    "displayName": "Watertown, Middlesex County, Massachusetts, United States",
+    "at": "2026-07-29T23:45:21.007Z",
+    "source": "nominatim"
+  },
+  "watsonville-california": {
+    "lat": 36.9089338,
+    "lng": -121.7557942,
+    "displayName": "Watsonville, Santa Cruz County, California, 95019, United States",
+    "at": "2026-07-29T23:45:22.909Z",
+    "source": "nominatim"
+  },
+  "wesley-chapel-florida": {
+    "lat": 28.1866014,
+    "lng": -82.366121,
+    "displayName": "Wesley Chapel, Pasco County, Florida, United States",
+    "at": "2026-07-29T23:45:24.834Z",
+    "source": "nominatim"
+  },
+  "west-bloomfield-township-michigan": {
+    "lat": 42.5684073,
+    "lng": -83.3740333,
+    "displayName": "West Bloomfield Township, Oakland County, Michigan, United States",
+    "at": "2026-07-29T23:45:26.746Z",
+    "source": "nominatim"
+  },
+  "west-hollywood-california": {
+    "lat": 34.0923014,
+    "lng": -118.3692894,
+    "displayName": "West Hollywood, Los Angeles County, California, United States",
+    "at": "2026-07-29T23:45:28.342Z",
+    "source": "nominatim"
+  },
+  "west-san-jose-in-san-jose-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:45:32.240Z"
+  },
+  "west-valley-city-utah": {
+    "lat": 40.6967891,
+    "lng": -111.9866954,
+    "displayName": "West Valley City, Salt Lake County, Utah, United States",
+    "at": "2026-07-29T23:45:33.784Z",
+    "source": "nominatim"
+  },
+  "westchester-florida": {
+    "lat": 25.7548224,
+    "lng": -80.3272741,
+    "displayName": "Westchester, Miami-Dade County, Florida, 33144, United States",
+    "at": "2026-07-29T23:45:35.312Z",
+    "source": "nominatim"
+  },
+  "westside-simi-valley-california": {
+    "error": "not-found",
+    "at": "2026-07-29T23:45:38.814Z"
+  },
+  "while-san-francisco-or-the-greater-bay-area-does-not-have-a-greek-cultural-distr": {
+    "lat": 37.8361421,
+    "lng": -122.2504457,
+    "displayName": "California College of the Arts, North Oakland, Oakland, Alameda County, California, United States",
+    "at": "2026-07-29T23:45:43.837Z",
+    "source": "nominatim"
+  },
+  "whistler-british-columbia": {
+    "lat": 50.1171903,
+    "lng": -122.9543022,
+    "displayName": "Whistler Resort Municipality, Squamish-Lillooet Regional District, British Columbia, Canada",
+    "at": "2026-07-29T23:45:45.690Z",
+    "source": "nominatim"
+  },
+  "white-center-washington-tacoma-washington-south-seattle-chinatown-international-": {
+    "lat": 47.6038321,
+    "lng": -122.330062,
+    "displayName": "Seattle, King County, Washington, United States",
+    "at": "2026-07-29T23:45:49.485Z",
+    "source": "nominatim"
+  },
+  "whittier-california": {
+    "lat": 33.9749136,
+    "lng": -118.0338664,
+    "displayName": "Whittier, Los Angeles County, California, United States",
+    "at": "2026-07-29T23:45:51.433Z",
+    "source": "nominatim"
+  },
+  "woodburn-oregon": {
+    "lat": 45.143731,
+    "lng": -122.8553725,
+    "displayName": "Woodburn, Marion County, Oregon, United States",
+    "at": "2026-07-29T23:45:53.486Z",
+    "source": "nominatim"
+  },
+  "worcester-massachusetts": {
+    "lat": 42.2625621,
+    "lng": -71.8018877,
+    "displayName": "Worcester, Worcester County, Massachusetts, United States",
+    "at": "2026-07-29T23:45:55.437Z",
+    "source": "nominatim"
+  },
+  "yorktown-new-york": {
+    "lat": 41.2956496,
+    "lng": -73.80819,
+    "displayName": "Town of Yorktown, Westchester County, New York, United States",
+    "at": "2026-07-29T23:45:57.355Z",
+    "source": "nominatim"
+  },
+  "yuba-city-california": {
+    "lat": 39.1404477,
+    "lng": -121.6169108,
+    "displayName": "Yuba City, Sutter County, California, United States",
+    "at": "2026-07-29T23:45:59.302Z",
+    "source": "nominatim"
+  }
+}
