@@ -540,11 +540,11 @@
     "source": "centroid"
   },
   "chinatown-flushing": {
-    "lat": 40.7128,
-    "lng": -74.006,
-    "displayName": "New York City, New York",
+    "lat": 40.759,
+    "lng": -73.83,
+    "displayName": "Flushing, Queens, New York",
     "at": "2026-07-29T16:40:52.919Z",
-    "source": "centroid"
+    "source": "curated-seed"
   },
   "chinatown-malden-massachusetts": {
     "lat": 42.4251,
@@ -589,11 +589,11 @@
     "source": "centroid"
   },
   "chinatown-sunset-park": {
-    "lat": 40.7128,
-    "lng": -74.006,
-    "displayName": "New York City, New York",
+    "lat": 40.641,
+    "lng": -74.009,
+    "displayName": "Sunset Park, Brooklyn, New York",
     "at": "2026-07-29T16:40:52.919Z",
-    "source": "centroid"
+    "source": "curated-seed"
   },
   "chinatown-windsor-ontario": {
     "lat": 42.3149,
@@ -939,18 +939,18 @@
     "source": "centroid"
   },
   "little-africa-bronx": {
-    "lat": 40.7128,
-    "lng": -74.006,
-    "displayName": "New York City, New York",
+    "lat": 40.834,
+    "lng": -73.921,
+    "displayName": "Bronx, New York",
     "at": "2026-07-29T16:40:52.920Z",
-    "source": "centroid"
+    "source": "curated-seed"
   },
   "little-africa-si": {
-    "lat": 40.7128,
-    "lng": -74.006,
-    "displayName": "New York City, New York",
+    "lat": 40.621,
+    "lng": -74.072,
+    "displayName": "Clifton, Staten Island, New York",
     "at": "2026-07-29T16:40:52.920Z",
-    "source": "centroid"
+    "source": "curated-seed"
   },
   "little-arabia-anaheim-california": {
     "lat": 33.8366,
@@ -1079,11 +1079,11 @@
     "source": "centroid"
   },
   "little-senegal": {
-    "lat": 40.7128,
-    "lng": -74.006,
-    "displayName": "New York City, New York",
+    "lat": 40.8029,
+    "lng": -73.9531,
+    "displayName": "Harlem, Manhattan, New York",
     "at": "2026-07-29T16:40:52.921Z",
-    "source": "centroid"
+    "source": "curated-seed"
   },
   "little-seoul-garden-grove-california": {
     "lat": 33.7739,

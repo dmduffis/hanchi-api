@@ -61,21 +61,25 @@ async function main() {
 
   console.log(`Upserting ${payload.enclaves.length} Wikipedia enclaves…`);
 
-  let ok = 0;
+  let created = 0;
+  let skipped = 0;
   for (const c of payload.enclaves) {
     if (!Number.isFinite(c.lat) || !Number.isFinite(c.lng)) continue;
 
-    await prisma.community.upsert({
+    // Never overwrite curated seed communities (name/boundary). City-level
+    // Wikipedia geocodes previously moved Flushing Chinatown to Manhattan.
+    const existing = await prisma.community.findUnique({
       where: { id: c.id },
-      create: {
+      select: { id: true },
+    });
+    if (existing) {
+      skipped += 1;
+      continue;
+    }
+
+    await prisma.community.create({
+      data: {
         id: c.id,
-        name: c.name,
-        neighborhood: c.neighborhood,
-        city: c.city,
-        description: c.description,
-        heroEmoji: c.heroEmoji,
-      },
-      update: {
         name: c.name,
         neighborhood: c.neighborhood,
         city: c.city,
@@ -89,11 +93,13 @@ async function main() {
       squarePolygonWkt(c.lat, c.lng, c.delta ?? 0.012),
       c.id,
     );
-    ok += 1;
-    if (ok % 25 === 0) console.log(`  … ${ok}/${payload.enclaves.length}`);
+    created += 1;
+    if (created % 25 === 0) {
+      console.log(`  … created ${created}, skipped ${skipped}`);
+    }
   }
 
-  console.log(`Done. Upserted ${ok} communities.`);
+  console.log(`Done. Created ${created}, skipped existing ${skipped}.`);
 }
 
 main()

@@ -1541,7 +1541,7 @@
     },
     {
       "id": "chinatown-flushing",
-      "name": "Chinatown in New York City",
+      "name": "Chinatown in Flushing",
       "neighborhood": "Chinatown, Flushing, Queens, New York City",
       "city": "New York City, New York",
       "country": "US",
@@ -1562,8 +1562,8 @@
       "raw": "Chinatown, Flushing, Queens, New York City, New York",
       "geocodeQuery": "Chinatown, Flushing, Queens, New York City, NY, USA",
       "description": "Chinatown in New York City — a china cultural community in New York City, New York.",
-      "lat": 40.7128,
-      "lng": -74.006,
+      "lat": 40.759,
+      "lng": -73.83,
       "delta": 0.014
     },
     {
@@ -2054,7 +2054,7 @@
     },
     {
       "id": "chinatown-sunset-park",
-      "name": "Chinatown Sunset Park in New York City",
+      "name": "Chinatown in Sunset Park",
       "neighborhood": "Chinatown Sunset Park, Brooklyn, New York City",
       "city": "New York City, New York",
       "country": "US",
@@ -2075,8 +2075,8 @@
       "raw": "Chinatown Sunset Park, Brooklyn, New York City, New York",
       "geocodeQuery": "Chinatown Sunset Park, Brooklyn, New York City, NY, USA",
       "description": "Chinatown Sunset Park in New York City — a china cultural community in New York City, New York.",
-      "lat": 40.7128,
-      "lng": -74.006,
+      "lat": 40.641,
+      "lng": -74.009,
       "delta": 0.014
     },
     {
@@ -3743,7 +3743,7 @@
     },
     {
       "id": "little-africa-bronx",
-      "name": "Little Africa in New York City",
+      "name": "Little Africa in the Bronx",
       "neighborhood": "Little Africa, The Bronx, New York City",
       "city": "New York City, New York",
       "country": "US",
@@ -3765,13 +3765,13 @@
       "raw": "Little Africa, The Bronx, New York City, New York",
       "geocodeQuery": "Little Africa, The Bronx, New York City, NY, USA",
       "description": "Little Africa in New York City — a pan-africa cultural community in New York City, New York.",
-      "lat": 40.7128,
-      "lng": -74.006,
+      "lat": 40.834,
+      "lng": -73.921,
       "delta": 0.012
     },
     {
       "id": "little-africa-si",
-      "name": "Little Africa in New York City",
+      "name": "Little Africa in Staten Island",
       "neighborhood": "Little Africa, Staten Island, New York City",
       "city": "New York City, New York",
       "country": "US",
@@ -3793,8 +3793,8 @@
       "raw": "Little Africa, Staten Island, New York City, New York",
       "geocodeQuery": "Little Africa, Staten Island, New York City, NY, USA",
       "description": "Little Africa in New York City — a pan-africa cultural community in New York City, New York.",
-      "lat": 40.7128,
-      "lng": -74.006,
+      "lat": 40.621,
+      "lng": -74.072,
       "delta": 0.012
     },
     {
@@ -4263,7 +4263,7 @@
     },
     {
       "id": "little-senegal",
-      "name": "Little Senegal in New York City",
+      "name": "Little Senegal",
       "neighborhood": "Little Senegal, New York City",
       "city": "New York City, New York",
       "country": "US",
@@ -4284,8 +4284,8 @@
       "raw": "Little Senegal, New York City, New York",
       "geocodeQuery": "Little Senegal, New York City, NY, USA",
       "description": "Little Senegal in New York City — a senegal cultural community in New York City, New York.",
-      "lat": 40.7128,
-      "lng": -74.006,
+      "lat": 40.8029,
+      "lng": -73.9531,
       "delta": 0.012
     },
     {

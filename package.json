@@ -24,6 +24,7 @@
     "communities:complete-wikipedia-geocode": "tsx scripts/complete-wikipedia-geocode.ts",
     "communities:generate-wikipedia-meta": "tsx scripts/generate-wikipedia-meta.ts",
     "communities:add-wikipedia": "tsx scripts/add-wikipedia-enclaves.ts",
+    "communities:restore-curated": "tsx scripts/restore-curated-community-boundaries.ts",
     "yelp:metro": "tsx scripts/sync-yelp-metro.ts",
     "dishes:upsert": "tsx scripts/upsert-seed-dishes.ts",
     "dishes:images": "tsx scripts/set-dish-images.ts"
