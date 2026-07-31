@@ -47,6 +47,17 @@ const COMMUNITY_SELECT = `
   (SELECT COUNT(*)::int FROM "Poi" p WHERE p."communityId" = c.id) AS poi_count
 `;
 
+/**
+ * US cultural districts that aren't diaspora "country" enclaves — hidden from
+ * map/list discovery until we have a better non-flag presentation.
+ */
+export const HIDDEN_COMMUNITY_IDS = [
+  "african-american-arts-sf",
+  "american-indian-sf",
+] as const;
+
+const HIDDEN_IDS_SQL = HIDDEN_COMMUNITY_IDS.map((id) => `'${id}'`).join(", ");
+
 export function parseGeoJson<T>(raw: string | null): T | null {
   if (!raw) return null;
   try {
@@ -77,6 +88,7 @@ export async function findCommunitiesNear(
       ) AS distance_meters
     FROM "Community" c
     WHERE c.boundary IS NOT NULL
+      AND c.id NOT IN (${HIDDEN_IDS_SQL})
       AND EXISTS (SELECT 1 FROM "Poi" p WHERE p."communityId" = c.id)
       AND ST_DWithin(
         c.boundary::geography,
@@ -98,7 +110,8 @@ export async function listCommunities(): Promise<CommunityRow[]> {
     SELECT
       ${COMMUNITY_SELECT}
     FROM "Community" c
-    WHERE EXISTS (SELECT 1 FROM "Poi" p WHERE p."communityId" = c.id)
+    WHERE c.id NOT IN (${HIDDEN_IDS_SQL})
+      AND EXISTS (SELECT 1 FROM "Poi" p WHERE p."communityId" = c.id)
     ORDER BY c.name ASC
     `,
   );
@@ -107,6 +120,9 @@ export async function listCommunities(): Promise<CommunityRow[]> {
 export async function getCommunityWithGeometry(
   id: string,
 ): Promise<CommunityRow | null> {
+  if ((HIDDEN_COMMUNITY_IDS as readonly string[]).includes(id)) {
+    return null;
+  }
   const rows = await prisma.$queryRawUnsafe<CommunityRow[]>(
     `
     SELECT
