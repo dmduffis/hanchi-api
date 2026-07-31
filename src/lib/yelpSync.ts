@@ -153,7 +153,7 @@ const COMMUNITY_ETHNICITIES: Record<string, string[]> = {
   "calle-24-sf": ["mexican", "salvadoran"],
   "soma-pilipinas-sf": ["filipino"],
   "sunset-chinese-sf": ["chinese"],
-  "african-american-arts-sf": ["caribbean", "jamaican"],
+  // US cultural districts — no foreign-country ethnicity reclaim.
   "pacific-islander-sf": ["hawaiian"],
 };
 

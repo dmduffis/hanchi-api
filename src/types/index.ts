@@ -110,6 +110,11 @@ export interface CreateStampBody {
   userId?: string;
 }
 
+export interface DeleteStampBody {
+  communityId: string;
+  userId?: string;
+}
+
 export interface CreateJournalBody {
   note: string;
   communityId?: string | null;
