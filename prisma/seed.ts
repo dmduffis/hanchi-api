@@ -1,7 +1,9 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient, RouteType } from "@prisma/client";
+import { CONNECTICUT_COMMUNITIES } from "../scripts/data/connecticut-communities";
 import { FIVE_METRO_COMMUNITIES } from "../scripts/data/five-metros-communities";
+import { FLORIDA_COMMUNITIES } from "../scripts/data/florida-communities";
 
 const connectionString = process.env.DATABASE_URL;
 if (!connectionString) {
@@ -715,6 +717,8 @@ const COMMUNITIES: {
     delta: 0.024,
   },
   ...FIVE_METRO_COMMUNITIES,
+  ...CONNECTICUT_COMMUNITIES,
+  ...FLORIDA_COMMUNITIES,
 ];
 
 async function main() {
