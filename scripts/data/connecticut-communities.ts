@@ -10,7 +10,7 @@ export const CONNECTICUT_COMMUNITIES = [
     heroEmoji: "🇮🇹",
     lat: 41.3048,
     lng: -72.9188,
-    delta: 0.01,
+    delta: 0.018,
   },
   {
     id: "little-poland-new-britain",
@@ -22,7 +22,7 @@ export const CONNECTICUT_COMMUNITIES = [
     heroEmoji: "🇵🇱",
     lat: 41.6755,
     lng: -72.787,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "park-street-hartford",
@@ -34,7 +34,7 @@ export const CONNECTICUT_COMMUNITIES = [
     heroEmoji: "🇵🇷",
     lat: 41.7585,
     lng: -72.6915,
-    delta: 0.014,
+    delta: 0.018,
   },
   {
     id: "south-end-hartford",
@@ -46,7 +46,7 @@ export const CONNECTICUT_COMMUNITIES = [
     heroEmoji: "🇮🇹",
     lat: 41.7375,
     lng: -72.6755,
-    delta: 0.014,
+    delta: 0.018,
   },
   {
     id: "hollow-bridgeport",
@@ -58,7 +58,7 @@ export const CONNECTICUT_COMMUNITIES = [
     heroEmoji: "🇵🇹",
     lat: 41.1865,
     lng: -73.1955,
-    delta: 0.012,
+    delta: 0.022,
   },
   {
     id: "little-italy-bridgeport",
@@ -70,7 +70,7 @@ export const CONNECTICUT_COMMUNITIES = [
     heroEmoji: "🇮🇹",
     lat: 41.1955,
     lng: -73.2045,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "danbury-brazilian",
@@ -82,7 +82,7 @@ export const CONNECTICUT_COMMUNITIES = [
     heroEmoji: "🇧🇷",
     lat: 41.3947,
     lng: -73.454,
-    delta: 0.014,
+    delta: 0.032,
   },
   {
     id: "stamford-caribbean",
@@ -94,7 +94,7 @@ export const CONNECTICUT_COMMUNITIES = [
     heroEmoji: "🇯🇲",
     lat: 41.0534,
     lng: -73.5387,
-    delta: 0.014,
+    delta: 0.018,
   },
   {
     id: "fair-haven-ct",
@@ -106,6 +106,6 @@ export const CONNECTICUT_COMMUNITIES = [
     heroEmoji: "🇵🇷",
     lat: 41.3105,
     lng: -72.8955,
-    delta: 0.012,
+    delta: 0.018,
   },
 ] as const;

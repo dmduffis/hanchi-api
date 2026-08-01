@@ -21,6 +21,8 @@
     "communities:add-sf": "tsx scripts/add-sf-communities.ts",
     "communities:add-chicago": "tsx scripts/add-chicago-communities.ts",
     "communities:add-five-metros": "tsx scripts/add-five-metros.ts",
+    "communities:resync-five-metros": "tsx scripts/resync-five-metros.ts",
+    "communities:resync-ct-fl-mn": "tsx scripts/resync-ct-fl-mn.ts",
     "communities:add-ct": "tsx scripts/add-connecticut-communities.ts",
     "communities:add-florida": "tsx scripts/add-florida-communities.ts",
     "communities:add-minnesota": "tsx scripts/add-minnesota-communities.ts",

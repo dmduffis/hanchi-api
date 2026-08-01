@@ -10,7 +10,7 @@ export const MINNESOTA_COMMUNITIES = [
     heroEmoji: "🇸🇴",
     lat: 44.9697,
     lng: -93.247,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "little-mekong-stpaul",
@@ -22,7 +22,7 @@ export const MINNESOTA_COMMUNITIES = [
     heroEmoji: "🇱🇦",
     lat: 44.9559,
     lng: -93.1115,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "hmongtown-stpaul",
@@ -34,7 +34,7 @@ export const MINNESOTA_COMMUNITIES = [
     heroEmoji: "🇱🇦",
     lat: 44.969,
     lng: -93.1145,
-    delta: 0.01,
+    delta: 0.018,
   },
   {
     id: "lake-street-minneapolis",
@@ -46,7 +46,7 @@ export const MINNESOTA_COMMUNITIES = [
     heroEmoji: "🇲🇽",
     lat: 44.9486,
     lng: -93.2623,
-    delta: 0.016,
+    delta: 0.02,
   },
   {
     id: "eat-street-minneapolis",
@@ -58,7 +58,7 @@ export const MINNESOTA_COMMUNITIES = [
     heroEmoji: "🇻🇳",
     lat: 44.955,
     lng: -93.2778,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "district-del-sol-stpaul",
@@ -70,7 +70,7 @@ export const MINNESOTA_COMMUNITIES = [
     heroEmoji: "🇲🇽",
     lat: 44.927,
     lng: -93.0885,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "central-ave-minneapolis",
@@ -82,7 +82,7 @@ export const MINNESOTA_COMMUNITIES = [
     heroEmoji: "🇲🇽",
     lat: 45.0128,
     lng: -93.2472,
-    delta: 0.014,
+    delta: 0.018,
   },
   {
     id: "brooklyn-park-minneapolis",
@@ -94,6 +94,6 @@ export const MINNESOTA_COMMUNITIES = [
     heroEmoji: "🇱🇦",
     lat: 45.0941,
     lng: -93.3563,
-    delta: 0.02,
+    delta: 0.024,
   },
 ] as const;
