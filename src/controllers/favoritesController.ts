@@ -1,6 +1,7 @@
 import type { Request, Response, NextFunction } from "express";
 import { FavoriteType } from "@prisma/client";
 import { prisma } from "../lib/prisma";
+import { getCommunityWithGeometry } from "../lib/geo";
 import type { AuthenticatedRequest } from "../middleware/auth";
 
 function parseFavoriteType(value: unknown): FavoriteType | null {
@@ -10,28 +11,39 @@ function parseFavoriteType(value: unknown): FavoriteType | null {
   return null;
 }
 
-async function resolveFavoriteTarget(
-  type: FavoriteType,
-  targetId: string,
-): Promise<{
+type ResolvedFavorite = {
   ok: boolean;
   title?: string;
   subtitle?: string;
   communityId?: string | null;
   emoji?: string;
   restaurantId?: string;
-}> {
+  imageUrl?: string | null;
+  ethnicities?: string[];
+  latitude?: number | null;
+  longitude?: number | null;
+};
+
+async function resolveFavoriteTarget(
+  type: FavoriteType,
+  targetId: string,
+): Promise<ResolvedFavorite> {
   if (type === "community") {
-    const community = await prisma.community.findUnique({
-      where: { id: targetId },
-    });
+    const community = await getCommunityWithGeometry(targetId);
     if (!community) return { ok: false };
+    const lat =
+      community.latitude == null ? null : Number(community.latitude);
+    const lng =
+      community.longitude == null ? null : Number(community.longitude);
     return {
       ok: true,
       title: community.name,
       subtitle: community.neighborhood,
       communityId: community.id,
       emoji: community.heroEmoji ?? "📍",
+      imageUrl: community.imageUrl,
+      latitude: Number.isFinite(lat) ? lat : null,
+      longitude: Number.isFinite(lng) ? lng : null,
     };
   }
 
@@ -50,6 +62,8 @@ async function resolveFavoriteTarget(
       communityId: poi.communityId,
       restaurantId: poi.id,
       emoji: "🍽️",
+      imageUrl: poi.imageUrl,
+      ethnicities: poi.ethnicities ?? [],
     };
   }
 
@@ -61,6 +75,8 @@ async function resolveFavoriteTarget(
           id: true,
           name: true,
           communityId: true,
+          imageUrl: true,
+          ethnicities: true,
           community: { select: { name: true } },
         },
       },
@@ -74,6 +90,31 @@ async function resolveFavoriteTarget(
     communityId: dish.poi.communityId,
     restaurantId: dish.poi.id,
     emoji: "🥢",
+    imageUrl: dish.imageUrl ?? dish.poi.imageUrl,
+    ethnicities: dish.poi.ethnicities ?? [],
+  };
+}
+
+function favoritePayload(
+  fav: { id: string; type: FavoriteType; targetId: string; createdAt: Date },
+  resolved: ResolvedFavorite,
+  favorited?: boolean,
+) {
+  return {
+    id: fav.id,
+    type: fav.type,
+    targetId: fav.targetId,
+    title: resolved.title,
+    subtitle: resolved.subtitle,
+    communityId: resolved.communityId,
+    restaurantId: resolved.restaurantId ?? null,
+    emoji: resolved.emoji,
+    imageUrl: resolved.imageUrl ?? null,
+    ethnicities: resolved.ethnicities ?? [],
+    latitude: resolved.latitude ?? null,
+    longitude: resolved.longitude ?? null,
+    savedAt: fav.createdAt.toISOString(),
+    ...(favorited !== undefined ? { favorited } : {}),
   };
 }
 
@@ -93,17 +134,7 @@ export async function listUserFavoritesHandler(
       favorites.map(async (fav) => {
         const resolved = await resolveFavoriteTarget(fav.type, fav.targetId);
         if (!resolved.ok) return null;
-        return {
-          id: fav.id,
-          type: fav.type,
-          targetId: fav.targetId,
-          title: resolved.title,
-          subtitle: resolved.subtitle,
-          communityId: resolved.communityId,
-          restaurantId: resolved.restaurantId ?? null,
-          emoji: resolved.emoji,
-          savedAt: fav.createdAt.toISOString(),
-        };
+        return favoritePayload(fav, resolved);
       }),
     );
 
@@ -149,18 +180,7 @@ export async function createFavoriteHandler(
       update: {},
     });
 
-    res.status(201).json({
-      id: favorite.id,
-      type: favorite.type,
-      targetId: favorite.targetId,
-      title: resolved.title,
-      subtitle: resolved.subtitle,
-      communityId: resolved.communityId,
-      restaurantId: resolved.restaurantId ?? null,
-      emoji: resolved.emoji,
-      savedAt: favorite.createdAt.toISOString(),
-      favorited: true,
-    });
+    res.status(201).json(favoritePayload(favorite, resolved, true));
   } catch (err) {
     next(err);
   }
@@ -230,14 +250,8 @@ export async function toggleFavoriteHandler(
     if (existing) {
       await prisma.favorite.delete({ where: { id: existing.id } });
       res.json({
+        ...favoritePayload(existing, resolved, false),
         favorited: false,
-        type,
-        targetId,
-        title: resolved.title,
-        subtitle: resolved.subtitle,
-        communityId: resolved.communityId,
-        restaurantId: resolved.restaurantId ?? null,
-        emoji: resolved.emoji,
       });
       return;
     }
@@ -246,18 +260,7 @@ export async function toggleFavoriteHandler(
       data: { userId, type, targetId },
     });
 
-    res.status(201).json({
-      id: favorite.id,
-      favorited: true,
-      type: favorite.type,
-      targetId: favorite.targetId,
-      title: resolved.title,
-      subtitle: resolved.subtitle,
-      communityId: resolved.communityId,
-      restaurantId: resolved.restaurantId ?? null,
-      emoji: resolved.emoji,
-      savedAt: favorite.createdAt.toISOString(),
-    });
+    res.status(201).json(favoritePayload(favorite, resolved, true));
   } catch (err) {
     next(err);
   }
