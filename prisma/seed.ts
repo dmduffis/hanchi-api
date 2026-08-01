@@ -4,6 +4,7 @@ import { PrismaClient, RouteType } from "@prisma/client";
 import { CONNECTICUT_COMMUNITIES } from "../scripts/data/connecticut-communities";
 import { FIVE_METRO_COMMUNITIES } from "../scripts/data/five-metros-communities";
 import { FLORIDA_COMMUNITIES } from "../scripts/data/florida-communities";
+import { MINNESOTA_COMMUNITIES } from "../scripts/data/minnesota-communities";
 
 const connectionString = process.env.DATABASE_URL;
 if (!connectionString) {
@@ -719,6 +720,7 @@ const COMMUNITIES: {
   ...FIVE_METRO_COMMUNITIES,
   ...CONNECTICUT_COMMUNITIES,
   ...FLORIDA_COMMUNITIES,
+  ...MINNESOTA_COMMUNITIES,
 ];
 
 async function main() {
