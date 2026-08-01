@@ -1,6 +1,6 @@
-/** Curated enclaves for Miami and Orlando. */
+/** Curated enclaves across Greater Miami, Orlando, Tampa Bay, and Jacksonville. */
 export const FLORIDA_COMMUNITIES = [
-  // —— Miami ——
+  // —— Greater Miami ——
   {
     id: "little-havana-miami",
     name: "Little Havana in Miami",
@@ -11,7 +11,7 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇨🇺",
     lat: 25.7655,
     lng: -80.2195,
-    delta: 0.014,
+    delta: 0.02,
   },
   {
     id: "little-haiti-miami",
@@ -23,7 +23,7 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇭🇹",
     lat: 25.8325,
     lng: -80.1915,
-    delta: 0.014,
+    delta: 0.02,
   },
   {
     id: "hialeah-miami",
@@ -35,7 +35,7 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇨🇺",
     lat: 25.8576,
     lng: -80.2781,
-    delta: 0.02,
+    delta: 0.026,
   },
   {
     id: "sweetwater-miami",
@@ -47,7 +47,7 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇳🇮",
     lat: 25.7634,
     lng: -80.3731,
-    delta: 0.016,
+    delta: 0.022,
   },
   {
     id: "allapattah-miami",
@@ -59,7 +59,7 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇩🇴",
     lat: 25.8085,
     lng: -80.2245,
-    delta: 0.014,
+    delta: 0.02,
   },
   {
     id: "westchester-miami",
@@ -71,7 +71,7 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇨🇴",
     lat: 25.7465,
     lng: -80.3165,
-    delta: 0.016,
+    delta: 0.022,
   },
   {
     id: "doral-miami",
@@ -83,10 +83,46 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇻🇪",
     lat: 25.8195,
     lng: -80.3553,
-    delta: 0.018,
+    delta: 0.024,
+  },
+  {
+    id: "kendall-miami",
+    name: "Kendall in Greater Miami",
+    neighborhood: "Kendall, Florida",
+    city: "Miami",
+    description:
+      "Kendall — suburban Miami-Dade Cuban and Latin restaurants stretching south of the city core.",
+    heroEmoji: "🇨🇺",
+    lat: 25.6719,
+    lng: -80.3564,
+    delta: 0.024,
+  },
+  {
+    id: "north-miami-haitian",
+    name: "North Miami Haitian Corridor",
+    neighborhood: "North Miami, Florida",
+    city: "Miami",
+    description:
+      "North Miami — a major Haitian and Caribbean restaurant corridor north of Little Haiti.",
+    heroEmoji: "🇭🇹",
+    lat: 25.8901,
+    lng: -80.1867,
+    delta: 0.022,
+  },
+  {
+    id: "pompano-brazilian",
+    name: "Brazilian Corridor in Pompano Beach",
+    neighborhood: "Pompano Beach / Deerfield, Florida",
+    city: "Miami",
+    description:
+      "North Broward's Brazilian corridor — churrascarias, padarias, and markets around Pompano and Deerfield Beach.",
+    heroEmoji: "🇧🇷",
+    lat: 26.3184,
+    lng: -80.0998,
+    delta: 0.024,
   },
 
-  // —— Orlando ——
+  // —— Greater Orlando ——
   {
     id: "mills-50-orlando",
     name: "Mills 50 in Orlando",
@@ -97,7 +133,7 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇻🇳",
     lat: 28.5535,
     lng: -81.3645,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "pine-hills-orlando",
@@ -109,7 +145,7 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇯🇲",
     lat: 28.5575,
     lng: -81.4525,
-    delta: 0.016,
+    delta: 0.022,
   },
   {
     id: "azalea-park-orlando",
@@ -121,7 +157,7 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇨🇴",
     lat: 28.5475,
     lng: -81.3005,
-    delta: 0.014,
+    delta: 0.02,
   },
   {
     id: "kissimmee-orlando",
@@ -133,6 +169,82 @@ export const FLORIDA_COMMUNITIES = [
     heroEmoji: "🇵🇷",
     lat: 28.2919,
     lng: -81.4076,
+    delta: 0.026,
+  },
+  {
+    id: "kirkman-orlando",
+    name: "Kirkman Road in Orlando",
+    neighborhood: "Kirkman / I-Drive, Orlando",
+    city: "Orlando",
+    description:
+      "Kirkman Road near International Drive — Indian restaurants and markets in west Orlando.",
+    heroEmoji: "🇮🇳",
+    lat: 28.45,
+    lng: -81.47,
+    delta: 0.022,
+  },
+  {
+    id: "apopka-orlando",
+    name: "Apopka in Greater Orlando",
+    neighborhood: "Apopka, Florida",
+    city: "Orlando",
+    description:
+      "Apopka — Mexican restaurants and markets in northwest Greater Orlando.",
+    heroEmoji: "🇲🇽",
+    lat: 28.6764,
+    lng: -81.5115,
+    delta: 0.022,
+  },
+
+  // —— Tampa Bay ——
+  {
+    id: "ybor-city-tampa",
+    name: "Ybor City in Tampa",
+    neighborhood: "Ybor City, Tampa",
+    city: "Tampa",
+    description:
+      "Ybor City — Tampa's historic Cuban and Spanish cigar district, birthplace of the Tampa Cuban sandwich.",
+    heroEmoji: "🇨🇺",
+    lat: 27.9606,
+    lng: -82.4414,
+    delta: 0.014,
+  },
+  {
+    id: "west-tampa",
+    name: "West Tampa",
+    neighborhood: "West Tampa, Florida",
+    city: "Tampa",
+    description:
+      "West Tampa — Cuban bakeries, cafés, and a classic Tampa Latin food corridor west of downtown.",
+    heroEmoji: "🇨🇺",
+    lat: 27.9535,
+    lng: -82.4865,
+    delta: 0.016,
+  },
+  {
+    id: "tarpon-springs-greek",
+    name: "Tarpon Springs",
+    neighborhood: "Tarpon Springs, Florida",
+    city: "Tampa",
+    description:
+      "Tarpon Springs — Florida's strongest Greek sponge-diving town, packed with Greek restaurants and bakeries on the Anclote River.",
+    heroEmoji: "🇬🇷",
+    lat: 28.1461,
+    lng: -82.7568,
+    delta: 0.016,
+  },
+
+  // —— Jacksonville ——
+  {
+    id: "baymeadows-jacksonville",
+    name: "Baymeadows in Jacksonville",
+    neighborhood: "Baymeadows Road, Jacksonville",
+    city: "Jacksonville",
+    description:
+      "Baymeadows — Jacksonville's global food corridor, anchored by Indian restaurants, markets, and international plazas.",
+    heroEmoji: "🇮🇳",
+    lat: 30.2197,
+    lng: -81.5698,
     delta: 0.02,
   },
 ] as const;

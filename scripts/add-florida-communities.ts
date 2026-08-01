@@ -69,7 +69,7 @@ async function main() {
   console.log("\nSyncing Yelp…");
   for (const c of COMMUNITIES) {
     const result = await syncYelpForCommunity(c.id, {
-      radiusMeters: 2500,
+      radiusMeters: 4000,
       limit: 40,
     });
     console.log(

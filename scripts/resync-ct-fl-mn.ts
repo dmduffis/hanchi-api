@@ -1,15 +1,17 @@
 /**
- * Upsert Minnesota / Twin Cities enclaves without wiping existing data.
- * Then Yelp-sync each (~2–3 calls / enclave).
+ * Upsert + expand boundaries + Yelp re-sync for Connecticut, Florida
+ * (Greater Miami / Orlando / Tampa / Jacksonville), and Twin Cities.
  *
- * Usage: npx tsx scripts/add-minnesota-communities.ts
- *    or: npm run communities:add-minnesota
+ * Usage: npx tsx scripts/resync-ct-fl-mn.ts
+ *    or: npm run communities:resync-ct-fl-mn
  */
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
 import { syncYelpForCommunity } from "../src/lib/yelpSync";
-import { MINNESOTA_COMMUNITIES as COMMUNITIES } from "./data/minnesota-communities";
+import { CONNECTICUT_COMMUNITIES } from "./data/connecticut-communities";
+import { FLORIDA_COMMUNITIES } from "./data/florida-communities";
+import { MINNESOTA_COMMUNITIES } from "./data/minnesota-communities";
 
 const connectionString = process.env.DATABASE_URL;
 if (!connectionString) {
@@ -27,6 +29,12 @@ const prisma = new PrismaClient({
   }),
 });
 
+const COMMUNITIES = [
+  ...CONNECTICUT_COMMUNITIES,
+  ...FLORIDA_COMMUNITIES,
+  ...MINNESOTA_COMMUNITIES,
+];
+
 function squarePolygonWkt(lat: number, lng: number, delta: number): string {
   const minLng = lng - delta;
   const maxLng = lng + delta;
@@ -36,7 +44,7 @@ function squarePolygonWkt(lat: number, lng: number, delta: number): string {
 }
 
 async function main() {
-  console.log(`Upserting ${COMMUNITIES.length} Minnesota enclaves…`);
+  console.log(`Upserting + boundary update for ${COMMUNITIES.length} enclaves…`);
 
   for (const c of COMMUNITIES) {
     await prisma.community.upsert({
@@ -57,7 +65,6 @@ async function main() {
         heroEmoji: c.heroEmoji,
       },
     });
-
     await prisma.$executeRawUnsafe(
       `UPDATE "Community" SET boundary = ST_SetSRID(ST_GeomFromText($1), 4326) WHERE id = $2`,
       squarePolygonWkt(c.lat, c.lng, c.delta),
@@ -66,14 +73,16 @@ async function main() {
     console.log(`  ✓ ${c.id}`);
   }
 
-  console.log("\nSyncing Yelp…");
+  console.log("\nRe-syncing Yelp (radius 4000m)…");
   for (const c of COMMUNITIES) {
+    const before = await prisma.poi.count({ where: { communityId: c.id } });
     const result = await syncYelpForCommunity(c.id, {
       radiusMeters: 4000,
       limit: 40,
     });
+    const after = await prisma.poi.count({ where: { communityId: c.id } });
     console.log(
-      `  ${result.communityId}: fetched=${result.fetched} upserted=${result.upserted} skipped=${result.skipped}`,
+      `  ${c.id}: before=${before} after=${after} fetched=${result.fetched} upserted=${result.upserted} skipped=${result.skipped}`,
     );
     await new Promise((r) => setTimeout(r, 400));
   }

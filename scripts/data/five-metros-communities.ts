@@ -11,7 +11,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇨🇳",
     lat: 29.7136,
     lng: -95.5478,
-    delta: 0.022,
+    delta: 0.026,
   },
   {
     id: "hillcroft-houston",
@@ -23,7 +23,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇮🇳",
     lat: 29.7225,
     lng: -95.4985,
-    delta: 0.016,
+    delta: 0.02,
   },
   {
     id: "little-saigon-houston",
@@ -35,7 +35,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇻🇳",
     lat: 29.7055,
     lng: -95.5325,
-    delta: 0.016,
+    delta: 0.02,
   },
   {
     id: "little-lagos-houston",
@@ -47,7 +47,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇳🇬",
     lat: 29.7015,
     lng: -95.5885,
-    delta: 0.018,
+    delta: 0.022,
   },
   {
     id: "sugar-land-houston",
@@ -59,7 +59,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇮🇳",
     lat: 29.6197,
     lng: -95.6349,
-    delta: 0.022,
+    delta: 0.026,
   },
   {
     id: "katy-houston",
@@ -71,7 +71,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇮🇳",
     lat: 29.7858,
     lng: -95.8244,
-    delta: 0.024,
+    delta: 0.028,
   },
   {
     id: "east-end-houston",
@@ -83,7 +83,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇲🇽",
     lat: 29.7525,
     lng: -95.3255,
-    delta: 0.016,
+    delta: 0.02,
   },
 
   // —— Seattle ——
@@ -97,7 +97,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇨🇳",
     lat: 47.5981,
     lng: -122.3225,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "little-saigon-seattle",
@@ -109,7 +109,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇻🇳",
     lat: 47.5992,
     lng: -122.3165,
-    delta: 0.01,
+    delta: 0.018,
   },
   {
     id: "white-center-seattle",
@@ -121,7 +121,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇻🇳",
     lat: 47.5172,
     lng: -122.3548,
-    delta: 0.014,
+    delta: 0.018,
   },
   {
     id: "beacon-hill-seattle",
@@ -133,7 +133,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇵🇭",
     lat: 47.5795,
     lng: -122.3115,
-    delta: 0.014,
+    delta: 0.018,
   },
   {
     id: "bellevue-seattle",
@@ -145,7 +145,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇮🇳",
     lat: 47.6185,
     lng: -122.1715,
-    delta: 0.016,
+    delta: 0.02,
   },
   {
     id: "kent-seattle",
@@ -157,7 +157,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇮🇳",
     lat: 47.3827,
     lng: -122.227,
-    delta: 0.02,
+    delta: 0.024,
   },
   {
     id: "redmond-seattle",
@@ -169,7 +169,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇮🇳",
     lat: 47.6694,
     lng: -122.1239,
-    delta: 0.018,
+    delta: 0.022,
   },
 
   // —— Boston ——
@@ -183,7 +183,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇨🇳",
     lat: 42.3513,
     lng: -71.0626,
-    delta: 0.01,
+    delta: 0.018,
   },
   {
     id: "chinatown-quincy",
@@ -195,7 +195,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇨🇳",
     lat: 42.2731,
     lng: -71.0254,
-    delta: 0.014,
+    delta: 0.018,
   },
   {
     id: "chinatown-malden",
@@ -207,7 +207,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇨🇳",
     lat: 42.4251,
     lng: -71.0662,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "east-boston",
@@ -219,7 +219,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇸🇻",
     lat: 42.3751,
     lng: -71.0392,
-    delta: 0.014,
+    delta: 0.018,
   },
   {
     id: "watertown-boston",
@@ -231,7 +231,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇦🇲",
     lat: 42.3653,
     lng: -71.1843,
-    delta: 0.014,
+    delta: 0.018,
   },
   {
     id: "somerville-boston",
@@ -243,7 +243,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇧🇷",
     lat: 42.3796,
     lng: -71.0968,
-    delta: 0.012,
+    delta: 0.024,
   },
 
   // —— Washington DC ——
@@ -257,7 +257,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇨🇳",
     lat: 38.9003,
     lng: -77.0212,
-    delta: 0.01,
+    delta: 0.018,
   },
   {
     id: "little-ethiopia-dc",
@@ -269,7 +269,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇪🇹",
     lat: 38.9172,
     lng: -77.0245,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "little-ethiopia-silver-spring",
@@ -281,7 +281,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇪🇹",
     lat: 38.9907,
     lng: -77.0261,
-    delta: 0.014,
+    delta: 0.018,
   },
   {
     id: "eden-center-dc",
@@ -293,7 +293,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇻🇳",
     lat: 38.8665,
     lng: -77.1535,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "mount-pleasant-dc",
@@ -305,7 +305,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇸🇻",
     lat: 38.9295,
     lng: -77.0375,
-    delta: 0.012,
+    delta: 0.018,
   },
   {
     id: "annandale-dc",
@@ -317,7 +317,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇰🇷",
     lat: 38.8304,
     lng: -77.1964,
-    delta: 0.016,
+    delta: 0.02,
   },
 
   // —— Dallas–Fort Worth ——
@@ -331,7 +331,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇨🇳",
     lat: 32.9483,
     lng: -96.7299,
-    delta: 0.016,
+    delta: 0.02,
   },
   {
     id: "little-asia-plano",
@@ -343,7 +343,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇨🇳",
     lat: 33.0198,
     lng: -96.6989,
-    delta: 0.018,
+    delta: 0.022,
   },
   {
     id: "plano-indian",
@@ -355,7 +355,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇮🇳",
     lat: 33.0455,
     lng: -96.7455,
-    delta: 0.018,
+    delta: 0.022,
   },
   {
     id: "frisco-indian",
@@ -367,7 +367,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇮🇳",
     lat: 33.1507,
     lng: -96.8236,
-    delta: 0.02,
+    delta: 0.024,
   },
   {
     id: "irving-pakistani",
@@ -379,7 +379,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇵🇰",
     lat: 32.8295,
     lng: -96.9442,
-    delta: 0.018,
+    delta: 0.022,
   },
   {
     id: "oak-cliff-dallas",
@@ -391,7 +391,7 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇲🇽",
     lat: 32.7355,
     lng: -96.8255,
-    delta: 0.018,
+    delta: 0.022,
   },
   {
     id: "carrollton-asian",
@@ -403,6 +403,6 @@ export const FIVE_METRO_COMMUNITIES = [
     heroEmoji: "🇰🇷",
     lat: 32.9755,
     lng: -96.8895,
-    delta: 0.018,
+    delta: 0.022,
   },
 ] as const;
