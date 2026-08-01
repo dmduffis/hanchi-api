@@ -20,6 +20,7 @@
     "communities:add-la": "tsx scripts/add-la-communities.ts",
     "communities:add-sf": "tsx scripts/add-sf-communities.ts",
     "communities:add-chicago": "tsx scripts/add-chicago-communities.ts",
+    "communities:add-five-metros": "tsx scripts/add-five-metros.ts",
     "communities:parse-wikipedia": "tsx scripts/parse-wikipedia-enclaves.ts",
     "communities:geocode-wikipedia": "tsx scripts/geocode-wikipedia-enclaves.ts",
     "communities:complete-wikipedia-geocode": "tsx scripts/complete-wikipedia-geocode.ts",
