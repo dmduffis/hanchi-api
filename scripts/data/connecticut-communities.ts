@@ -1,0 +1,111 @@
+/** Curated enclaves across Connecticut. */
+export const CONNECTICUT_COMMUNITIES = [
+  {
+    id: "wooster-square-ct",
+    name: "Wooster Square in New Haven",
+    neighborhood: "Wooster Square, New Haven",
+    city: "Connecticut",
+    description:
+      "New Haven's Little Italy around Wooster Square — world-famous apizza, Italian bakeries, and the classic Wooster Street dinner crawl.",
+    heroEmoji: "🇮🇹",
+    lat: 41.3048,
+    lng: -72.9188,
+    delta: 0.01,
+  },
+  {
+    id: "little-poland-new-britain",
+    name: "Little Poland in New Britain",
+    neighborhood: "Broad Street, New Britain",
+    city: "Connecticut",
+    description:
+      "New Britain's Little Poland along Broad Street — pierogi, delis, bakeries, and one of New England's strongest Polish food corridors.",
+    heroEmoji: "🇵🇱",
+    lat: 41.6755,
+    lng: -72.787,
+    delta: 0.012,
+  },
+  {
+    id: "park-street-hartford",
+    name: "Park Street in Hartford",
+    neighborhood: "Frog Hollow, Hartford",
+    city: "Connecticut",
+    description:
+      "Hartford's Park Street — Puerto Rican and Latin restaurants, bakeries, and markets through Frog Hollow and Parkville.",
+    heroEmoji: "🇵🇷",
+    lat: 41.7585,
+    lng: -72.6915,
+    delta: 0.014,
+  },
+  {
+    id: "south-end-hartford",
+    name: "South End in Hartford",
+    neighborhood: "South End, Hartford",
+    city: "Connecticut",
+    description:
+      "Hartford's South End — Italian restaurants and markets along Franklin Avenue in a classic Connecticut Italian corridor.",
+    heroEmoji: "🇮🇹",
+    lat: 41.7375,
+    lng: -72.6755,
+    delta: 0.014,
+  },
+  {
+    id: "hollow-bridgeport",
+    name: "The Hollow in Bridgeport",
+    neighborhood: "The Hollow, Bridgeport",
+    city: "Connecticut",
+    description:
+      "Bridgeport's Hollow — Portuguese bakeries, Brazilian churrascarias, and a dense Lusophone food pocket near downtown.",
+    heroEmoji: "🇵🇹",
+    lat: 41.1865,
+    lng: -73.1955,
+    delta: 0.012,
+  },
+  {
+    id: "little-italy-bridgeport",
+    name: "Little Italy in Bridgeport",
+    neighborhood: "Madison Avenue, Bridgeport",
+    city: "Connecticut",
+    description:
+      "Bridgeport's Little Italy along Madison Avenue — Italian restaurants and a long-standing North End food corridor.",
+    heroEmoji: "🇮🇹",
+    lat: 41.1955,
+    lng: -73.2045,
+    delta: 0.012,
+  },
+  {
+    id: "danbury-brazilian",
+    name: "Brazilian Corridor in Danbury",
+    neighborhood: "Downtown Danbury, Connecticut",
+    city: "Connecticut",
+    description:
+      "Danbury's Brazilian corridor — churrascarias, padarias, and one of Connecticut's densest Brazilian dining scenes.",
+    heroEmoji: "🇧🇷",
+    lat: 41.3947,
+    lng: -73.454,
+    delta: 0.014,
+  },
+  {
+    id: "stamford-caribbean",
+    name: "West Indian Corridor in Stamford",
+    neighborhood: "West Side / South End, Stamford",
+    city: "Connecticut",
+    description:
+      "Stamford's West Indian corridor — Caribbean restaurants, jerk spots, and groceries on the city's west and south sides.",
+    heroEmoji: "🇯🇲",
+    lat: 41.0534,
+    lng: -73.5387,
+    delta: 0.014,
+  },
+  {
+    id: "fair-haven-ct",
+    name: "Fair Haven in New Haven",
+    neighborhood: "Fair Haven, New Haven",
+    city: "Connecticut",
+    description:
+      "Fair Haven — Latin American restaurants and markets east of downtown New Haven along a historic immigrant waterfront.",
+    heroEmoji: "🇵🇷",
+    lat: 41.3105,
+    lng: -72.8955,
+    delta: 0.012,
+  },
+] as const;
