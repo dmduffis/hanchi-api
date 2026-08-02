@@ -1,9 +1,12 @@
 /**
- * Remove low-quality Wikipedia community imports that duplicate curated
- * enclaves or are city-level / malformed rows ("Anaheim in Anaheim").
+ * Remove low-quality Wikipedia community imports (city-level / malformed
+ * rows like "Anaheim in Anaheim").
  *
- * Keeps curated metro communities. Orphans POIs (communityId → null) before
- * deleting doomed communities so restaurants are not wiped.
+ * Wikipedia is the source of truth for enclave coverage — this no longer
+ * deletes wiki rows merely because a curated short-id community exists.
+ * Use `communities:dedupe-wiki` to fold curated duplicates into wiki ids.
+ *
+ * Orphans POIs (communityId → null) before deleting doomed communities.
  *
  * Usage:
  *   npx tsx scripts/cleanup-wiki-communities.ts           # dry-run
@@ -63,32 +66,14 @@ function loadCuratedIds(): Set<string> {
 function reasonsFor(
   c: { id: string; name: string; neighborhood: string; city: string },
   curated: Set<string>,
-  curatedByName: Map<string, string>,
 ): string[] {
+  // Never delete curated catalog rows from this script.
   if (curated.has(c.id)) return [];
   const reasons: string[] = [];
 
+  // Only drop junk/blob wiki rows. Do not remove wiki coverage that
+  // overlaps curated catalogs — dedupe folds curated → wiki instead.
   if (isJunkWikiCommunity(c)) reasons.push("junk-or-blob");
-
-  const sameName = curatedByName.get(c.name.trim().toLowerCase());
-  if (sameName) reasons.push(`same-name-as:${sameName}`);
-
-  for (const cid of curated) {
-    if (cid.length < 12) continue;
-    if (
-      c.id === `${cid}-california` ||
-      c.id === `${cid}-michigan` ||
-      c.id === `${cid}-texas` ||
-      c.id === `${cid}-florida` ||
-      c.id === `${cid}-new-york` ||
-      c.id === `${cid}-pennsylvania` ||
-      c.id === `${cid}-illinois` ||
-      c.id.startsWith(`${cid}-`)
-    ) {
-      reasons.push(`dup-of:${cid}`);
-      break;
-    }
-  }
 
   return reasons;
 }
@@ -100,15 +85,9 @@ async function main() {
     orderBy: { id: "asc" },
   });
 
-  const curatedByName = new Map<string, string>();
-  for (const c of all) {
-    if (!curated.has(c.id)) continue;
-    curatedByName.set(c.name.trim().toLowerCase(), c.id);
-  }
-
   const doomed = new Map<string, string[]>();
   for (const c of all) {
-    const reasons = reasonsFor(c, curated, curatedByName);
+    const reasons = reasonsFor(c, curated);
     if (reasons.length) doomed.set(c.id, reasons);
   }
 

@@ -248,8 +248,8 @@ export const FIVE_METRO_COMMUNITIES = [
 
   // —— Washington DC ——
   {
-    id: "chinatown-dc",
-    name: "Chinatown in Washington, D.C.",
+    id: "chinatown-washington-d-c",
+    name: "Chinatown in Washington",
     neighborhood: "Gallery Place, Washington, D.C.",
     city: "Washington, D.C.",
     description:
@@ -260,8 +260,8 @@ export const FIVE_METRO_COMMUNITIES = [
     delta: 0.018,
   },
   {
-    id: "little-ethiopia-dc",
-    name: "Little Ethiopia in Washington, D.C.",
+    id: "little-ethiopia-shaw-washington-d-c",
+    name: "Little Ethiopia in Washington",
     neighborhood: "U Street / 9th Street, Washington, D.C.",
     city: "Washington, D.C.",
     description:

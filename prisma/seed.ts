@@ -237,14 +237,15 @@ const COMMUNITIES: {
     delta: 0.016,
   },
   {
-    id: "little-egypt",
+    // One Astoria-area community (wiki geo id; Little Egypt is the real local name)
+    id: "astoria-queens-new-york",
     name: "Little Egypt",
     neighborhood: "Astoria, Queens",
     description:
       "Astoria's Little Egypt — shisha cafés, koshari, and Steinway Street evenings that stretch late.",
     heroEmoji: "🇪🇬",
-    lat: 40.77,
-    lng: -73.912,
+    lat: 40.772,
+    lng: -73.93,
   },
   {
     id: "little-guyana-queens",
@@ -562,8 +563,8 @@ const COMMUNITIES: {
     delta: 0.02,
   },
   {
-    id: "little-saigon-westminster",
-    name: "Little Saigon in Westminster",
+    id: "little-saigon-orange-county-california",
+    name: "Little Saigon in Orange County",
     neighborhood: "Bolsa Avenue, Westminster",
     city: "Orange County",
     description:

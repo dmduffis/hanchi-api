@@ -45,7 +45,7 @@ const ENCLAVES: Enclave[] = [
   { id: "little-colombia", lat: 40.747, lng: -73.891, delta: 0.018 },
   { id: "little-dominican-republic", lat: 40.847, lng: -73.938, delta: 0.012 },
   { id: "little-ecuador", lat: 40.748, lng: -73.869, delta: 0.016 },
-  { id: "little-egypt", lat: 40.77, lng: -73.912, delta: 0.012 },
+  { id: "astoria-queens-new-york", lat: 40.772, lng: -73.93, delta: 0.012 },
   { id: "little-guyana-queens", lat: 40.68, lng: -73.837, delta: 0.016 },
   { id: "little-guyana-bronx", lat: 40.899, lng: -73.847, delta: 0.016 },
   { id: "little-haiti", lat: 40.64, lng: -73.955, delta: 0.014 },
@@ -90,7 +90,7 @@ const ENCLAVES: Enclave[] = [
   { id: "little-ethiopia-la", lat: 34.0545, lng: -118.366, delta: 0.012 },
   { id: "little-arabia-anaheim", lat: 33.8345, lng: -117.9555, delta: 0.022 },
   {
-    id: "little-saigon-westminster",
+    id: "little-saigon-orange-county-california",
     lat: 33.745,
     lng: -117.954,
     delta: 0.028,

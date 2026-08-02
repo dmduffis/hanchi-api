@@ -90,8 +90,8 @@ const COMMUNITIES = [
     delta: 0.022,
   },
   {
-    id: "little-saigon-westminster",
-    name: "Little Saigon in Westminster",
+    id: "little-saigon-orange-county-california",
+    name: "Little Saigon in Orange County",
     neighborhood: "Bolsa Avenue, Westminster",
     city: "Orange County",
     description:
