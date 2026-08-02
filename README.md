@@ -10,13 +10,13 @@ Standalone Node.js + TypeScript backend for **Hanchi** — a cultural-discovery 
 - **dotenv** — environment config
 - **`@prisma/adapter-pg`** — Postgres driver adapter required by Prisma 7
 
-Auth is intentionally stubbed via an `x-user-id` header. Replace before shipping (Supabase Auth, Clerk, Firebase Auth, etc.).
+Auth uses **Supabase Auth** JWTs (`Authorization: Bearer <access_token>`). The API verifies the token and upserts a Prisma `User` with `id = auth.uid`. Signing up with an email listed in `SEED_USER_CLAIM_EMAILS` (default `explorer@hanchi.app`) one-time claims `seed-user-1` stamps/favorites/journal.
 
 ## Hosting (Supabase + Railway)
 
 Recommended split:
 
-- **Supabase** — Postgres + PostGIS
+- **Supabase** — Postgres + PostGIS + Auth
 - **Railway** — runs this Express API
 
 ### 1. Supabase database
@@ -45,17 +45,25 @@ npm run prisma:seed
 
 1. Put this folder in a GitHub repo (root = `hanchi-api`, or set Railway **Root Directory** to `hanchi-api` in a monorepo).
 2. [railway.app](https://railway.app) → **New Project** → **Deploy from GitHub** → select the repo.
-3. Variables → set **only**:
+3. Variables → set:
    - `DATABASE_URL` = same Supabase session-pooler URI as local `.env`
+   - `SUPABASE_URL` = project URL
+   - `SUPABASE_SECRET_KEY` = secret/service role key (server only)
+   - Optional: `SEED_USER_CLAIM_EMAILS` = comma-separated emails that claim seed data
 4. Deploy. `railway.toml` runs `npm run build`, then `npm start` (`prisma migrate deploy` + server).
 5. **Settings → Networking → Generate domain** → open `https://<domain>/health`.
 
-Do **not** set `DEV_DEFAULT_USER_ID` on Railway.
+Do **not** set `DEV_DEFAULT_USER_ID` or `ALLOW_STUB_AUTH` on Railway.
+
+### Auth setup (Supabase dashboard)
+
+1. **Authentication → Providers** → enable Email.
+2. For faster mobile testing, you can disable **Confirm email** under Auth settings (re-enable before public launch if you want).
+3. Copy the project URL + anon/publishable key into the mobile app `.env`.
 
 ### Notes
 
 - Seed is manual (`npm run prisma:seed`) — not run on every deploy.
-- Later you can replace stub `x-user-id` auth with **Supabase Auth** without changing hosts.
 
 ## Prerequisites
 
@@ -109,31 +117,37 @@ Server defaults to `http://localhost:3000`. Health check: `GET /health`.
 
 ## Environment variables
 
-| Variable              | Required | Description                                                  |
-| --------------------- | -------- | ------------------------------------------------------------ |
-| `DATABASE_URL`        | Yes      | Postgres connection string (PostGIS-enabled DB)              |
-| `PORT`                | No       | HTTP port (default `3000`)                                   |
-| `DEV_DEFAULT_USER_ID` | No       | Fallback user id when `x-user-id` is omitted (dev only)      |
-| `YELP_API_KEY`        | No\*     | Yelp Fusion key for POI sync (\*required to run sync)        |
-| `SYNC_SECRET`         | No\*     | Shared secret for `POST /admin/sync/yelp*` (`x-sync-secret`) |
+| Variable                 | Required | Description                                                          |
+| ------------------------ | -------- | -------------------------------------------------------------------- |
+| `DATABASE_URL`           | Yes      | Postgres connection string (PostGIS-enabled DB)                      |
+| `SUPABASE_URL`           | Yes\*    | Supabase project URL (\*required for auth)                           |
+| `SUPABASE_SECRET_KEY`    | Yes\*    | Secret/service role key for token verification                       |
+| `SEED_USER_CLAIM_EMAILS` | No       | Emails that claim `seed-user-1` data on first sign-in                |
+| `PORT`                   | No       | HTTP port (default `3000`)                                           |
+| `ALLOW_STUB_AUTH`        | No       | Set `1` locally to accept `x-user-id` without JWT (never on Railway) |
+| `DEV_DEFAULT_USER_ID`    | No       | Stub fallback user id when `ALLOW_STUB_AUTH=1`                       |
+| `YELP_API_KEY`           | No\*     | Yelp Fusion key for POI sync (\*required to run sync)                |
+| `SYNC_SECRET`            | No\*     | Shared secret for `POST /admin/sync/yelp*` (`x-sync-secret`)         |
 
 ## API overview
 
-| Method | Path                      | Notes                                                                    |
-| ------ | ------------------------- | ------------------------------------------------------------------------ |
-| `GET`  | `/communities`            | Optional `?near=lat,lng&radius=meters` (PostGIS)                         |
-| `GET`  | `/communities/:id`        | Community + POIs                                                         |
-| `GET`  | `/communities/:id/dishes` | Dishes across POIs in a community                                        |
-| `GET`  | `/pois/:id`               | POI + dishes                                                             |
-| `POST` | `/stamps`                 | Body: `{ communityId, userId? }` — requires `x-user-id`                  |
-| `GET`  | `/users/:id/stamps`       | Requires `x-user-id`                                                     |
-| `POST` | `/journal`                | Body: `{ note, communityId?, poiId?, photoUrl? }` — requires `x-user-id` |
-| `GET`  | `/users/:id/journal`      | Requires `x-user-id`                                                     |
-| `GET`  | `/routes`                 | Optional `?type=curated\|ai_generated\|seasonal`                         |
-| `GET`  | `/routes/:id`             | Route with ordered stops                                                 |
-| `GET`  | `/search?q=`              | Search communities, POIs, dishes by name                                 |
-| `POST` | `/admin/sync/yelp`        | Sync all communities from Yelp — requires `x-sync-secret`                |
-| `POST` | `/admin/sync/yelp/:id`    | Sync one community — requires `x-sync-secret`                            |
+| Method  | Path                      | Notes                                                            |
+| ------- | ------------------------- | ---------------------------------------------------------------- |
+| `GET`   | `/communities`            | Optional `?near=lat,lng&radius=meters` (PostGIS)                 |
+| `GET`   | `/communities/:id`        | Community + POIs                                                 |
+| `GET`   | `/communities/:id/dishes` | Dishes across POIs in a community                                |
+| `GET`   | `/pois/:id`               | POI + dishes                                                     |
+| `GET`   | `/users/me`               | Current user — Bearer token                                      |
+| `PATCH` | `/users/me`               | Update intents / cultures — Bearer token                         |
+| `POST`  | `/stamps`                 | Body: `{ communityId }` — Bearer token                           |
+| `GET`   | `/users/:id/stamps`       | Own stamps only — Bearer token                                   |
+| `POST`  | `/journal`                | Body: `{ note, communityId?, poiId?, photoUrl? }` — Bearer token |
+| `GET`   | `/users/:id/journal`      | Own journal only — Bearer token                                  |
+| `GET`   | `/routes`                 | Optional `?type=curated\|ai_generated\|seasonal`                 |
+| `GET`   | `/routes/:id`             | Route with ordered stops                                         |
+| `GET`   | `/search?q=`              | Search communities, POIs, dishes by name                         |
+| `POST`  | `/admin/sync/yelp`        | Sync all communities from Yelp — requires `x-sync-secret`        |
+| `POST`  | `/admin/sync/yelp/:id`    | Sync one community — requires `x-sync-secret`                    |
 
 ## Yelp POI sync
 
@@ -156,7 +170,7 @@ On Railway, also set `YELP_API_KEY` and `SYNC_SECRET`.
 Stub auth example:
 
 ```bash
-curl -H "x-user-id: seed-user-1" http://localhost:3000/users/seed-user-1/stamps
+curl -H "Authorization: Bearer <SUPABASE_ACCESS_TOKEN>" http://localhost:3000/users/me
 ```
 
 ## Seed data

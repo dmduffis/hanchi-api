@@ -50,7 +50,8 @@
     "communities:fix-city-centroids": "tsx scripts/fix-city-centroid-boundaries.ts",
     "yelp:metro": "tsx scripts/sync-yelp-metro.ts",
     "dishes:upsert": "tsx scripts/upsert-seed-dishes.ts",
-    "dishes:images": "tsx scripts/set-dish-images.ts"
+    "dishes:images": "tsx scripts/set-dish-images.ts",
+    "users:claim-seed": "tsx scripts/claim-seed-user.ts"
   },
   "engines": {
     "node": ">=20.19.0"
@@ -58,6 +59,7 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
+    "@supabase/supabase-js": "^2.111.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",

@@ -125,6 +125,11 @@ export async function listUserFavoritesHandler(
 ): Promise<void> {
   try {
     const { id } = req.params;
+    const authedId = (req as AuthenticatedRequest).userId;
+    if (id !== authedId) {
+      res.status(403).json({ error: "Forbidden" });
+      return;
+    }
     const favorites = await prisma.favorite.findMany({
       where: { userId: id },
       orderBy: { createdAt: "desc" },

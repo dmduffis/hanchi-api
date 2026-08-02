@@ -4,10 +4,10 @@ import {
   deleteStampHandler,
   toggleStampHandler,
 } from "../controllers/stampsController";
-import { stubAuth } from "../middleware/auth";
+import { requireAuth } from "../middleware/auth";
 
 export const stampsRouter = Router();
 
-stampsRouter.post("/", stubAuth, createStampHandler);
-stampsRouter.post("/toggle", stubAuth, toggleStampHandler);
-stampsRouter.delete("/", stubAuth, deleteStampHandler);
+stampsRouter.post("/", requireAuth, createStampHandler);
+stampsRouter.post("/toggle", requireAuth, toggleStampHandler);
+stampsRouter.delete("/", requireAuth, deleteStampHandler);

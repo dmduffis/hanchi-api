@@ -16,18 +16,10 @@ export async function createJournalHandler(
       return;
     }
 
-    const userId = (
-      body.userId?.trim() || (req as AuthenticatedRequest).userId
-    ).trim();
+    const userId = (req as AuthenticatedRequest).userId;
     const communityId = body.communityId ?? null;
     const poiId = body.poiId ?? null;
     const photoUrl = body.photoUrl ?? null;
-
-    const user = await prisma.user.findUnique({ where: { id: userId } });
-    if (!user) {
-      res.status(404).json({ error: "User not found" });
-      return;
-    }
 
     if (communityId) {
       const community = await prisma.community.findUnique({
@@ -78,6 +70,11 @@ export async function listUserJournalHandler(
 ): Promise<void> {
   try {
     const { id } = req.params;
+    const authedId = (req as AuthenticatedRequest).userId;
+    if (id !== authedId) {
+      res.status(403).json({ error: "Forbidden" });
+      return;
+    }
     const entries = await prisma.journalEntry.findMany({
       where: { userId: id },
       orderBy: { createdAt: "desc" },
