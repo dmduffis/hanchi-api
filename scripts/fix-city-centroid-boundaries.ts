@@ -38,7 +38,7 @@ const FIXES: Fix[] = [
   },
   { id: "bay-ridge-brooklyn-new-york-city", lat: 40.634, lng: -74.028 },
   { id: "greenpoint-new-york-city", lat: 40.7305, lng: -73.954 },
-  { id: "hicksville-new-york", lat: 40.7681, lng: -73.5251 },
+  { id: "little-india-hicksville", lat: 40.7681, lng: -73.5251 },
   {
     id: "jackson-heights-queens-new-york-city",
     lat: 40.7557,

@@ -40,6 +40,18 @@ const COMMUNITY_SEARCH_TERMS: Record<string, string | string[]> = {
   "little-dominican-republic": "dominican",
   "little-haiti": "haitian",
   "little-poland": "polish",
+  "ridgewood-queens-new-york": [
+    "serbian",
+    "balkan",
+    "bosnian",
+    "croatian",
+    "mediterranean",
+  ],
+  "sunnyside-queens-new-york": [
+    "romanian",
+    "eastern european",
+    "mediterranean",
+  ],
   "little-ukraine": "ukrainian",
   "little-odessa": ["russian", "ukrainian"],
   "little-manila": "filipino",
@@ -274,6 +286,8 @@ const COMMUNITY_ETHNICITIES: Record<string, string[]> = {
   "little-dominican-republic": ["dominican"],
   "little-haiti": ["haitian"],
   "little-poland": ["polish"],
+  "ridgewood-queens-new-york": ["serbian", "bosnian", "croatian"],
+  "sunnyside-queens-new-york": ["romanian"],
   "little-ukraine": ["ukrainian"],
   "little-odessa": ["russian", "ukrainian"],
   "little-manila": ["filipino"],
@@ -483,7 +497,10 @@ async function isInsideCommunity(
   return Boolean(rows[0]?.inside);
 }
 
-function preferredEthnicities(communityId: string): string[] | undefined {
+/** Primary culture slugs for a community (curated + wiki). Used by Yelp sync and search. */
+export function preferredEthnicities(
+  communityId: string,
+): string[] | undefined {
   return (
     COMMUNITY_ETHNICITIES[communityId] ??
     WIKI_COMMUNITY_ETHNICITIES[communityId]

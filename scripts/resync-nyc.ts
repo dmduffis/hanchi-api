@@ -48,6 +48,18 @@ const ENCLAVES = [
   { id: "little-palestine", lat: 40.622, lng: -74.028, delta: 0.012 },
   { id: "little-pakistan", lat: 40.635, lng: -73.963, delta: 0.012 },
   { id: "little-poland", lat: 40.73, lng: -73.954, delta: 0.01 },
+  {
+    id: "ridgewood-queens-new-york",
+    lat: 40.7012,
+    lng: -73.8978,
+    delta: 0.018,
+  },
+  {
+    id: "sunnyside-queens-new-york",
+    lat: 40.7445,
+    lng: -73.9205,
+    delta: 0.014,
+  },
   { id: "little-senegal", lat: 40.8029, lng: -73.9531, delta: 0.014 },
   { id: "little-ukraine", lat: 40.728, lng: -73.987, delta: 0.01 },
   { id: "little-yemen", lat: 40.857, lng: -73.868, delta: 0.018 },

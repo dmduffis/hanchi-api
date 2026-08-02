@@ -15,15 +15,20 @@ export function isBrandedEnclaveName(name: string): boolean {
 
 /**
  * Weak wiki titles that aren't enclave brands:
- * "Bangladesh Street in New York City", "Pelham Parkway in New York City".
+ * "Bangladesh Street in New York City", "Hicksville in New York –".
  */
 export function isWeakPlaceInCityName(name: string): boolean {
   if (isBrandedEnclaveName(name)) return false;
   const m = name.match(/^(.+?)\s+in\s+(.+)$/i);
   if (!m) return false;
   const left = m[1].trim();
+  const right = m[2].trim();
   // Street-level fragments imported as if they were enclaves.
   if (/\b(street|boulevard|parkway|avenue|road|hwy|highway)\b/i.test(left)) {
+    return true;
+  }
+  // Bare town dumped into a metro label ("Hicksville in New York –").
+  if (/[–—-]/.test(right) || /^(new york|new york city)\b/i.test(right)) {
     return true;
   }
   return false;

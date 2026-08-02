@@ -5052,9 +5052,9 @@
     },
     {
       "id": "ridgewood-queens-new-york",
-      "name": "Ridgewood in Queens",
-      "neighborhood": "Ridgewood, Queens",
-      "city": "Queens, New York",
+      "name": "Little Serbia",
+      "neighborhood": "Ridgewood & Glendale, Queens",
+      "city": "New York City, New York",
       "country": "US",
       "ethnicitySection": "serbia",
       "heroEmoji": "🇷🇸",
@@ -5068,11 +5068,11 @@
       ],
       "ethnicities": null,
       "raw": "Ridgewood, Queens, New York",
-      "geocodeQuery": "Ridgewood, Queens, NY, USA",
-      "description": "Ridgewood in Queens — a serbia cultural community in Queens, New York.",
-      "lat": 40.7282,
-      "lng": -73.7949,
-      "delta": 0.012
+      "geocodeQuery": "Myrtle Avenue & Fresh Pond Road, Ridgewood, Queens, NY, USA",
+      "description": "Queens' Serbian and Balkan corridor — Myrtle and Forest Avenue markets, ćevapi, and the Serbian Association anchoring Ridgewood and Glendale.",
+      "lat": 40.7012,
+      "lng": -73.8978,
+      "delta": 0.018
     },
     {
       "id": "riverside-california",
@@ -5428,9 +5428,9 @@
     },
     {
       "id": "sunnyside-queens-new-york",
-      "name": "Sunnyside in Queens",
+      "name": "Little Romania",
       "neighborhood": "Sunnyside, Queens",
-      "city": "Queens, New York",
+      "city": "New York City, New York",
       "country": "US",
       "ethnicitySection": "romania",
       "heroEmoji": "🇷🇴",
@@ -5443,11 +5443,11 @@
       ],
       "ethnicities": null,
       "raw": "Sunnyside, Queens, New York",
-      "geocodeQuery": "Sunnyside, Queens, NY, USA",
-      "description": "Sunnyside in Queens — a romania cultural community in Queens, New York.",
-      "lat": 40.7282,
-      "lng": -73.7949,
-      "delta": 0.012
+      "geocodeQuery": "43rd Avenue & 41st Street, Sunnyside, Queens, NY, USA",
+      "description": "Sunnyside's Romanian corridor — sarmale, mici, and live music at spots like Romanian Garden and Danubius along 41st Street and 43rd Avenue.",
+      "lat": 40.7445,
+      "lng": -73.9205,
+      "delta": 0.014
     },
     {
       "id": "sunnyvale-california",

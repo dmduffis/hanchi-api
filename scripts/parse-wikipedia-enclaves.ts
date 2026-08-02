@@ -675,6 +675,7 @@ const ID_ALIASES: Record<string, string> = {
   "little-tokyo-los-angeles-california": "little-tokyo-la",
   "thai-town-los-angeles-california": "thai-town-la",
   "little-india-hicksville-new-york": "little-india-hicksville",
+  "hicksville-new-york": "little-india-hicksville",
   "little-senegal-new-york-city-new-york": "little-senegal",
   "little-africa-the-bronx-new-york-city-new-york": "little-africa-bronx",
   "little-africa-staten-island-new-york-city-new-york": "little-africa-si",

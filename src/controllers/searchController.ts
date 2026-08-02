@@ -7,14 +7,58 @@ import {
   mapPoi,
 } from "../lib/geo";
 import { isBrandedEnclaveName } from "../lib/wikiCommunityQuality";
+import { preferredEthnicities } from "../lib/yelpSync";
+import { ETHNICITY_TO_COUNTRY } from "../lib/userPrefs";
+import { getWorldCountry } from "../lib/worldCountries";
 
 /** Strip " in {City…}" so metro queries don't over-match wiki titles. */
 function nameCore(name: string): string {
   return name.replace(/\s+in\s+.+$/i, "").trim();
 }
 
+/** "brazil" ↔ brazilian, "korea" ↔ korean via ethnicity + country label. */
+function cultureTermsMatchNeedle(
+  communityId: string,
+  needle: string,
+): boolean {
+  if (needle.length < 3) return false;
+  const terms = preferredEthnicities(communityId);
+  if (!terms?.length) return false;
+
+  for (const raw of terms) {
+    const slug = raw.toLowerCase().replace(/_/g, " ");
+    if (
+      slug === needle ||
+      slug.includes(needle) ||
+      (needle.length >= 4 && needle.includes(slug))
+    ) {
+      return true;
+    }
+    const iso =
+      ETHNICITY_TO_COUNTRY[raw] ??
+      ETHNICITY_TO_COUNTRY[raw.replace(/\s+/g, "_")];
+    const country = iso ? getWorldCountry(iso) : undefined;
+    if (!country) continue;
+    const label = country.label.toLowerCase();
+    if (
+      label === needle ||
+      label.includes(needle) ||
+      (needle.length >= 4 && needle.includes(label))
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function scoreCommunityMatch(
-  c: { name: string; neighborhood: string; city: string; description: string },
+  c: {
+    id: string;
+    name: string;
+    neighborhood: string;
+    city: string;
+    description: string;
+  },
   needle: string,
 ): number | null {
   const name = c.name.toLowerCase();
@@ -29,6 +73,9 @@ function scoreCommunityMatch(
   // Match on the enclave label itself ("Little Bangladesh"), not only
   // the trailing " in New York City" that every NYC wiki row carries.
   if (core.includes(needle)) return branded ? 780 : 700;
+  // Culture metadata: "brazil" → Somerville (brazilian), even when the
+  // display name is a place label like "Union Square in Somerville".
+  if (cultureTermsMatchNeedle(c.id, needle)) return 640;
   if (name.includes(needle) && !core.includes(needle)) {
     // "Bangladesh Street in New York City" for q=new york → demote hard.
     return branded ? 360 : 60;
