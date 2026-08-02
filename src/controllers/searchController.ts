@@ -56,15 +56,25 @@ export async function searchHandler(
     ]);
 
     const communities = allCommunities
-      .filter(
-        (c) =>
-          c.name.toLowerCase().includes(needle) ||
-          c.neighborhood.toLowerCase().includes(needle) ||
-          c.description.toLowerCase().includes(needle) ||
-          c.city.toLowerCase().includes(needle),
-      )
+      .map((c) => {
+        const name = c.name.toLowerCase();
+        const neighborhood = c.neighborhood.toLowerCase();
+        const city = c.city.toLowerCase();
+        const description = c.description.toLowerCase();
+        let score = 0;
+        if (name === needle) score = 1000;
+        else if (name.startsWith(needle)) score = 850;
+        else if (name.includes(needle)) score = 700;
+        else if (neighborhood.includes(needle)) score = 500;
+        else if (city.includes(needle)) score = 300;
+        else if (description.includes(needle)) score = 100;
+        else return null;
+        return { row: c, score };
+      })
+      .filter((x): x is { row: (typeof allCommunities)[number]; score: number } => x != null)
+      .sort((a, b) => b.score - a.score)
       .slice(0, 20)
-      .map(mapCommunitySummary);
+      .map(({ row }) => mapCommunitySummary(row));
 
     const poiResults = await Promise.all(
       pois.map(async (p) => {
