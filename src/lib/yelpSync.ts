@@ -72,7 +72,7 @@ const COMMUNITY_SEARCH_TERMS: Record<string, string | string[]> = {
   "guyana-gateway": ["guyanese", "roti"],
   "little-caribbean": ["caribbean", "jamaican", "jerk"],
   "little-bhod-tibet": ["tibetan", "nepali", "himalayan", "momo"],
-  "little-albania": "albanian",
+  "little-albania": ["albanian", "balkan", "greek", "byrek", "qofte"],
   "little-india-hicksville": ["indian", "south indian", "pakistani"],
   "little-portugal-mineola": ["portuguese", "bacalhau"],
   "little-el-salvador-brentwood": ["salvadoran", "pupusas", "central american"],
@@ -554,6 +554,9 @@ const NON_COMPETING_ETHNICITIES = new Set([
 const SKIP_GENERIC_ETHNICITY_ENRICH = new Set([
   "yemeni-south-end-dearborn",
   "little-arabia-dearborn",
+  // Arthur Avenue is shared with Italian/ME — don't paint every
+  // Mediterranean label as Albanian.
+  "little-albania",
 ]);
 
 /**
@@ -575,6 +578,8 @@ export function enrichEthnicitiesForCommunity(
 
   if (!hasCommunitySpecific) {
     const primary = preferred.find((e) => !GENERIC_ETHNICITIES.has(e));
+    if (primary && ethnicities.length === 0) return [primary];
+
     const hasGeneric = ethnicities.some((e) => GENERIC_ETHNICITIES.has(e));
     const onlyGeneric =
       ethnicities.length > 0 &&
