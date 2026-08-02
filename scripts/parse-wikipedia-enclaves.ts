@@ -653,7 +653,7 @@ const ETHNICITY_META: Record<
   },
 };
 
-/** Prefer existing Sinta community ids when Wikipedia names match. */
+/** Prefer existing Hanchi community ids when Wikipedia names match. */
 const ID_ALIASES: Record<string, string> = {
   "chinatown-manhattan-new-york-city-new-york": "chinatown-manhattan",
   "chinatown-flushing-queens-new-york-city-new-york": "chinatown-flushing",

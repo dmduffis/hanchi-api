@@ -63,7 +63,7 @@ async function setPoiLocation(
 }
 
 /**
- * NYC Immigrant Enclaves — aligned to sinta-mobile mockCommunities
+ * NYC Immigrant Enclaves — aligned to mobile mockCommunities
  * (Mayor's Office map, 30 neighborhoods).
  */
 const COMMUNITIES: {
@@ -724,7 +724,7 @@ const COMMUNITIES: {
 ];
 
 async function main() {
-  console.log("Seeding Sinta database…");
+  console.log("Seeding Hanchi database…");
 
   await prisma.routeStop.deleteMany();
   await prisma.route.deleteMany();
@@ -738,8 +738,8 @@ async function main() {
   const user = await prisma.user.create({
     data: {
       id: "seed-user-1",
-      email: "explorer@sinta.app",
-      displayName: "Sinta Explorer",
+      email: "explorer@hanchi.app",
+      displayName: "Hanchi Explorer",
       intents: ["explore"],
       cultures: ["kr"],
     },
