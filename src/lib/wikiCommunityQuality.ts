@@ -9,6 +9,7 @@ const JUNK =
 /** Wiki rows superseded by curated enclaves — never re-import. */
 const SUPERSEDED_WIKI_IDS = new Set([
   "greenpoint-new-york-city", // → little-poland (Greenpoint, Brooklyn)
+  "richmond-hill-queens-new-york-city", // → little-guyana-queens
 ]);
 
 /**
