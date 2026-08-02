@@ -6,6 +6,15 @@
 const JUNK =
   /citation needed|etimated|\bestimated\b|\\-|see also|distribution of|united states, united states|canada, canada|\bmuch of\b|other parts of|and other areas|has the largest|especially in|formerly known|facing quebec|_citation|000 yemenis|"|\bin\s+in\b|growing mexican|colombian and ecuadorean/i;
 
+/**
+ * Auto-generated wiki import blurbs that just restate the title:
+ * "Excelsior District in San Francisco — a yemen cultural community in …"
+ */
+export function isBoilerplateWikiDescription(description: string): boolean {
+  // No \b before the dash — space+em-dash is not a word boundary in JS.
+  return /[—–-]\s*a\s+.+\s+cultural community in\b/i.test(description.trim());
+}
+
 /** Chinatown / Little X / Koreatown — real enclave brands. */
 export function isBrandedEnclaveName(name: string): boolean {
   return /\b(little\s|chinatown|koreatown|japantown|greektown|banglatown|thai town|filipinotown|india square|mexicantown|tehrangeles|poletown|corktown)\b/i.test(

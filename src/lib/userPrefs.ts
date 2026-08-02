@@ -85,6 +85,7 @@ export const ETHNICITY_TO_COUNTRY: Record<string, string> = {
   russian: "ru",
   portuguese: "pt",
   salvadoran: "sv",
+  guatemalan: "gt",
   brazilian: "br",
   british: "gb",
   french: "fr",

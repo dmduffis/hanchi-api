@@ -687,11 +687,11 @@
     "source": "centroid"
   },
   "excelsior-district-san-francisco-california": {
-    "lat": 37.7749,
-    "lng": -122.4194,
-    "displayName": "San Francisco, California",
-    "at": "2026-07-29T16:40:52.919Z",
-    "source": "centroid"
+    "lat": 37.7235,
+    "lng": -122.434,
+    "displayName": "Excelsior, San Francisco, California",
+    "at": "2026-08-02T05:50:00.000Z",
+    "source": "manual"
   },
   "fall-river-massachusetts": {
     "lat": 41.7015,

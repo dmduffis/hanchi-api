@@ -596,8 +596,10 @@ export const WIKI_COMMUNITY_SEARCH_TERMS: Record<string, string[]> = {
     "slovenian"
   ],
   "excelsior-district-san-francisco-california": [
-    "yemeni",
-    "middle eastern"
+    "guatemalan",
+    "salvadoran",
+    "mexican",
+    "filipino"
   ],
   "fairfax-county-virginia": [
     "vietnamese",
@@ -2313,8 +2315,10 @@ export const WIKI_COMMUNITY_ETHNICITIES: Record<string, string[]> = {
     "indian"
   ],
   "excelsior-district-san-francisco-california": [
-    "yemeni",
-    "middle_eastern"
+    "guatemalan",
+    "salvadoran",
+    "mexican",
+    "filipino"
   ],
   "fairfax-county-virginia": [
     "vietnamese"
