@@ -45,6 +45,11 @@ const FIXES: Fix[] = [
     lng: -73.8831,
   },
   {
+    id: "little-ethiopia-alexandria-virginia",
+    lat: 38.81,
+    lng: -77.13,
+  },
+  {
     id: "jewtown-port-richmond-staten-island-nyc",
     lat: 40.636,
     lng: -74.134,

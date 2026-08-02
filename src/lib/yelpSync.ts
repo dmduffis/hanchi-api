@@ -117,6 +117,12 @@ const COMMUNITY_SEARCH_TERMS: Record<string, string | string[]> = {
   "thai-town-la": ["thai", "pad thai"],
   "little-tokyo-la": ["japanese", "ramen", "sushi"],
   "little-ethiopia-la": ["ethiopian", "eritrean"],
+  "little-ethiopia-alexandria-virginia": [
+    "ethiopian",
+    "eritrean",
+    "injera",
+    "ethiopian restaurant",
+  ],
   "little-arabia-anaheim": [
     "middle eastern",
     "mediterranean",
@@ -334,6 +340,7 @@ const COMMUNITY_ETHNICITIES: Record<string, string[]> = {
   "thai-town-la": ["thai"],
   "little-tokyo-la": ["japanese"],
   "little-ethiopia-la": ["ethiopian"],
+  "little-ethiopia-alexandria-virginia": ["ethiopian"],
   "little-arabia-anaheim": [
     "lebanese",
     "syrian",
