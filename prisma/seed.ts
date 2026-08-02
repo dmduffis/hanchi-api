@@ -165,12 +165,12 @@ const COMMUNITIES: {
   {
     id: "little-albania",
     name: "Little Albania",
-    neighborhood: "Fordham, Bronx",
+    neighborhood: "Belmont & Fordham, Bronx",
     description:
-      "Fordham's Albanian stretch — cafés, bakeries, and Balkan grilling near the Grand Concourse.",
+      "The Bronx Albanian corridor around Belmont and Arthur Avenue — cafés, bakeries, and Balkan grilling shared with Little Italy.",
     heroEmoji: "🇦🇱",
-    lat: 40.862,
-    lng: -73.898,
+    lat: 40.8545,
+    lng: -73.888,
   },
   {
     id: "little-bangladesh",

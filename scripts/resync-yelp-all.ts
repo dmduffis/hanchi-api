@@ -38,7 +38,7 @@ const ENCLAVES: Enclave[] = [
   { id: "koreatown-queens", lat: 40.748, lng: -73.814, delta: 0.02 },
   { id: "little-africa-si", lat: 40.621, lng: -74.072, delta: 0.016 },
   { id: "little-africa-bronx", lat: 40.834, lng: -73.921, delta: 0.016 },
-  { id: "little-albania", lat: 40.862, lng: -73.898, delta: 0.014 },
+  { id: "little-albania", lat: 40.8545, lng: -73.888, delta: 0.018 },
   { id: "little-bangladesh", lat: 40.707, lng: -73.793, delta: 0.016 },
   { id: "little-bhod-tibet", lat: 40.755, lng: -73.87, delta: 0.016 },
   { id: "little-caribbean", lat: 40.652, lng: -73.96, delta: 0.014 },

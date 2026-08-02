@@ -31,6 +31,7 @@
     "communities:rebuild-ridgewood-serbia": "tsx scripts/rebuild-ridgewood-serbia.ts",
     "communities:rebuild-sunnyside-romania": "tsx scripts/rebuild-sunnyside-romania.ts",
     "communities:rebuild-excelsior-sf": "tsx scripts/rebuild-excelsior-sf.ts",
+    "communities:rebuild-little-albania": "tsx scripts/rebuild-little-albania.ts",
     "communities:clear-boilerplate-descriptions": "tsx scripts/clear-boilerplate-descriptions.ts",
     "communities:add-ct": "tsx scripts/add-connecticut-communities.ts",
     "communities:add-florida": "tsx scripts/add-florida-communities.ts",
