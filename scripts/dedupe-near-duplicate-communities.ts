@@ -58,6 +58,8 @@ const MERGES: Record<string, string> = {
   // Street-level wiki fragment → Jackson Heights Little Bangladesh
   "bangladesh-street-jackson-heights-queens-new-york-city-new-york":
     "little-bangladesh",
+  // Same Hicksville pin as curated Little India
+  "hicksville-new-york": "little-india-hicksville",
 };
 
 function squarePolygonWkt(lat: number, lng: number, delta: number): string {

@@ -1401,11 +1401,11 @@
     "source": "centroid"
   },
   "sunnyside-queens-new-york": {
-    "lat": 40.7282,
-    "lng": -73.7949,
-    "displayName": "Queens, New York",
-    "at": "2026-07-29T16:40:52.922Z",
-    "source": "centroid"
+    "lat": 40.7445,
+    "lng": -73.9205,
+    "displayName": "Sunnyside, Queens, New York",
+    "at": "2026-08-02T05:30:00.000Z",
+    "source": "manual"
   },
   "sunnyvale-california": {
     "lat": 37.3688,

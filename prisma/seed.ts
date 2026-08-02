@@ -361,6 +361,28 @@ const COMMUNITIES: {
     lng: -73.954,
   },
   {
+    id: "ridgewood-queens-new-york",
+    name: "Little Serbia",
+    neighborhood: "Ridgewood & Glendale, Queens",
+    description:
+      "Queens' Serbian and Balkan corridor — Myrtle and Forest Avenue markets, ćevapi, and the Serbian Association anchoring Ridgewood and Glendale.",
+    heroEmoji: "🇷🇸",
+    lat: 40.7012,
+    lng: -73.8978,
+    delta: 0.018,
+  },
+  {
+    id: "sunnyside-queens-new-york",
+    name: "Little Romania",
+    neighborhood: "Sunnyside, Queens",
+    description:
+      "Sunnyside's Romanian corridor — sarmale, mici, and live music at spots like Romanian Garden and Danubius along 41st Street and 43rd Avenue.",
+    heroEmoji: "🇷🇴",
+    lat: 40.7445,
+    lng: -73.9205,
+    delta: 0.014,
+  },
+  {
     id: "little-senegal",
     name: "Little Senegal",
     neighborhood: "Harlem, Manhattan",
