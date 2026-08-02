@@ -27,6 +27,7 @@
     "communities:resync-nyc": "tsx scripts/resync-nyc.ts",
     "communities:daily-wiki-yelp": "tsx scripts/daily-wiki-yelp-sync.ts",
     "communities:cleanup-wiki": "tsx scripts/cleanup-wiki-communities.ts",
+    "communities:dedupe-wiki": "tsx scripts/dedupe-near-duplicate-communities.ts",
     "communities:add-ct": "tsx scripts/add-connecticut-communities.ts",
     "communities:add-florida": "tsx scripts/add-florida-communities.ts",
     "communities:add-minnesota": "tsx scripts/add-minnesota-communities.ts",

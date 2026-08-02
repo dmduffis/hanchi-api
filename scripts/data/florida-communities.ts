@@ -222,8 +222,8 @@ export const FLORIDA_COMMUNITIES = [
     delta: 0.016,
   },
   {
-    id: "tarpon-springs-greek",
-    name: "Tarpon Springs",
+    id: "greektown-tarpon-springs-florida",
+    name: "Greektown in Tarpon Springs",
     neighborhood: "Tarpon Springs, Florida",
     city: "Tampa",
     description:

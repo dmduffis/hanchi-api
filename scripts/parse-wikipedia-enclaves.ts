@@ -653,8 +653,19 @@ const ETHNICITY_META: Record<
   },
 };
 
-/** Prefer existing Hanchi community ids when Wikipedia names match. */
+/**
+ * Collapse Wikipedia slug variants onto one canonical wiki id.
+ * Prefer the Wikipedia row — do not fold into old curated short ids.
+ */
 const ID_ALIASES: Record<string, string> = {
+  // Astoria appears under multiple ethnicity sections with different city strings.
+  // Keep one geo id; product name is Little Egypt (see seed / DB override).
+  "astoria-queens-new-york-city": "astoria-queens-new-york",
+  "astoria-queens-new-york-city-new-york": "astoria-queens-new-york",
+  // DC Chinatown / Little Ethiopia slug variants
+  "chinatown-washington-dc": "chinatown-washington-d-c",
+  "little-ethiopia-washington-d-c": "little-ethiopia-shaw-washington-d-c",
+  // Keep stable short wiki aliases already in production
   "chinatown-manhattan-new-york-city-new-york": "chinatown-manhattan",
   "chinatown-flushing-queens-new-york-city-new-york": "chinatown-flushing",
   "chinatown-sunset-park-brooklyn-new-york-city-new-york":
@@ -663,13 +674,15 @@ const ID_ALIASES: Record<string, string> = {
   "little-ethiopia-los-angeles-california": "little-ethiopia-la",
   "little-tokyo-los-angeles-california": "little-tokyo-la",
   "thai-town-los-angeles-california": "thai-town-la",
-  "little-saigon-westminster-california": "little-saigon-westminster",
   "little-india-hicksville-new-york": "little-india-hicksville",
   "little-senegal-new-york-city-new-york": "little-senegal",
   "little-africa-the-bronx-new-york-city-new-york": "little-africa-bronx",
   "little-africa-staten-island-new-york-city-new-york": "little-africa-si",
   "japantown-san-francisco-california": "japantown-sf",
   "chinatown-san-francisco-california": "chinatown-sf",
+  // Little Saigon OC: prefer the broader Orange County wiki row
+  "little-saigon-westminster-california":
+    "little-saigon-orange-county-california",
 };
 
 function slugify(input: string): string {
@@ -734,16 +747,10 @@ function detectCountry(place: string): "US" | "CA" | null {
 
 function looksNamedEnclave(place: string): boolean {
   const p = place.toLowerCase();
-  if (
-    /\b(chinatown|koreatown|japantown|little |cambodia town|thai town|filipinotown|greektown|germantown|india square|bangla|tehrangeles|olvera|calle |pilsen|mexicantown|banglatown|little saigon|corktown|frogtown|historic filipinotown|poletown|greektown)\b/i.test(
-      p,
-    )
-  ) {
-    return true;
-  }
-  const commas = place.split(",").map((s) => s.trim()).filter(Boolean);
-  if (commas.length >= 2) return true;
-  return false;
+  // Commas alone do NOT make a named enclave ("Astoria, Queens, New York").
+  return /\b(chinatown|koreatown|japantown|little |cambodia town|thai town|filipinotown|greektown|germantown|india square|bangla|tehrangeles|olvera|calle |pilsen|mexicantown|banglatown|little saigon|corktown|frogtown|historic filipinotown|poletown)\b/i.test(
+    p,
+  );
 }
 
 function isVagueMetroOnly(place: string): boolean {
