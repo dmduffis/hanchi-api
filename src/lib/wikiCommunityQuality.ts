@@ -6,6 +6,11 @@
 const JUNK =
   /citation needed|etimated|\bestimated\b|\\-|see also|distribution of|united states, united states|canada, canada|\bmuch of\b|other parts of|and other areas|has the largest|especially in|formerly known|facing quebec|_citation|000 yemenis|"|\bin\s+in\b|growing mexican|colombian and ecuadorean/i;
 
+/** Wiki rows superseded by curated enclaves — never re-import. */
+const SUPERSEDED_WIKI_IDS = new Set([
+  "greenpoint-new-york-city", // → little-poland (Greenpoint, Brooklyn)
+]);
+
 /**
  * Auto-generated wiki import blurbs that just restate the title:
  * "Excelsior District in San Francisco — a yemen cultural community in …"
@@ -88,6 +93,7 @@ export function isJunkWikiCommunity(c: {
   neighborhood?: string;
   city?: string;
 }): boolean {
+  if (SUPERSEDED_WIKI_IDS.has(c.id)) return true;
   if (c.id.length > 70 && !isBrandedEnclaveName(c.name)) return true;
   // Redundant "...-new-york-city-new-york" slugs — keep branded Little/Chinatown rows.
   if (

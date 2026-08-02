@@ -75,6 +75,10 @@ const CATEGORY_ETHNICITY_RULES: { match: RegExp; id: string }[] = [
   { match: /\bturkish\b/i, id: "turkish" },
   { match: /\biranian\b|persian\b/i, id: "iranian" },
   { match: /\bisraeli\b/i, id: "israeli" },
+  {
+    match: /\bjewish\b|\bkosher\b|\bhasidic\b|\bglatt\b|\bsatmar\b/i,
+    id: "jewish",
+  },
   // Many Chaldean/Iraqi spots are Yelp-tagged "Mediterranean", not Iraqi.
   { match: /\bmiddle.?eastern|mediterranean|arab\b/i, id: "middle_eastern" },
   {
