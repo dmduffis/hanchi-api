@@ -55,6 +55,9 @@ const MERGES: Record<string, string> = {
   "little-saigon-westminster": "little-saigon-orange-county-california",
   "tarpon-springs-greek": "greektown-tarpon-springs-florida",
   "scarborough-toronto-ontario": "scarborough-toronto",
+  // Street-level wiki fragment → Jackson Heights Little Bangladesh
+  "bangladesh-street-jackson-heights-queens-new-york-city-new-york":
+    "little-bangladesh",
 };
 
 function squarePolygonWkt(lat: number, lng: number, delta: number): string {

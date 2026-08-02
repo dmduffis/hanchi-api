@@ -6,6 +6,38 @@ import {
   mapCommunitySummary,
   mapPoi,
 } from "../lib/geo";
+import { isBrandedEnclaveName } from "../lib/wikiCommunityQuality";
+
+/** Strip " in {City…}" so metro queries don't over-match wiki titles. */
+function nameCore(name: string): string {
+  return name.replace(/\s+in\s+.+$/i, "").trim();
+}
+
+function scoreCommunityMatch(
+  c: { name: string; neighborhood: string; city: string; description: string },
+  needle: string,
+): number | null {
+  const name = c.name.toLowerCase();
+  const core = nameCore(c.name).toLowerCase();
+  const neighborhood = c.neighborhood.toLowerCase();
+  const city = c.city.toLowerCase();
+  const description = c.description.toLowerCase();
+  const branded = isBrandedEnclaveName(c.name);
+
+  if (name === needle || core === needle) return 1000;
+  if (core.startsWith(needle) || name.startsWith(needle)) return 850;
+  // Match on the enclave label itself ("Little Bangladesh"), not only
+  // the trailing " in New York City" that every NYC wiki row carries.
+  if (core.includes(needle)) return branded ? 780 : 700;
+  if (name.includes(needle) && !core.includes(needle)) {
+    // "Bangladesh Street in New York City" for q=new york → demote hard.
+    return branded ? 360 : 60;
+  }
+  if (neighborhood.includes(needle)) return branded ? 520 : 480;
+  if (city.includes(needle)) return branded ? 420 : 200;
+  if (description.includes(needle)) return branded ? 140 : 40;
+  return null;
+}
 
 export async function searchHandler(
   req: Request,
@@ -57,22 +89,15 @@ export async function searchHandler(
 
     const communities = allCommunities
       .map((c) => {
-        const name = c.name.toLowerCase();
-        const neighborhood = c.neighborhood.toLowerCase();
-        const city = c.city.toLowerCase();
-        const description = c.description.toLowerCase();
-        let score = 0;
-        if (name === needle) score = 1000;
-        else if (name.startsWith(needle)) score = 850;
-        else if (name.includes(needle)) score = 700;
-        else if (neighborhood.includes(needle)) score = 500;
-        else if (city.includes(needle)) score = 300;
-        else if (description.includes(needle)) score = 100;
-        else return null;
+        const score = scoreCommunityMatch(c, needle);
+        if (score == null || score < 100) return null;
         return { row: c, score };
       })
-      .filter((x): x is { row: (typeof allCommunities)[number]; score: number } => x != null)
-      .sort((a, b) => b.score - a.score)
+      .filter(
+        (x): x is { row: (typeof allCommunities)[number]; score: number } =>
+          x != null,
+      )
+      .sort((a, b) => b.score - a.score || a.row.name.localeCompare(b.row.name))
       .slice(0, 20)
       .map(({ row }) => mapCommunitySummary(row));
 

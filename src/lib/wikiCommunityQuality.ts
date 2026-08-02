@@ -6,6 +6,29 @@
 const JUNK =
   /citation needed|etimated|\bestimated\b|\\-|see also|distribution of|united states, united states|canada, canada|\bmuch of\b|other parts of|and other areas|has the largest|especially in|formerly known|facing quebec|_citation|000 yemenis|"|\bin\s+in\b|growing mexican|colombian and ecuadorean/i;
 
+/** Chinatown / Little X / Koreatown — real enclave brands. */
+export function isBrandedEnclaveName(name: string): boolean {
+  return /\b(little\s|chinatown|koreatown|japantown|greektown|banglatown|thai town|filipinotown|india square|mexicantown|tehrangeles|poletown|corktown)\b/i.test(
+    name,
+  );
+}
+
+/**
+ * Weak wiki titles that aren't enclave brands:
+ * "Bangladesh Street in New York City", "Pelham Parkway in New York City".
+ */
+export function isWeakPlaceInCityName(name: string): boolean {
+  if (isBrandedEnclaveName(name)) return false;
+  const m = name.match(/^(.+?)\s+in\s+(.+)$/i);
+  if (!m) return false;
+  const left = m[1].trim();
+  // Street-level fragments imported as if they were enclaves.
+  if (/\b(street|boulevard|parkway|avenue|road|hwy|highway)\b/i.test(left)) {
+    return true;
+  }
+  return false;
+}
+
 /** "Anaheim in Anaheim" / repeated neighborhood,city pairs. */
 export function isXinXName(name: string, neighborhood = ""): boolean {
   const m = name.match(/^(.+?)\s+in\s+(.+)$/i);
@@ -51,9 +74,17 @@ export function isJunkWikiCommunity(c: {
   neighborhood?: string;
   city?: string;
 }): boolean {
-  if (c.id.length > 70) return true;
+  if (c.id.length > 70 && !isBrandedEnclaveName(c.name)) return true;
+  // Redundant "...-new-york-city-new-york" slugs — keep branded Little/Chinatown rows.
+  if (
+    /-new-york-city-new-york$/i.test(c.id) &&
+    !isBrandedEnclaveName(c.name)
+  ) {
+    return true;
+  }
   if (isXinXName(c.name, c.neighborhood ?? "")) return true;
   if (isGenericMetroBlob(c.name)) return true;
+  if (isWeakPlaceInCityName(c.name)) return true;
   if (JUNK.test(c.name) || JUNK.test(c.id)) return true;
   if (c.neighborhood && JUNK.test(c.neighborhood)) return true;
   if (c.city && JUNK.test(c.city)) return true;
