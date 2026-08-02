@@ -1002,11 +1002,11 @@
     "source": "centroid"
   },
   "little-ethiopia-alexandria-virginia": {
-    "lat": 38.8048,
-    "lng": -77.0469,
-    "displayName": "Alexandria, Virginia",
-    "at": "2026-07-29T16:40:52.921Z",
-    "source": "centroid"
+    "lat": 38.81,
+    "lng": -77.13,
+    "displayName": "Van Dorn & Southern Towers, Alexandria, Virginia",
+    "at": "2026-08-02T06:45:00.000Z",
+    "source": "manual"
   },
   "little-ethiopia-la": {
     "lat": 34.0522,

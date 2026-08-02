@@ -3982,7 +3982,7 @@
     {
       "id": "little-ethiopia-alexandria-virginia",
       "name": "Little Ethiopia in Alexandria",
-      "neighborhood": "Little Ethiopia, Alexandria",
+      "neighborhood": "Van Dorn & Southern Towers, Alexandria",
       "city": "Alexandria, Virginia",
       "country": "US",
       "ethnicitySection": "ethiopia",
@@ -3999,11 +3999,11 @@
         "ethiopian"
       ],
       "raw": "Little Ethiopia, Alexandria, Virginia",
-      "geocodeQuery": "Little Ethiopia, Alexandria, VA, USA",
-      "description": "Little Ethiopia in Alexandria — a ethiopia cultural community in Alexandria, Virginia.",
-      "lat": 38.8048,
-      "lng": -77.0469,
-      "delta": 0.012
+      "geocodeQuery": "Van Dorn Street, Alexandria, VA, USA",
+      "description": "West Alexandria's Ethiopian corridor near Van Dorn and Southern Towers — injera, tibs, and markets shared with the wider DMV diaspora.",
+      "lat": 38.81,
+      "lng": -77.13,
+      "delta": 0.022
     },
     {
       "id": "little-ethiopia-la",

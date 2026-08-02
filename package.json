@@ -32,6 +32,7 @@
     "communities:rebuild-sunnyside-romania": "tsx scripts/rebuild-sunnyside-romania.ts",
     "communities:rebuild-excelsior-sf": "tsx scripts/rebuild-excelsior-sf.ts",
     "communities:rebuild-little-albania": "tsx scripts/rebuild-little-albania.ts",
+    "communities:rebuild-little-ethiopia-alexandria": "tsx scripts/rebuild-little-ethiopia-alexandria.ts",
     "communities:clear-boilerplate-descriptions": "tsx scripts/clear-boilerplate-descriptions.ts",
     "communities:add-ct": "tsx scripts/add-connecticut-communities.ts",
     "communities:add-florida": "tsx scripts/add-florida-communities.ts",
