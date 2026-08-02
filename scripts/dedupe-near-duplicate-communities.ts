@@ -62,6 +62,9 @@ const MERGES: Record<string, string> = {
   "hicksville-new-york": "little-india-hicksville",
   // Wiki "Greenpoint" is the same Polish corridor as curated Little Poland
   "greenpoint-new-york-city": "little-poland",
+  // Wiki "Richmond Hill" (India section) overlaps curated Little Guyana; do not
+  // auto-merge POIs — Manhattan Indian orphans must be cleared first.
+  "richmond-hill-queens-new-york-city": "little-guyana-queens",
 };
 
 function squarePolygonWkt(lat: number, lng: number, delta: number): string {

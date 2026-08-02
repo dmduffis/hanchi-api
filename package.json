@@ -36,6 +36,7 @@
     "communities:fix-little-egypt-astoria": "tsx scripts/fix-little-egypt-astoria.ts",
     "communities:rebuild-kiryas-joel": "tsx scripts/rebuild-kiryas-joel.ts",
     "communities:merge-greenpoint-little-poland": "tsx scripts/merge-greenpoint-into-little-poland.ts",
+    "communities:remove-richmond-hill-wiki-dupe": "tsx scripts/remove-richmond-hill-wiki-dupe.ts",
     "communities:clear-boilerplate-descriptions": "tsx scripts/clear-boilerplate-descriptions.ts",
     "communities:add-ct": "tsx scripts/add-connecticut-communities.ts",
     "communities:add-florida": "tsx scripts/add-florida-communities.ts",
