@@ -50,7 +50,7 @@ async function main() {
       city: "Orange County, New York",
       description:
         "Satmar Hasidic Kiryas Joel in Orange County — a tightly knit Yiddish-speaking village near Monroe with kosher bakeries, pizza, and groceries.",
-      heroEmoji: "✡️",
+      heroEmoji: "",
     },
   });
   console.log("updated metadata", ID);
