@@ -1,6 +1,6 @@
-# Sinta API
+# Hanchi API
 
-Standalone Node.js + TypeScript backend for **Sinta** — a cultural-discovery app for exploring ethnic enclaves, earning passport stamps, and journaling finds.
+Standalone Node.js + TypeScript backend for **Hanchi** — a cultural-discovery app for exploring ethnic enclaves, earning passport stamps, and journaling finds.
 
 ## Stack
 
@@ -21,7 +21,7 @@ Recommended split:
 
 ### 1. Supabase database
 
-1. Create a project at [supabase.com/dashboard](https://supabase.com/dashboard) (name it e.g. `sinta`).
+1. Create a project at [supabase.com/dashboard](https://supabase.com/dashboard) (name it e.g. `hanchi`).
 2. Open **SQL Editor** and run:
 
 ```sql
@@ -68,16 +68,16 @@ Do **not** set `DEV_DEFAULT_USER_ID` on Railway.
 # macOS (Homebrew)
 brew install postgresql@16 postgis
 brew services start postgresql@16
-createdb sinta
-psql sinta -c "CREATE EXTENSION IF NOT EXISTS postgis;"
+createdb hanchi
+psql hanchi -c "CREATE EXTENSION IF NOT EXISTS postgis;"
 ```
 
 Or with Docker:
 
 ```bash
-docker run --name sinta-postgres \
+docker run --name hanchi-postgres \
   -e POSTGRES_PASSWORD=postgres \
-  -e POSTGRES_DB=sinta \
+  -e POSTGRES_DB=hanchi \
   -p 5432:5432 \
   -d postgis/postgis:16-3.4
 ```
@@ -161,7 +161,7 @@ curl -H "x-user-id: seed-user-1" http://localhost:3000/users/seed-user-1/stamps
 
 ## Seed data
 
-`prisma/seed.ts` loads **30 NYC enclaves** aligned with the mobile mock data (Mayor's Office immigrant enclaves map), plus a few curated POIs/dishes/routes. Demo user: `seed-user-1` / `explorer@sinta.app`.
+`prisma/seed.ts` loads **30 NYC enclaves** aligned with the mobile mock data (Mayor's Office immigrant enclaves map), plus a few curated POIs/dishes/routes. Demo user: `seed-user-1` / `explorer@hanchi.app`.
 
 After seeding, run `npm run yelp:sync` (or `POST /admin/sync/yelp`) to fill restaurants from Yelp.
 

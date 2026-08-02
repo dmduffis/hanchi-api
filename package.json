@@ -1,8 +1,8 @@
 {
-  "name": "sinta-api",
+  "name": "hanchi-api",
   "version": "0.1.0",
   "private": true,
-  "description": "Sinta cultural-discovery API — communities, stamps, journal, and routes",
+  "description": "Hanchi cultural-discovery API — communities, stamps, journal, and routes",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",

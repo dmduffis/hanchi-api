@@ -38,7 +38,7 @@ type GeoCache = Record<
   | { error: string; at: string }
 >;
 
-const USER_AGENT = "SintaEnclaveImporter/1.0 (cultural discovery app)";
+const USER_AGENT = "HanchiEnclaveImporter/1.0 (cultural discovery app)";
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));

@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/health", (_req, res) => {
-  res.json({ ok: true, service: "sinta-api" });
+  res.json({ ok: true, service: "hanchi-api" });
 });
 
 app.use("/communities", communitiesRouter);
@@ -36,5 +36,5 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 app.listen(port, "0.0.0.0", () => {
-  console.log(`sinta-api listening on http://0.0.0.0:${port}`);
+  console.log(`hanchi-api listening on http://0.0.0.0:${port}`);
 });
