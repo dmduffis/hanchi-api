@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { createJournalHandler } from "../controllers/journalController";
-import { stubAuth } from "../middleware/auth";
+import { requireAuth } from "../middleware/auth";
 
 export const journalRouter = Router();
 
-journalRouter.post("/", stubAuth, createJournalHandler);
+journalRouter.post("/", requireAuth, createJournalHandler);

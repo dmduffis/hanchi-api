@@ -16,19 +16,11 @@ export async function createStampHandler(
       return;
     }
 
-    const userId = (
-      body.userId?.trim() || (req as AuthenticatedRequest).userId
-    ).trim();
+    const userId = (req as AuthenticatedRequest).userId;
 
-    const [user, community] = await Promise.all([
-      prisma.user.findUnique({ where: { id: userId } }),
-      prisma.community.findUnique({ where: { id: communityId } }),
-    ]);
-
-    if (!user) {
-      res.status(404).json({ error: "User not found" });
-      return;
-    }
+    const community = await prisma.community.findUnique({
+      where: { id: communityId },
+    });
     if (!community) {
       res.status(404).json({ error: "Community not found" });
       return;
@@ -83,9 +75,7 @@ export async function deleteStampHandler(
       return;
     }
 
-    const userId = (
-      body.userId?.trim() || (req as AuthenticatedRequest).userId
-    ).trim();
+    const userId = (req as AuthenticatedRequest).userId;
 
     await prisma.stamp.deleteMany({
       where: { userId, communityId },
@@ -111,9 +101,7 @@ export async function toggleStampHandler(
       return;
     }
 
-    const userId = (
-      body.userId?.trim() || (req as AuthenticatedRequest).userId
-    ).trim();
+    const userId = (req as AuthenticatedRequest).userId;
 
     const existing = await prisma.stamp.findUnique({
       where: { userId_communityId: { userId, communityId } },
@@ -125,15 +113,9 @@ export async function toggleStampHandler(
       return;
     }
 
-    const [user, community] = await Promise.all([
-      prisma.user.findUnique({ where: { id: userId } }),
-      prisma.community.findUnique({ where: { id: communityId } }),
-    ]);
-
-    if (!user) {
-      res.status(404).json({ error: "User not found" });
-      return;
-    }
+    const community = await prisma.community.findUnique({
+      where: { id: communityId },
+    });
     if (!community) {
       res.status(404).json({ error: "Community not found" });
       return;
@@ -176,6 +158,11 @@ export async function listUserStampsHandler(
 ): Promise<void> {
   try {
     const { id } = req.params;
+    const authedId = (req as AuthenticatedRequest).userId;
+    if (id !== authedId) {
+      res.status(403).json({ error: "Forbidden" });
+      return;
+    }
     const stamps = await prisma.stamp.findMany({
       where: { userId: id },
       include: {

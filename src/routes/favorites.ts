@@ -4,10 +4,10 @@ import {
   deleteFavoriteHandler,
   toggleFavoriteHandler,
 } from "../controllers/favoritesController";
-import { stubAuth } from "../middleware/auth";
+import { requireAuth } from "../middleware/auth";
 
 export const favoritesRouter = Router();
 
-favoritesRouter.post("/", stubAuth, createFavoriteHandler);
-favoritesRouter.post("/toggle", stubAuth, toggleFavoriteHandler);
-favoritesRouter.delete("/", stubAuth, deleteFavoriteHandler);
+favoritesRouter.post("/", requireAuth, createFavoriteHandler);
+favoritesRouter.post("/toggle", requireAuth, toggleFavoriteHandler);
+favoritesRouter.delete("/", requireAuth, deleteFavoriteHandler);
