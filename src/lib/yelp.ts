@@ -36,6 +36,32 @@ function getYelpApiKey(): string {
   return key;
 }
 
+export class YelpRateLimitError extends Error {
+  readonly status = 429;
+  readonly remaining: number | null;
+  readonly resetTime: string | null;
+
+  constructor(message: string, remaining: number | null, resetTime: string | null) {
+    super(message);
+    this.name = "YelpRateLimitError";
+    this.remaining = remaining;
+    this.resetTime = resetTime;
+  }
+}
+
+export type YelpSearchResult = {
+  businesses: YelpBusiness[];
+  dailyRemaining: number | null;
+  dailyLimit: number | null;
+};
+
+function parseHeaderInt(response: Response, name: string): number | null {
+  const raw = response.headers.get(name);
+  if (raw == null || raw === "") return null;
+  const n = Number(raw);
+  return Number.isFinite(n) ? n : null;
+}
+
 export async function searchYelpBusinesses(params: {
   latitude: number;
   longitude: number;
@@ -45,6 +71,19 @@ export async function searchYelpBusinesses(params: {
   limit?: number;
   offset?: number;
 }): Promise<YelpBusiness[]> {
+  const { businesses } = await searchYelpBusinessesDetailed(params);
+  return businesses;
+}
+
+export async function searchYelpBusinessesDetailed(params: {
+  latitude: number;
+  longitude: number;
+  radiusMeters?: number;
+  term?: string;
+  categories?: string;
+  limit?: number;
+  offset?: number;
+}): Promise<YelpSearchResult> {
   const url = new URL("https://api.yelp.com/v3/businesses/search");
   url.searchParams.set("latitude", String(params.latitude));
   url.searchParams.set("longitude", String(params.longitude));
@@ -67,13 +106,30 @@ export async function searchYelpBusinesses(params: {
     },
   });
 
+  const dailyRemaining = parseHeaderInt(response, "RateLimit-Remaining");
+  const dailyLimit = parseHeaderInt(response, "RateLimit-DailyLimit");
+  const resetTime = response.headers.get("RateLimit-ResetTime");
+
+  if (response.status === 429) {
+    const body = await response.text();
+    throw new YelpRateLimitError(
+      `Yelp daily rate limit hit: ${body}`,
+      dailyRemaining,
+      resetTime,
+    );
+  }
+
   if (!response.ok) {
     const body = await response.text();
     throw new Error(`Yelp search failed (${response.status}): ${body}`);
   }
 
   const data = (await response.json()) as YelpSearchResponse;
-  return data.businesses ?? [];
+  return {
+    businesses: data.businesses ?? [],
+    dailyRemaining,
+    dailyLimit,
+  };
 }
 
 export function formatYelpAddress(business: YelpBusiness): string | null {

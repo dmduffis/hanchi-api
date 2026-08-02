@@ -5,6 +5,7 @@ import { CONNECTICUT_COMMUNITIES } from "../scripts/data/connecticut-communities
 import { FIVE_METRO_COMMUNITIES } from "../scripts/data/five-metros-communities";
 import { FLORIDA_COMMUNITIES } from "../scripts/data/florida-communities";
 import { MINNESOTA_COMMUNITIES } from "../scripts/data/minnesota-communities";
+import { effectiveDelta } from "../src/lib/communityBounds";
 
 const connectionString = process.env.DATABASE_URL;
 if (!connectionString) {
@@ -449,7 +450,19 @@ const COMMUNITIES: {
     heroEmoji: "🇱🇧",
     lat: 42.3223,
     lng: -83.1763,
-    delta: 0.025,
+    delta: 0.036,
+  },
+  {
+    id: "yemeni-south-end-dearborn",
+    name: "Yemeni South End in Dearborn",
+    neighborhood: "Salina / South End & Schaefer",
+    city: "Metro Detroit",
+    description:
+      "Metro Detroit's historic Yemeni community — South End roots around Salina since the Rouge Plant era, plus mandi houses, sabaya bakeries, and coffee chains along Schaefer and Michigan Avenue into Dearborn Heights.",
+    heroEmoji: "🇾🇪",
+    lat: 42.308,
+    lng: -83.158,
+    delta: 0.028,
   },
   {
     id: "little-baghdad-sterling-heights",
@@ -461,7 +474,7 @@ const COMMUNITIES: {
     heroEmoji: "🇮🇶",
     lat: 42.5806,
     lng: -83.0675,
-    delta: 0.028,
+    delta: 0.04,
   },
   {
     id: "banglatown-hamtramck",
@@ -473,7 +486,7 @@ const COMMUNITIES: {
     heroEmoji: "🇧🇩",
     lat: 42.3978,
     lng: -83.057,
-    delta: 0.02,
+    delta: 0.036,
   },
   {
     id: "mexicantown-detroit",
@@ -485,7 +498,7 @@ const COMMUNITIES: {
     heroEmoji: "🇲🇽",
     lat: 42.3185,
     lng: -83.0865,
-    delta: 0.02,
+    delta: 0.032,
   },
   // —— Greater Los Angeles / Orange County ——
   {
@@ -756,7 +769,7 @@ async function main() {
         heroEmoji: c.heroEmoji,
       },
     });
-    await setCommunityBoundary(c.id, c.lat, c.lng, c.delta ?? 0.008);
+    await setCommunityBoundary(c.id, c.lat, c.lng, effectiveDelta(c.delta ?? 0.008));
   }
 
   // —— Curated starter POIs / dishes (Yelp sync fills the rest) ——

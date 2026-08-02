@@ -6,6 +6,10 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import {
+  DEFAULT_COMMUNITY_SYNC_RADIUS_M,
+  effectiveDelta,
+} from "../src/lib/communityBounds";
 import { syncYelpForCommunity } from "../src/lib/yelpSync";
 
 const connectionString = process.env.DATABASE_URL;
@@ -35,6 +39,20 @@ const COMMUNITIES = [
     heroEmoji: "🇱🇧",
     lat: 42.3223,
     lng: -83.1763,
+    delta: 0.036,
+  },
+  {
+    id: "yemeni-south-end-dearborn",
+    name: "Yemeni South End in Dearborn",
+    neighborhood: "Salina / South End & Schaefer",
+    city: "Metro Detroit",
+    description:
+      "Metro Detroit's historic Yemeni community — South End roots around Salina since the Rouge Plant era, plus mandi houses, sabaya bakeries, and coffee chains along Schaefer and Michigan Avenue into Dearborn Heights.",
+    heroEmoji: "🇾🇪",
+    // South End (Salina) + Schaefer / Michigan Ave food corridor; keep north
+    // edge below the densest Warren Ave Lebanese strip.
+    lat: 42.308,
+    lng: -83.158,
     delta: 0.028,
   },
   {
@@ -47,7 +65,7 @@ const COMMUNITIES = [
     heroEmoji: "🇮🇶",
     lat: 42.5806,
     lng: -83.0675,
-    delta: 0.03,
+    delta: 0.04,
   },
   {
     id: "banglatown-hamtramck",
@@ -59,7 +77,7 @@ const COMMUNITIES = [
     heroEmoji: "🇧🇩",
     lat: 42.3978,
     lng: -83.057,
-    delta: 0.022,
+    delta: 0.036,
   },
   {
     id: "mexicantown-detroit",
@@ -71,7 +89,7 @@ const COMMUNITIES = [
     heroEmoji: "🇲🇽",
     lat: 42.3185,
     lng: -83.0865,
-    delta: 0.022,
+    delta: 0.032,
   },
 ] as const;
 
@@ -108,16 +126,22 @@ async function main() {
 
     await prisma.$executeRawUnsafe(
       `UPDATE "Community" SET boundary = ST_SetSRID(ST_GeomFromText($1), 4326) WHERE id = $2`,
-      squarePolygonWkt(c.lat, c.lng, c.delta),
+      squarePolygonWkt(c.lat, c.lng, effectiveDelta(c.delta)),
       c.id,
     );
     console.log(`  ✓ ${c.id}`);
   }
 
   console.log("\nSyncing Yelp for Metro Detroit enclaves…");
-  for (const c of COMMUNITIES) {
+  // Sync Little Yemen after Little Arabia so Yemeni spots can reclaim.
+  const syncOrder = [...COMMUNITIES].sort((a, b) => {
+    if (a.id === "yemeni-south-end-dearborn") return 1;
+    if (b.id === "yemeni-south-end-dearborn") return -1;
+    return 0;
+  });
+  for (const c of syncOrder) {
     const result = await syncYelpForCommunity(c.id, {
-      radiusMeters: 2800,
+      radiusMeters: DEFAULT_COMMUNITY_SYNC_RADIUS_M,
       limit: 50,
     });
     console.log(

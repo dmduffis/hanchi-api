@@ -10,6 +10,7 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import { DEFAULT_COMMUNITY_SYNC_RADIUS_M } from "../src/lib/communityBounds";
 import { syncYelpForCommunity } from "../src/lib/yelpSync";
 
 const connectionString = process.env.DATABASE_URL;
@@ -77,7 +78,7 @@ async function main() {
   for (const c of batch) {
     try {
       const result = await syncYelpForCommunity(c.id, {
-        radiusMeters: 2800,
+        radiusMeters: DEFAULT_COMMUNITY_SYNC_RADIUS_M,
         limit: 40,
       });
       console.log(

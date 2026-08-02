@@ -1,8 +1,8 @@
 /**
- * Wipe Yelp-synced POIs (keep curated seed places), reset community
- * boundaries from seed coords, then re-sync every enclave.
+ * Reset NYC enclave boundaries with effectiveDelta and re-sync Yelp
+ * (additive — does not wipe existing POIs).
  *
- * Usage: npx tsx scripts/resync-yelp-all.ts
+ * Usage: npx tsx scripts/resync-nyc.ts
  */
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
@@ -11,7 +11,6 @@ import {
   DEFAULT_COMMUNITY_SYNC_RADIUS_M,
   effectiveDelta,
 } from "../src/lib/communityBounds";
-import { ethnicitiesFromText } from "../src/lib/ethnicities";
 import { syncYelpForCommunity } from "../src/lib/yelpSync";
 
 const prisma = new PrismaClient({
@@ -21,15 +20,7 @@ const prisma = new PrismaClient({
   }),
 });
 
-type Enclave = {
-  id: string;
-  lat: number;
-  lng: number;
-  delta: number;
-};
-
-/** Generous corridors so targeted Yelp searches have room to land. */
-const ENCLAVES: Enclave[] = [
+const ENCLAVES = [
   { id: "chinatown-flushing", lat: 40.759, lng: -73.83, delta: 0.014 },
   { id: "chinatown-manhattan", lat: 40.7155, lng: -73.997, delta: 0.01 },
   { id: "chinatown-sunset-park", lat: 40.641, lng: -74.009, delta: 0.012 },
@@ -60,42 +51,7 @@ const ENCLAVES: Enclave[] = [
   { id: "little-senegal", lat: 40.8029, lng: -73.9531, delta: 0.014 },
   { id: "little-ukraine", lat: 40.728, lng: -73.987, delta: 0.01 },
   { id: "little-yemen", lat: 40.857, lng: -73.868, delta: 0.018 },
-  { id: "little-india-hicksville", lat: 40.7681, lng: -73.5251, delta: 0.022 },
-  { id: "little-portugal-mineola", lat: 40.7493, lng: -73.6407, delta: 0.018 },
-  {
-    id: "little-el-salvador-brentwood",
-    lat: 40.785,
-    lng: -73.224,
-    delta: 0.03,
-  },
-  { id: "koreatown-nassau", lat: 40.7635, lng: -73.705, delta: 0.028 },
-  { id: "little-arabia-dearborn", lat: 42.3223, lng: -83.1763, delta: 0.036 },
-  {
-    id: "yemeni-south-end-dearborn",
-    lat: 42.308,
-    lng: -83.158,
-    delta: 0.028,
-  },
-  {
-    id: "little-baghdad-sterling-heights",
-    lat: 42.5806,
-    lng: -83.0675,
-    delta: 0.04,
-  },
-  { id: "banglatown-hamtramck", lat: 42.3978, lng: -83.057, delta: 0.036 },
-  { id: "mexicantown-detroit", lat: 42.3185, lng: -83.0865, delta: 0.032 },
-  { id: "koreatown-la", lat: 34.061, lng: -118.302, delta: 0.022 },
-  { id: "thai-town-la", lat: 34.1015, lng: -118.305, delta: 0.014 },
-  { id: "little-tokyo-la", lat: 34.0501, lng: -118.2405, delta: 0.012 },
-  { id: "little-ethiopia-la", lat: 34.0545, lng: -118.366, delta: 0.012 },
-  { id: "little-arabia-anaheim", lat: 33.8345, lng: -117.9555, delta: 0.022 },
-  {
-    id: "little-saigon-westminster",
-    lat: 33.745,
-    lng: -117.954,
-    delta: 0.028,
-  },
-];
+] as const;
 
 function square(lat: number, lng: number, delta: number): string {
   const minLng = lng - delta;
@@ -106,69 +62,32 @@ function square(lat: number, lng: number, delta: number): string {
 }
 
 async function main() {
-  console.log("1) Deleting Yelp-synced POIs (keeping curated seed places)…");
-  const deleted = await prisma.poi.deleteMany({
-    where: { yelpId: { not: null } },
-  });
-  console.log(`   removed ${deleted.count}`);
-
-  console.log("2) Resetting community boundaries…");
+  console.log(`Updating ${ENCLAVES.length} NYC boundaries…`);
   for (const e of ENCLAVES) {
     await prisma.$executeRawUnsafe(
       `UPDATE "Community" SET boundary = ST_SetSRID(ST_GeomFromText($1), 4326) WHERE id = $2`,
       square(e.lat, e.lng, effectiveDelta(e.delta)),
       e.id,
     );
+    console.log(`  ✓ ${e.id}`);
   }
-  console.log(`   updated ${ENCLAVES.length} boundaries`);
 
-  console.log("3) Syncing all enclaves from Yelp…");
-  // Sync ethnicity-specific corridors before denser neighbors when possible
-  const order = [...ENCLAVES].sort((a, b) => a.id.localeCompare(b.id));
-  for (const e of order) {
+  console.log(
+    `\nSyncing Yelp (radius ${DEFAULT_COMMUNITY_SYNC_RADIUS_M}m)…`,
+  );
+  for (const e of ENCLAVES) {
+    const before = await prisma.poi.count({ where: { communityId: e.id } });
     const result = await syncYelpForCommunity(e.id, {
       radiusMeters: DEFAULT_COMMUNITY_SYNC_RADIUS_M,
       limit: 50,
     });
+    const after = await prisma.poi.count({ where: { communityId: e.id } });
     console.log(
-      `   ${result.communityId}: fetched=${result.fetched} upserted=${result.upserted} skipped=${result.skipped}`,
+      `  ${e.id}: before=${before} after=${after} fetched=${result.fetched} upserted=${result.upserted} skipped=${result.skipped}`,
     );
-    await new Promise((r) => setTimeout(r, 400));
+    await new Promise((r) => setTimeout(r, 350));
   }
-
-  console.log("4) Backfilling ethnicities from name/category…");
-  const pois = await prisma.poi.findMany({
-    select: { id: true, name: true, category: true, ethnicities: true },
-  });
-  let updated = 0;
-  for (const poi of pois) {
-    const inferred = ethnicitiesFromText(`${poi.name} ${poi.category}`);
-    if (!inferred.length) continue;
-    const same =
-      inferred.length === poi.ethnicities.length &&
-      inferred.every((v, i) => v === poi.ethnicities[i]);
-    if (same) continue;
-    await prisma.poi.update({
-      where: { id: poi.id },
-      data: { ethnicities: inferred },
-    });
-    updated += 1;
-  }
-  console.log(`   updated ${updated}`);
-
-  const counts = await prisma.poi.groupBy({
-    by: ["communityId"],
-    _count: { _all: true },
-  });
-  console.log("\nPOI counts:");
-  for (const row of counts.sort(
-    (a, b) => a.communityId.localeCompare(b.communityId),
-  )) {
-    console.log(`  ${String(row._count._all).padStart(3)}  ${row.communityId}`);
-  }
-  console.log(
-    `total ${counts.reduce((n, r) => n + r._count._all, 0)}`,
-  );
+  console.log("\nDone.");
 }
 
 main()

@@ -1,5 +1,6 @@
 import { prisma } from "./prisma";
 import { ethnicitiesFromYelp } from "./ethnicities";
+import { DEFAULT_COMMUNITY_SYNC_RADIUS_M } from "./communityBounds";
 import {
   WIKI_COMMUNITY_ETHNICITIES,
   WIKI_COMMUNITY_SEARCH_TERMS,
@@ -42,9 +43,9 @@ const COMMUNITY_SEARCH_TERMS: Record<string, string | string[]> = {
   "little-ukraine": "ukrainian",
   "little-odessa": ["russian", "ukrainian"],
   "little-manila": "filipino",
-  "little-egypt": ["egyptian", "middle eastern"],
-  "little-yemen": ["yemeni", "middle eastern", "arabic"],
-  "little-palestine": ["palestinian", "middle eastern"],
+  "little-egypt": ["egyptian", "middle eastern", "mediterranean"],
+  "little-yemen": ["yemeni", "middle eastern", "arabic", "mediterranean"],
+  "little-palestine": ["palestinian", "middle eastern", "mediterranean"],
   "little-guyana-queens": ["guyanese", "roti"],
   "little-guyana-bronx": ["guyanese", "roti"],
   "guyana-gateway": ["guyanese", "roti"],
@@ -57,18 +58,39 @@ const COMMUNITY_SEARCH_TERMS: Record<string, string | string[]> = {
   "koreatown-nassau": ["korean", "korean bbq"],
   "little-arabia-dearborn": [
     "lebanese",
-    "yemeni",
     "middle eastern",
+    "mediterranean",
     "arabic",
     "shawarma",
+  ],
+  "yemeni-south-end-dearborn": [
+    "yemeni",
+    "yemen",
+    "mandi",
+    "saltah",
+    "fahsa",
+    "haraz",
+    "qahwah",
+    "middle eastern",
+    "arabic",
   ],
   "little-baghdad-sterling-heights": [
     "iraqi",
     "chaldean",
     "middle eastern",
+    "mediterranean",
     "arabic",
+    "kebab",
+    "shawarma",
   ],
-  "banglatown-hamtramck": ["bangladeshi", "bengali", "indian"],
+  "banglatown-hamtramck": [
+    "bangladeshi",
+    "bengali",
+    "indian",
+    "south asian",
+    "biryani",
+    "halal",
+  ],
   "mexicantown-detroit": ["mexican", "tacos"],
   "koreatown-la": ["korean", "korean bbq"],
   "thai-town-la": ["thai", "pad thai"],
@@ -76,6 +98,7 @@ const COMMUNITY_SEARCH_TERMS: Record<string, string | string[]> = {
   "little-ethiopia-la": ["ethiopian", "eritrean"],
   "little-arabia-anaheim": [
     "middle eastern",
+    "mediterranean",
     "lebanese",
     "syrian",
     "arabic",
@@ -89,6 +112,7 @@ const COMMUNITY_SEARCH_TERMS: Record<string, string | string[]> = {
   "pilsen-chicago": ["mexican", "tacos"],
   "bridgeview-chicago": [
     "middle eastern",
+    "mediterranean",
     "palestinian",
     "lebanese",
     "arabic",
@@ -237,15 +261,16 @@ const COMMUNITY_ETHNICITIES: Record<string, string[]> = {
   "little-portugal-mineola": ["portuguese"],
   "little-el-salvador-brentwood": ["salvadoran"],
   "koreatown-nassau": ["korean"],
+  // Yemeni Dearborn spots reclaim into yemeni-south-end-dearborn, not here.
   "little-arabia-dearborn": [
     "lebanese",
-    "yemeni",
     "palestinian",
     "iraqi",
     "middle_eastern",
   ],
+  "yemeni-south-end-dearborn": ["yemeni", "middle_eastern"],
   "little-baghdad-sterling-heights": ["iraqi", "middle_eastern"],
-  "banglatown-hamtramck": ["bangladeshi", "indian"],
+  "banglatown-hamtramck": ["bangladeshi", "indian", "pakistani"],
   "mexicantown-detroit": ["mexican"],
   "koreatown-la": ["korean"],
   "thai-town-la": ["thai"],
@@ -418,15 +443,66 @@ async function isInsideCommunity(
   return Boolean(rows[0]?.inside);
 }
 
+function preferredEthnicities(communityId: string): string[] | undefined {
+  return (
+    COMMUNITY_ETHNICITIES[communityId] ??
+    WIKI_COMMUNITY_ETHNICITIES[communityId]
+  );
+}
+
 function ethnicityMatchesCommunity(
   communityId: string,
   ethnicities: string[],
 ): boolean {
-  const preferred =
-    COMMUNITY_ETHNICITIES[communityId] ??
-    WIKI_COMMUNITY_ETHNICITIES[communityId];
+  const preferred = preferredEthnicities(communityId);
   if (!preferred?.length) return false;
   return ethnicities.some((e) => preferred.includes(e));
+}
+
+/** Broad Yelp labels that should inherit a community's primary culture when inside its box. */
+const GENERIC_ETHNICITIES = new Set([
+  "middle_eastern",
+  "caribbean",
+  "west_african",
+]);
+
+/**
+ * Overlapping Arab corridors (Dearborn) should not inherit a sibling culture
+ * from a generic "Middle Eastern" Yelp label.
+ */
+const SKIP_GENERIC_ETHNICITY_ENRICH = new Set([
+  "yemeni-south-end-dearborn",
+  "little-arabia-dearborn",
+]);
+
+/**
+ * If Yelp only says "Middle Eastern" / "Mediterranean", also tag the enclave's
+ * primary culture so culture filters still match (e.g. Iraqi in Little Baghdad).
+ */
+function enrichEthnicitiesForCommunity(
+  communityId: string,
+  ethnicities: string[],
+): string[] {
+  if (SKIP_GENERIC_ETHNICITY_ENRICH.has(communityId)) return ethnicities;
+
+  const preferred = preferredEthnicities(communityId);
+  if (!preferred?.length) return ethnicities;
+
+  const hasCommunitySpecific = ethnicities.some(
+    (e) => preferred.includes(e) && !GENERIC_ETHNICITIES.has(e),
+  );
+  if (hasCommunitySpecific) return ethnicities;
+
+  const onlyGeneric =
+    ethnicities.length > 0 &&
+    ethnicities.every((e) => GENERIC_ETHNICITIES.has(e));
+  if (!onlyGeneric && ethnicities.length > 0) return ethnicities;
+
+  const primary = preferred.find((e) => !GENERIC_ETHNICITIES.has(e));
+  if (!primary) return ethnicities;
+
+  const merged = [...ethnicities.filter((e) => e !== primary), primary];
+  return merged.slice(0, 2);
 }
 
 async function upsertYelpBusiness(
@@ -440,7 +516,10 @@ async function upsertYelpBusiness(
   const inside = await isInsideCommunity(communityId, lat, lng);
   if (!inside) return "skipped";
 
-  const ethnicities = ethnicitiesFromYelp(business);
+  const ethnicities = enrichEthnicitiesForCommunity(
+    communityId,
+    ethnicitiesFromYelp(business),
+  );
   const data = {
     communityId,
     name: business.name,
@@ -664,8 +743,8 @@ export async function syncYelpForCommunity(
     const batch = await searchYelpBusinesses({
       latitude: centroid.lat,
       longitude: centroid.lng,
-      radiusMeters: opts?.radiusMeters ?? 1600,
-      limit: opts?.limit ?? 40,
+      radiusMeters: opts?.radiusMeters ?? DEFAULT_COMMUNITY_SYNC_RADIUS_M,
+      limit: opts?.limit ?? 50,
       term,
     });
     for (const b of batch) {

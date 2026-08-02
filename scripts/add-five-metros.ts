@@ -8,6 +8,10 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import {
+  DEFAULT_COMMUNITY_SYNC_RADIUS_M,
+  effectiveDelta,
+} from "../src/lib/communityBounds";
 import { syncYelpForCommunity } from "../src/lib/yelpSync";
 import { FIVE_METRO_COMMUNITIES as COMMUNITIES } from "./data/five-metros-communities";
 
@@ -60,7 +64,7 @@ async function main() {
 
     await prisma.$executeRawUnsafe(
       `UPDATE "Community" SET boundary = ST_SetSRID(ST_GeomFromText($1), 4326) WHERE id = $2`,
-      squarePolygonWkt(c.lat, c.lng, c.delta),
+      squarePolygonWkt(c.lat, c.lng, effectiveDelta(c.delta)),
       c.id,
     );
     console.log(`  ✓ ${c.id}`);
@@ -69,8 +73,8 @@ async function main() {
   console.log("\nSyncing Yelp…");
   for (const c of COMMUNITIES) {
     const result = await syncYelpForCommunity(c.id, {
-      radiusMeters: 4000,
-      limit: 40,
+      radiusMeters: DEFAULT_COMMUNITY_SYNC_RADIUS_M,
+      limit: 50,
     });
     console.log(
       `  ${result.communityId}: fetched=${result.fetched} upserted=${result.upserted} skipped=${result.skipped}`,

@@ -6,6 +6,10 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import {
+  DEFAULT_COMMUNITY_SYNC_RADIUS_M,
+  effectiveDelta,
+} from "../src/lib/communityBounds";
 import { syncYelpForCommunity } from "../src/lib/yelpSync";
 
 const connectionString = process.env.DATABASE_URL;
@@ -108,7 +112,7 @@ async function main() {
 
     await prisma.$executeRawUnsafe(
       `UPDATE "Community" SET boundary = ST_SetSRID(ST_GeomFromText($1), 4326) WHERE id = $2`,
-      squarePolygonWkt(c.lat, c.lng, c.delta),
+      squarePolygonWkt(c.lat, c.lng, effectiveDelta(c.delta)),
       c.id,
     );
     console.log(`  ✓ ${c.id}`);
@@ -117,7 +121,7 @@ async function main() {
   console.log("\nSyncing Yelp for Long Island enclaves…");
   for (const c of COMMUNITIES) {
     const result = await syncYelpForCommunity(c.id, {
-      radiusMeters: c.id === "koreatown-nassau" ? 3500 : 2500,
+      radiusMeters: DEFAULT_COMMUNITY_SYNC_RADIUS_M,
       limit: 50,
     });
     console.log(

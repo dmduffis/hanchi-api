@@ -61,18 +61,21 @@ const CATEGORY_ETHNICITY_RULES: { match: RegExp; id: string }[] = [
   { match: /\bpalestinian\b|falafel|knafeh|shawarma/i, id: "palestinian" },
   {
     match:
-      /\byemeni\b|\byemen\b|\baden\b|tihama|\bazal\b|sheeba|\bsheba\b|saltah|fahsa|fahsah|mandi\b|haneeth|bint.?al.?sahn/i,
+      /\byemeni\b|\byemen\b|\baden\b|tihama|\bazal\b|sheeba|\bsheba\b|saltah|fahsa|fahsah|mandi\b|haneeth|bint.?al.?sahn|\bharaz\b|\bqahwah\b/i,
     id: "yemeni",
   },
   {
-    match: /\bchaldean\b|\biraqi\b|\biraq\b|baghdad|mosul|basra/i,
+    // Obvious name / place / dish cues — Yelp often only tags these "Mediterranean".
+    match:
+      /\bchaldean\b|\bassyrian\b|\biraqi\b|\biraq\b|baghdad|babylon|babel\b|mosul|basra|nineveh|ninawa|erbil|kirkuk|najaf|karbala|mesopotam|tigris|euphrates|\bfurat\b|rafidain|rafidyn|sumerian|\bmasgouf\b|\bmasgoof\b|\bquzi\b|\bqoozi\b/i,
     id: "iraqi",
   },
   { match: /\bmoroccan\b/i, id: "moroccan" },
   { match: /\bturkish\b/i, id: "turkish" },
   { match: /\biranian\b|persian\b/i, id: "iranian" },
   { match: /\bisraeli\b/i, id: "israeli" },
-  { match: /\bmiddle.?eastern|arab\b/i, id: "middle_eastern" },
+  // Many Chaldean/Iraqi spots are Yelp-tagged "Mediterranean", not Iraqi.
+  { match: /\bmiddle.?eastern|mediterranean|arab\b/i, id: "middle_eastern" },
   { match: /\balbanian\b/i, id: "albanian" },
   { match: /\bgreek\b/i, id: "greek" },
   { match: /\bitalian\b/i, id: "italian" },
