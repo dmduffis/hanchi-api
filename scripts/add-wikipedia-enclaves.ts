@@ -10,6 +10,7 @@ import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
 import { effectiveDelta } from "../src/lib/communityBounds";
+import { isJunkWikiCommunity } from "../src/lib/wikiCommunityQuality";
 
 const READY = path.join(__dirname, "data", "wikipedia-enclaves-ready.json");
 
@@ -64,8 +65,21 @@ async function main() {
 
   let created = 0;
   let skipped = 0;
+  let rejected = 0;
   for (const c of payload.enclaves) {
     if (!Number.isFinite(c.lat) || !Number.isFinite(c.lng)) continue;
+
+    if (
+      isJunkWikiCommunity({
+        id: c.id,
+        name: c.name,
+        neighborhood: c.neighborhood,
+        city: c.city,
+      })
+    ) {
+      rejected += 1;
+      continue;
+    }
 
     // Never overwrite curated seed communities (name/boundary). City-level
     // Wikipedia geocodes previously moved Flushing Chinatown to Manhattan.
@@ -100,7 +114,9 @@ async function main() {
     }
   }
 
-  console.log(`Done. Created ${created}, skipped existing ${skipped}.`);
+  console.log(
+    `Done. Created ${created}, skipped existing ${skipped}, rejected junk ${rejected}.`,
+  );
 }
 
 main()
