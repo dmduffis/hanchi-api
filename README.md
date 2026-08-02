@@ -43,7 +43,7 @@ npm run prisma:seed
 
 ### 2. Railway API
 
-1. Put this folder in a GitHub repo (root = `sinta-api`, or set Railway **Root Directory** to `sinta-api` in a monorepo).
+1. Put this folder in a GitHub repo (root = `hanchi-api`, or set Railway **Root Directory** to `hanchi-api` in a monorepo).
 2. [railway.app](https://railway.app) → **New Project** → **Deploy from GitHub** → select the repo.
 3. Variables → set **only**:
    - `DATABASE_URL` = same Supabase session-pooler URI as local `.env`
@@ -95,7 +95,7 @@ Then copy the connection string into `.env` as `DATABASE_URL`.
 ## Setup
 
 ```bash
-cd sinta-api
+cd hanchi-api
 cp .env.example .env
 # Edit .env — set DATABASE_URL (and optionally PORT / DEV_DEFAULT_USER_ID)
 
@@ -168,7 +168,7 @@ After seeding, run `npm run yelp:sync` (or `POST /admin/sync/yelp`) to fill rest
 ## Project structure
 
 ```
-sinta-api/
+hanchi-api/
   src/
     routes/
     controllers/

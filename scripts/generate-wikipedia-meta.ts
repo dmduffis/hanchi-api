@@ -2,8 +2,8 @@
  * Emit mobile + API metadata maps from parsed Wikipedia enclaves.
  *
  * Writes:
- *  - sinta-mobile/src/data/generated/wikipediaCommunityMeta.ts
- *  - sinta-api/src/data/wikipediaYelpMeta.ts
+ *  - hanchi-mobile/src/data/generated/wikipediaCommunityMeta.ts
+ *  - hanchi-api/src/data/wikipediaYelpMeta.ts
  *
  * Usage: npx tsx scripts/generate-wikipedia-meta.ts
  */
@@ -13,7 +13,7 @@ import path from "node:path";
 const PARSED = path.join(__dirname, "data", "wikipedia-enclaves-parsed.json");
 const MOBILE_OUT = path.resolve(
   __dirname,
-  "../../sinta-mobile/src/data/generated/wikipediaCommunityMeta.ts",
+  "../../hanchi-mobile/src/data/generated/wikipediaCommunityMeta.ts",
 );
 const API_OUT = path.resolve(__dirname, "../src/data/wikipediaYelpMeta.ts");
 
