@@ -312,6 +312,8 @@ const COMMUNITY_ETHNICITIES: Record<string, string[]> = {
     "palestinian",
     "middle_eastern",
   ],
+  // Hasidic Satmar village — not Israeli; wiki meta incorrectly maps Jews → IL.
+  "kiryas-joel-new-york-near-monroe-new-york": ["jewish"],
   "little-egypt": ["egyptian", "middle_eastern"],
   "little-yemen": ["yemeni", "middle_eastern"],
   "little-palestine": ["palestinian", "middle_eastern", "lebanese"],

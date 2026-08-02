@@ -5050,16 +5050,15 @@
     },
     {
       "id": "kiryas-joel-new-york-near-monroe-new-york",
-      "name": "Kiryas Joel in New York near Monroe",
-      "neighborhood": "Kiryas Joel, New York near Monroe",
-      "city": "New York near Monroe, New York",
+      "name": "Kiryas Joel",
+      "neighborhood": "Palm Tree / Monroe, Orange County",
+      "city": "Orange County, New York",
       "country": "US",
       "ethnicitySection": "jews (of many nationalities)",
-      "heroEmoji": "🇮🇱",
-      "countryCode": "il",
+      "heroEmoji": "✡️",
+      "countryCode": null,
       "affinities": [
-        "european",
-        "middle-eastern"
+        "european"
       ],
       "yelpTerms": [
         "jewish",
@@ -5067,11 +5066,11 @@
         "deli"
       ],
       "ethnicities": [
-        "israeli"
+        "jewish"
       ],
       "raw": "Kiryas Joel, New York near Monroe, New York",
       "geocodeQuery": "Kiryas Joel, New York near Monroe, NY, USA",
-      "description": "Kiryas Joel in New York near Monroe — a jews (of many nationalities) cultural community in New York near Monroe, New York."
+      "description": "Satmar Hasidic Kiryas Joel in Orange County — a tightly knit Yiddish-speaking village near Monroe with kosher bakeries, pizza, and groceries."
     },
     {
       "id": "koreatown-ellicott-city-maryland",

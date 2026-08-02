@@ -60,6 +60,8 @@ const MERGES: Record<string, string> = {
     "little-bangladesh",
   // Same Hicksville pin as curated Little India
   "hicksville-new-york": "little-india-hicksville",
+  // Wiki "Greenpoint" is the same Polish corridor as curated Little Poland
+  "greenpoint-new-york-city": "little-poland",
 };
 
 function squarePolygonWkt(lat: number, lng: number, delta: number): string {
