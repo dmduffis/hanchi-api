@@ -9,6 +9,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import { effectiveDelta } from "../src/lib/communityBounds";
 
 const READY = path.join(__dirname, "data", "wikipedia-enclaves-ready.json");
 
@@ -90,7 +91,7 @@ async function main() {
 
     await prisma.$executeRawUnsafe(
       `UPDATE "Community" SET boundary = ST_SetSRID(ST_GeomFromText($1), 4326) WHERE id = $2`,
-      squarePolygonWkt(c.lat, c.lng, c.delta ?? 0.012),
+      squarePolygonWkt(c.lat, c.lng, effectiveDelta(c.delta ?? 0.012)),
       c.id,
     );
     created += 1;

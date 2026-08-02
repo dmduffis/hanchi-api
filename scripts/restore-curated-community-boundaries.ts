@@ -7,6 +7,7 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import { effectiveDelta } from "../src/lib/communityBounds";
 
 const connectionString = process.env.DATABASE_URL;
 if (!connectionString) {
@@ -119,7 +120,7 @@ async function main() {
 
     await prisma.$executeRawUnsafe(
       `UPDATE "Community" SET boundary = ST_SetSRID(ST_GeomFromText($1), 4326) WHERE id = $2`,
-      squarePolygonWkt(c.lat, c.lng, c.delta),
+      squarePolygonWkt(c.lat, c.lng, effectiveDelta(c.delta)),
       c.id,
     );
 

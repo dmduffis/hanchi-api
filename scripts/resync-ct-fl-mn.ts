@@ -8,6 +8,10 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "@prisma/client";
+import {
+  DEFAULT_COMMUNITY_SYNC_RADIUS_M,
+  effectiveDelta,
+} from "../src/lib/communityBounds";
 import { syncYelpForCommunity } from "../src/lib/yelpSync";
 import { CONNECTICUT_COMMUNITIES } from "./data/connecticut-communities";
 import { FLORIDA_COMMUNITIES } from "./data/florida-communities";
@@ -67,18 +71,20 @@ async function main() {
     });
     await prisma.$executeRawUnsafe(
       `UPDATE "Community" SET boundary = ST_SetSRID(ST_GeomFromText($1), 4326) WHERE id = $2`,
-      squarePolygonWkt(c.lat, c.lng, c.delta),
+      squarePolygonWkt(c.lat, c.lng, effectiveDelta(c.delta)),
       c.id,
     );
     console.log(`  ✓ ${c.id}`);
   }
 
-  console.log("\nRe-syncing Yelp (radius 4000m)…");
+  console.log(
+    `\nRe-syncing Yelp (radius ${DEFAULT_COMMUNITY_SYNC_RADIUS_M}m)…`,
+  );
   for (const c of COMMUNITIES) {
     const before = await prisma.poi.count({ where: { communityId: c.id } });
     const result = await syncYelpForCommunity(c.id, {
-      radiusMeters: 4000,
-      limit: 40,
+      radiusMeters: DEFAULT_COMMUNITY_SYNC_RADIUS_M,
+      limit: 50,
     });
     const after = await prisma.poi.count({ where: { communityId: c.id } });
     console.log(
