@@ -260,6 +260,14 @@ const COMMUNITY_SEARCH_TERMS: Record<string, string | string[]> = {
   "japantown-sf": ["japanese", "ramen", "sushi"],
   "calle-24-sf": ["mexican", "salvadoran", "latin"],
   "soma-pilipinas-sf": ["filipino", "lumpia"],
+  "excelsior-district-san-francisco-california": [
+    "guatemalan",
+    "salvadoran",
+    "mexican",
+    "filipino",
+    "pupusas",
+    "latin american",
+  ],
   "sunset-chinese-sf": ["chinese", "dim sum"],
   "african-american-arts-sf": ["soul food", "southern", "creole"],
   "pacific-islander-sf": ["samoan", "hawaiian", "pacific islander"],
@@ -280,7 +288,7 @@ const COMMUNITY_ETHNICITIES: Record<string, string[]> = {
   "chinatown-flushing": ["chinese", "taiwanese"],
   "chinatown-manhattan": ["chinese"],
   "chinatown-sunset-park": ["chinese"],
-  "little-senegal": ["senegalese", "west_african", "ghanaian"],
+  "little-senegal": ["senegalese"],
   "little-africa-si": ["liberian", "west_african", "ghanaian", "senegalese"],
   "little-africa-bronx": ["ghanaian", "west_african", "nigerian", "senegalese"],
   "little-dominican-republic": ["dominican"],
@@ -357,7 +365,7 @@ const COMMUNITY_ETHNICITIES: Record<string, string[]> = {
   "chinatown-houston": ["chinese", "taiwanese"],
   "hillcroft-houston": ["indian", "pakistani"],
   "little-saigon-houston": ["vietnamese"],
-  "little-lagos-houston": ["nigerian", "west_african"],
+  "little-lagos-houston": ["nigerian"],
   "sugar-land-houston": ["indian"],
   "katy-houston": ["indian"],
   "east-end-houston": ["mexican"],
@@ -430,6 +438,12 @@ const COMMUNITY_ETHNICITIES: Record<string, string[]> = {
   "japantown-sf": ["japanese"],
   "calle-24-sf": ["mexican", "salvadoran"],
   "soma-pilipinas-sf": ["filipino"],
+  "excelsior-district-san-francisco-california": [
+    "guatemalan",
+    "salvadoran",
+    "mexican",
+    "filipino",
+  ],
   "sunset-chinese-sf": ["chinese"],
   // US cultural districts — no foreign-country ethnicity reclaim.
   "pacific-islander-sf": ["hawaiian"],
@@ -523,6 +537,16 @@ const GENERIC_ETHNICITIES = new Set([
   "west_african",
 ]);
 
+/** Specific tags that should not block inheriting the enclave's primary culture. */
+const NON_COMPETING_ETHNICITIES = new Set([
+  "french",
+  "american",
+  "british",
+  "spanish",
+  "italian",
+  "german",
+]);
+
 /**
  * Overlapping Arab corridors (Dearborn) should not inherit a sibling culture
  * from a generic "Middle Eastern" Yelp label.
@@ -536,7 +560,7 @@ const SKIP_GENERIC_ETHNICITY_ENRICH = new Set([
  * If Yelp only says "Middle Eastern" / "Mediterranean", also tag the enclave's
  * primary culture so culture filters still match (e.g. Iraqi in Little Baghdad).
  */
-function enrichEthnicitiesForCommunity(
+export function enrichEthnicitiesForCommunity(
   communityId: string,
   ethnicities: string[],
 ): string[] {
@@ -548,18 +572,80 @@ function enrichEthnicitiesForCommunity(
   const hasCommunitySpecific = ethnicities.some(
     (e) => preferred.includes(e) && !GENERIC_ETHNICITIES.has(e),
   );
-  if (hasCommunitySpecific) return ethnicities;
 
-  const onlyGeneric =
-    ethnicities.length > 0 &&
-    ethnicities.every((e) => GENERIC_ETHNICITIES.has(e));
-  if (!onlyGeneric && ethnicities.length > 0) return ethnicities;
+  if (!hasCommunitySpecific) {
+    const primary = preferred.find((e) => !GENERIC_ETHNICITIES.has(e));
+    const hasGeneric = ethnicities.some((e) => GENERIC_ETHNICITIES.has(e));
+    const onlyGeneric =
+      ethnicities.length > 0 &&
+      ethnicities.every((e) => GENERIC_ETHNICITIES.has(e));
 
-  const primary = preferred.find((e) => !GENERIC_ETHNICITIES.has(e));
-  if (!primary) return ethnicities;
+    // "French, African" in Le Petit Senegal should still inherit Senegalese —
+    // but don't override a real competing national cuisine (Ethiopian, Ghanaian…).
+    const competingSpecific = ethnicities.some(
+      (e) =>
+        !GENERIC_ETHNICITIES.has(e) &&
+        !NON_COMPETING_ETHNICITIES.has(e) &&
+        e !== primary,
+    );
 
-  const merged = [...ethnicities.filter((e) => e !== primary), primary];
-  return merged.slice(0, 2);
+    if (primary && hasGeneric && !competingSpecific) {
+      const merged = [...ethnicities.filter((e) => e !== primary), primary];
+      return rankEthnicitiesForCommunity(merged, preferred).slice(0, 2);
+    }
+
+    if (primary && onlyGeneric) {
+      const merged = [...ethnicities.filter((e) => e !== primary), primary];
+      return rankEthnicitiesForCommunity(merged, preferred).slice(0, 2);
+    }
+
+    return rankEthnicitiesForCommunity(ethnicities, preferred).slice(0, 2);
+  }
+
+  return rankEthnicitiesForCommunity(ethnicities, preferred).slice(0, 2);
+}
+
+function rankEthnicitiesForCommunity(
+  ethnicities: string[],
+  preferred: string[],
+): string[] {
+  return [...ethnicities].sort((a, b) => {
+    const ga = GENERIC_ETHNICITIES.has(a);
+    const gb = GENERIC_ETHNICITIES.has(b);
+    if (ga !== gb) return ga ? 1 : -1;
+
+    const ia = preferred.indexOf(a);
+    const ib = preferred.indexOf(b);
+    if (ia === -1 && ib === -1) return 0;
+    if (ia === -1) return 1;
+    if (ib === -1) return -1;
+    return ia - ib;
+  });
+}
+
+/** Drop POIs whose coordinates sit outside the community polygon (bad reclaims). */
+export async function orphanPoisOutsideCommunityBoundary(
+  communityId: string,
+): Promise<number> {
+  const rows = await prisma.$queryRawUnsafe<{ id: string }[]>(
+    `
+    SELECT p.id
+    FROM "Poi" p
+    JOIN "Community" c ON c.id = $1
+    WHERE p."communityId" = $1
+      AND (
+        p.location IS NULL
+        OR NOT ST_Contains(c.boundary, p.location::geometry)
+      )
+    `,
+    communityId,
+  );
+  if (rows.length === 0) return 0;
+  const result = await prisma.poi.updateMany({
+    where: { id: { in: rows.map((r) => r.id) } },
+    data: { communityId: null },
+  });
+  return result.count;
 }
 
 async function upsertYelpBusiness(
@@ -822,6 +908,9 @@ export async function syncYelpForCommunity(
     if (result === "upserted") upserted += 1;
     else skipped += 1;
   }
+
+  // Safety net: Manhattan Indian spots must not stick to Hicksville, etc.
+  await orphanPoisOutsideCommunityBoundary(communityId);
 
   return {
     communityId,

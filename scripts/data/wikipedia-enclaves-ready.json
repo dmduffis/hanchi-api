@@ -2855,30 +2855,34 @@
     },
     {
       "id": "excelsior-district-san-francisco-california",
-      "name": "Excelsior District in San Francisco",
-      "neighborhood": "Excelsior District, San Francisco",
+      "name": "Excelsior District",
+      "neighborhood": "Excelsior, San Francisco",
       "city": "San Francisco, California",
       "country": "US",
-      "ethnicitySection": "yemen",
-      "heroEmoji": "🇾🇪",
-      "countryCode": "ye",
+      "ethnicitySection": "guatemala",
+      "heroEmoji": "🇬🇹",
+      "countryCode": "gt",
       "affinities": [
-        "middle-eastern"
+        "latino"
       ],
       "yelpTerms": [
-        "yemeni",
-        "middle eastern"
+        "guatemalan",
+        "salvadoran",
+        "mexican",
+        "filipino"
       ],
       "ethnicities": [
-        "yemeni",
-        "middle_eastern"
+        "guatemalan",
+        "salvadoran",
+        "mexican",
+        "filipino"
       ],
       "raw": "Excelsior District, San Francisco, California",
-      "geocodeQuery": "Excelsior District, San Francisco, CA, USA",
-      "description": "Excelsior District in San Francisco — a yemen cultural community in San Francisco, California.",
-      "lat": 37.7749,
-      "lng": -122.4194,
-      "delta": 0.012
+      "geocodeQuery": "Mission Street & Ocean Avenue, San Francisco, CA, USA",
+      "description": "San Francisco's Excelsior — a Latino and Filipino neighborhood along Mission Street, with Guatemalan, Salvadoran, Mexican, and Filipino markets and restaurants.",
+      "lat": 37.7235,
+      "lng": -122.434,
+      "delta": 0.014
     },
     {
       "id": "fall-river-massachusetts",

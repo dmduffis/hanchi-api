@@ -39,6 +39,8 @@ export type ParsedEnclave = {
   ethnicities: string[] | null;
   raw: string;
   geocodeQuery: string;
+  /** Wiki note only — never auto "a {section} cultural community" blurbs. */
+  description: string;
 };
 
 const US_STATES: Record<string, string> = {
@@ -924,9 +926,9 @@ function main() {
     );
     const id = makeId(place);
     const displayName = place.split(",")[0]!.trim() || place;
-    const description = note
-      ? `${displayName} — a ${section} cultural community in ${city}. ${note}`
-      : `${displayName} — a ${section} cultural community in ${city}.`;
+    // Prefer wiki notes only — "a {section} cultural community in {city}"
+    // blurbs just restate the title and show up as duplicate copy in the app.
+    const description = note?.trim() || "";
 
     const row: ParsedEnclave = {
       id,
@@ -942,6 +944,7 @@ function main() {
       ethnicities: meta.ethnicities,
       raw: place,
       geocodeQuery,
+      description,
     };
 
     // Prefer longer / more specific raw when colliding
@@ -951,11 +954,7 @@ function main() {
     }
   }
 
-  // Attach description via recompute for export
-  const enclaves = [...byId.values()].map((e) => ({
-    ...e,
-    description: `${e.name} — a ${e.ethnicitySection} cultural community in ${e.city}.`,
-  }));
+  const enclaves = [...byId.values()];
 
   enclaves.sort((a, b) => a.id.localeCompare(b.id));
 

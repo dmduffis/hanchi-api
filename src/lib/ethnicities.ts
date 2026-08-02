@@ -40,8 +40,9 @@ const CATEGORY_ETHNICITY_RULES: { match: RegExp; id: string }[] = [
   { match: /\bpuerto.?rican\b/i, id: "puerto_rican" },
   { match: /\bjamaican\b|jerk\b/i, id: "jamaican" },
   { match: /\bhaitian\b|griot\b/i, id: "haitian" },
+  { match: /\btrinidad|tobago/i, id: "trinidadian" },
   {
-    match: /\btrinidad|\bindo-?caribbean|guyanese|roti\b|doubles\b/i,
+    match: /\bguyanese|guyana\b|\bindo-?caribbean|roti\b|doubles\b/i,
     id: "guyanese",
   },
   { match: /\bcaribbean\b|west.?indian/i, id: "caribbean" },
@@ -98,6 +99,10 @@ const CATEGORY_ETHNICITY_RULES: { match: RegExp; id: string }[] = [
   {
     match: /\bsalvadoran\b|el salvador|pupusas?\b|pupuseria/i,
     id: "salvadoran",
+  },
+  {
+    match: /\bguatemalan\b|guatemala\b|chapin\b/i,
+    id: "guatemalan",
   },
   { match: /\bbritish\b|irish\b/i, id: "british" },
 ];
