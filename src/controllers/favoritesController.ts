@@ -1,121 +1,59 @@
 import type { Request, Response, NextFunction } from "express";
-import { FavoriteType } from "@prisma/client";
 import { prisma } from "../lib/prisma";
-import { getCommunityWithGeometry } from "../lib/geo";
 import type { AuthenticatedRequest } from "../middleware/auth";
-
-function parseFavoriteType(value: unknown): FavoriteType | null {
-  if (value === "community" || value === "restaurant" || value === "dish") {
-    return value;
-  }
-  return null;
-}
-
-type ResolvedFavorite = {
-  ok: boolean;
-  title?: string;
-  subtitle?: string;
-  communityId?: string | null;
-  emoji?: string;
-  restaurantId?: string;
-  imageUrl?: string | null;
-  ethnicities?: string[];
-  latitude?: number | null;
-  longitude?: number | null;
-};
-
-async function resolveFavoriteTarget(
-  type: FavoriteType,
-  targetId: string,
-): Promise<ResolvedFavorite> {
-  if (type === "community") {
-    const community = await getCommunityWithGeometry(targetId);
-    if (!community) return { ok: false };
-    const lat =
-      community.latitude == null ? null : Number(community.latitude);
-    const lng =
-      community.longitude == null ? null : Number(community.longitude);
-    return {
-      ok: true,
-      title: community.name,
-      subtitle: community.neighborhood,
-      communityId: community.id,
-      emoji: community.heroEmoji ?? "📍",
-      imageUrl: community.imageUrl,
-      latitude: Number.isFinite(lat) ? lat : null,
-      longitude: Number.isFinite(lng) ? lng : null,
-    };
-  }
-
-  if (type === "restaurant") {
-    const poi = await prisma.poi.findUnique({
-      where: { id: targetId },
-      include: { community: { select: { id: true, name: true } } },
-    });
-    if (!poi) return { ok: false };
-    return {
-      ok: true,
-      title: poi.name,
-      subtitle: poi.community
-        ? `${poi.community.name} · Restaurant`
-        : "Restaurant",
-      communityId: poi.communityId,
-      restaurantId: poi.id,
-      emoji: "🍽️",
-      imageUrl: poi.imageUrl,
-      ethnicities: poi.ethnicities ?? [],
-    };
-  }
-
-  const dish = await prisma.dish.findUnique({
-    where: { id: targetId },
-    include: {
-      poi: {
-        select: {
-          id: true,
-          name: true,
-          communityId: true,
-          imageUrl: true,
-          ethnicities: true,
-          community: { select: { name: true } },
-        },
-      },
-    },
-  });
-  if (!dish) return { ok: false };
-  return {
-    ok: true,
-    title: dish.name,
-    subtitle: `${dish.poi.name} · Dish`,
-    communityId: dish.poi.communityId,
-    restaurantId: dish.poi.id,
-    emoji: "🥢",
-    imageUrl: dish.imageUrl ?? dish.poi.imageUrl,
-    ethnicities: dish.poi.ethnicities ?? [],
-  };
-}
+import {
+  itemPayload,
+  parseFavoriteType,
+  resolveSaveTarget,
+  type ResolvedSaveTarget,
+} from "../lib/saveTargets";
+import { ensureDefaultCollection } from "./collectionsController";
 
 function favoritePayload(
-  fav: { id: string; type: FavoriteType; targetId: string; createdAt: Date },
-  resolved: ResolvedFavorite,
+  fav: { id: string; type: import("@prisma/client").FavoriteType; targetId: string; createdAt: Date },
+  resolved: ResolvedSaveTarget,
   favorited?: boolean,
 ) {
   return {
-    id: fav.id,
-    type: fav.type,
-    targetId: fav.targetId,
-    title: resolved.title,
-    subtitle: resolved.subtitle,
-    communityId: resolved.communityId,
-    restaurantId: resolved.restaurantId ?? null,
-    emoji: resolved.emoji,
-    imageUrl: resolved.imageUrl ?? null,
-    ethnicities: resolved.ethnicities ?? [],
-    latitude: resolved.latitude ?? null,
-    longitude: resolved.longitude ?? null,
-    savedAt: fav.createdAt.toISOString(),
+    ...itemPayload(
+      { id: fav.id, type: fav.type, targetId: fav.targetId, createdAt: fav.createdAt },
+      resolved,
+    ),
     ...(favorited !== undefined ? { favorited } : {}),
   };
+}
+
+async function addToDefaultCollection(
+  userId: string,
+  type: import("@prisma/client").FavoriteType,
+  targetId: string,
+) {
+  const col = await ensureDefaultCollection(userId);
+  await prisma.collectionItem.upsert({
+    where: {
+      collectionId_type_targetId: {
+        collectionId: col.id,
+        type,
+        targetId,
+      },
+    },
+    create: { collectionId: col.id, type, targetId },
+    update: {},
+  });
+}
+
+async function removeFromAllCollections(
+  userId: string,
+  type: import("@prisma/client").FavoriteType,
+  targetId: string,
+) {
+  await prisma.collectionItem.deleteMany({
+    where: {
+      type,
+      targetId,
+      collection: { userId },
+    },
+  });
 }
 
 export async function listUserFavoritesHandler(
@@ -130,26 +68,41 @@ export async function listUserFavoritesHandler(
       res.status(403).json({ error: "Forbidden" });
       return;
     }
-    const favorites = await prisma.favorite.findMany({
-      where: { userId: id },
+
+    // Prefer collection items (dedupe by type+targetId)
+    await ensureDefaultCollection(id);
+    const items = await prisma.collectionItem.findMany({
+      where: { collection: { userId: id } },
       orderBy: { createdAt: "desc" },
     });
 
-    const items = await Promise.all(
-      favorites.map(async (fav) => {
-        const resolved = await resolveFavoriteTarget(fav.type, fav.targetId);
-        if (!resolved.ok) return null;
-        return favoritePayload(fav, resolved);
-      }),
-    );
+    const seen = new Set<string>();
+    const payload = [];
+    for (const it of items) {
+      const key = `${it.type}:${it.targetId}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const resolved = await resolveSaveTarget(it.type, it.targetId);
+      if (!resolved.ok) continue;
+      payload.push(
+        favoritePayload(
+          {
+            id: it.id,
+            type: it.type,
+            targetId: it.targetId,
+            createdAt: it.createdAt,
+          },
+          resolved,
+        ),
+      );
+    }
 
-    res.json(items.filter(Boolean));
+    res.json(payload);
   } catch (err) {
     next(err);
   }
 }
 
-/** POST body: { type, targetId } — creates favorite if missing (idempotent). */
 export async function createFavoriteHandler(
   req: Request,
   res: Response,
@@ -171,12 +124,13 @@ export async function createFavoriteHandler(
       return;
     }
 
-    const resolved = await resolveFavoriteTarget(type, targetId);
+    const resolved = await resolveSaveTarget(type, targetId);
     if (!resolved.ok) {
       res.status(404).json({ error: "Favorite target not found" });
       return;
     }
 
+    await addToDefaultCollection(userId, type, targetId);
     const favorite = await prisma.favorite.upsert({
       where: {
         userId_type_targetId: { userId, type, targetId },
@@ -191,7 +145,6 @@ export async function createFavoriteHandler(
   }
 }
 
-/** DELETE body/query: type + targetId — removes favorite. */
 export async function deleteFavoriteHandler(
   req: Request,
   res: Response,
@@ -208,6 +161,7 @@ export async function deleteFavoriteHandler(
     }
 
     const userId = (req as AuthenticatedRequest).userId;
+    await removeFromAllCollections(userId, type, targetId);
     await prisma.favorite.deleteMany({
       where: { userId, type, targetId },
     });
@@ -218,7 +172,6 @@ export async function deleteFavoriteHandler(
   }
 }
 
-/** POST /favorites/toggle — add or remove. */
 export async function toggleFavoriteHandler(
   req: Request,
   res: Response,
@@ -240,29 +193,45 @@ export async function toggleFavoriteHandler(
       return;
     }
 
-    const resolved = await resolveFavoriteTarget(type, targetId);
+    const resolved = await resolveSaveTarget(type, targetId);
     if (!resolved.ok) {
       res.status(404).json({ error: "Favorite target not found" });
       return;
     }
 
-    const existing = await prisma.favorite.findUnique({
+    const membership = await prisma.collectionItem.findFirst({
       where: {
-        userId_type_targetId: { userId, type, targetId },
+        type,
+        targetId,
+        collection: { userId },
       },
     });
 
-    if (existing) {
-      await prisma.favorite.delete({ where: { id: existing.id } });
+    if (membership) {
+      await removeFromAllCollections(userId, type, targetId);
+      await prisma.favorite.deleteMany({ where: { userId, type, targetId } });
       res.json({
-        ...favoritePayload(existing, resolved, false),
+        ...itemPayload(
+          {
+            id: membership.id,
+            type,
+            targetId,
+            createdAt: membership.createdAt,
+          },
+          resolved,
+        ),
         favorited: false,
       });
       return;
     }
 
-    const favorite = await prisma.favorite.create({
-      data: { userId, type, targetId },
+    await addToDefaultCollection(userId, type, targetId);
+    const favorite = await prisma.favorite.upsert({
+      where: {
+        userId_type_targetId: { userId, type, targetId },
+      },
+      create: { userId, type, targetId },
+      update: {},
     });
 
     res.status(201).json(favoritePayload(favorite, resolved, true));
