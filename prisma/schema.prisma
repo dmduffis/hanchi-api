@@ -20,18 +20,25 @@ enum FavoriteType {
   dish
 }
 
+enum CollectionVisibility {
+  private
+  public
+}
+
 model User {
-  id          String         @id @default(cuid())
-  email       String         @unique
-  displayName String
+  id                String             @id @default(cuid())
+  email             String             @unique
+  displayName       String
   /// Zero or more of: explore | home | learn | bite
-  intents     String[]       @default([])
+  intents           String[]           @default([])
   /// 1–2 ISO country codes the user feels at home with (e.g. ["kr","mx"]).
-  cultures    String[]       @default([])
-  createdAt   DateTime       @default(now())
-  stamps      Stamp[]
-  journal     JournalEntry[]
-  favorites   Favorite[]
+  cultures          String[]           @default([])
+  createdAt         DateTime           @default(now())
+  stamps            Stamp[]
+  journal           JournalEntry[]
+  favorites         Favorite[]
+  collections       Collection[]
+  collectionFollows CollectionFollow[]
 }
 
 model Community {
@@ -118,6 +125,54 @@ model Favorite {
   @@unique([userId, type, targetId])
   @@index([userId])
   @@index([type, targetId])
+}
+
+/// Named list of saved places/dishes (Yelp-style Collection).
+model Collection {
+  id          String               @id @default(cuid())
+  userId      String
+  user        User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String
+  description String?
+  visibility  CollectionVisibility @default(private)
+  /// Exactly one default "Saved" list per user (enforced in app).
+  isDefault   Boolean              @default(false)
+  /// Opaque share token — private lists are still open via slug.
+  shareSlug   String               @unique @default(cuid())
+  createdAt   DateTime             @default(now())
+  updatedAt   DateTime             @updatedAt
+  items       CollectionItem[]
+  followers   CollectionFollow[]
+
+  @@index([userId])
+  @@index([visibility])
+}
+
+model CollectionItem {
+  id           String       @id @default(cuid())
+  collectionId String
+  collection   Collection   @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  type         FavoriteType
+  targetId     String
+  note         String?
+  createdAt    DateTime     @default(now())
+
+  @@unique([collectionId, type, targetId])
+  @@index([collectionId])
+  @@index([type, targetId])
+}
+
+model CollectionFollow {
+  id           String     @id @default(cuid())
+  userId       String
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  collectionId String
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  createdAt    DateTime   @default(now())
+
+  @@unique([userId, collectionId])
+  @@index([userId])
+  @@index([collectionId])
 }
 
 model JournalEntry {
