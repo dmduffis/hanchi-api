@@ -25,10 +25,23 @@ enum CollectionVisibility {
   public
 }
 
+enum MediaPurpose {
+  moment
+  avatar
+}
+
+enum MediaStatus {
+  pending
+  approved
+  rejected
+}
+
 model User {
   id                String             @id @default(cuid())
   email             String             @unique
   displayName       String
+  /// Moderated public avatar URL (null = initials in clients).
+  avatarUrl         String?
   /// Zero or more of: explore | home | learn | bite
   intents           String[]           @default([])
   /// 1–2 ISO country codes the user feels at home with (e.g. ["kr","mx"]).
@@ -39,6 +52,25 @@ model User {
   favorites         Favorite[]
   collections       Collection[]
   collectionFollows CollectionFollow[]
+  mediaAssets       MediaAsset[]
+}
+
+/// User-uploaded photo after validation + content moderation.
+model MediaAsset {
+  id             String       @id @default(cuid())
+  userId         String
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  purpose        MediaPurpose
+  status         MediaStatus  @default(pending)
+  storageKey     String?
+  publicUrl      String?
+  mimeType       String?
+  byteSize       Int?
+  moderationJson Json?
+  createdAt      DateTime     @default(now())
+
+  @@index([userId, status])
+  @@index([userId, purpose])
 }
 
 model Community {
@@ -184,7 +216,10 @@ model JournalEntry {
   poiId       String?
   poi         Poi?       @relation(fields: [poiId], references: [id], onDelete: SetNull)
   note        String
+  /// First photo (convenience / legacy). Prefer photoUrls.
   photoUrl    String?
+  /// Moderated public photo URLs (1–6).
+  photoUrls   String[]   @default([])
   createdAt   DateTime   @default(now())
 
   @@index([userId])

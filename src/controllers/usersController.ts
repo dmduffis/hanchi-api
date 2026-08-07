@@ -5,11 +5,16 @@ import {
   normalizeCultures,
   normalizeIntents,
 } from "../lib/userPrefs";
+import {
+  deleteMediaPublicUrl,
+  resolveApprovedMedia,
+} from "./mediaController";
 
 function mapUser(user: {
   id: string;
   email: string;
   displayName: string;
+  avatarUrl: string | null;
   intents: string[];
   cultures: string[];
 }) {
@@ -17,6 +22,7 @@ function mapUser(user: {
     id: user.id,
     email: user.email,
     displayName: user.displayName,
+    avatarUrl: user.avatarUrl ?? null,
     intents: user.intents ?? [],
     cultures: user.cultures ?? [],
   };
@@ -41,7 +47,7 @@ export async function getMeHandler(
   }
 }
 
-/** PATCH /users/me — body: { intents?, cultures? } */
+/** PATCH /users/me — body: { intents?, cultures?, avatarMediaId? } */
 export async function updateMeHandler(
   req: Request,
   res: Response,
@@ -55,7 +61,12 @@ export async function updateMeHandler(
       return;
     }
 
-    const data: { intents?: string[]; cultures?: string[] } = {};
+    const data: {
+      intents?: string[];
+      cultures?: string[];
+      avatarUrl?: string | null;
+    } = {};
+    let previousAvatar: string | null | undefined;
 
     if ("intents" in (req.body ?? {})) {
       const intents = normalizeIntents(req.body.intents);
@@ -97,8 +108,32 @@ export async function updateMeHandler(
       data.cultures = cultures;
     }
 
+    if ("avatarMediaId" in (req.body ?? {})) {
+      const mediaId =
+        typeof req.body.avatarMediaId === "string"
+          ? req.body.avatarMediaId.trim()
+          : "";
+      if (!mediaId) {
+        previousAvatar = existing.avatarUrl;
+        data.avatarUrl = null;
+      } else {
+        const media = await resolveApprovedMedia(userId, mediaId, "avatar");
+        if (!media) {
+          res.status(400).json({
+            error: "Photo is missing or not approved. Upload again.",
+            code: "invalid_media",
+          });
+          return;
+        }
+        previousAvatar = existing.avatarUrl;
+        data.avatarUrl = media.publicUrl;
+      }
+    }
+
     if (Object.keys(data).length === 0) {
-      res.status(400).json({ error: "Provide intents and/or cultures" });
+      res.status(400).json({
+        error: "Provide intents, cultures, and/or avatarMediaId",
+      });
       return;
     }
 
@@ -106,6 +141,13 @@ export async function updateMeHandler(
       where: { id: userId },
       data,
     });
+
+    if (
+      previousAvatar &&
+      previousAvatar !== user.avatarUrl
+    ) {
+      void deleteMediaPublicUrl(previousAvatar);
+    }
 
     res.json(mapUser(user));
   } catch (err) {
