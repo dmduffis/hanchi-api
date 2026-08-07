@@ -149,13 +149,15 @@ export async function uploadMediaHandler(
       });
       publicUrl = stored.publicUrl;
     } catch (err) {
+      const message = err instanceof Error ? err.message : "storage_failed";
+      console.error("[media] store failed:", message);
       await prisma.mediaAsset.update({
         where: { id: asset.id },
         data: {
           status: "rejected",
           moderationJson: {
             reason: "storage_failed",
-            message: err instanceof Error ? err.message : "storage_failed",
+            message,
           },
         },
       });
@@ -163,6 +165,7 @@ export async function uploadMediaHandler(
         error: "Could not store photo. Try again later.",
         code: "storage_unavailable",
         mediaId: asset.id,
+        ...(process.env.NODE_ENV !== "production" ? { detail: message } : {}),
       });
       return;
     }

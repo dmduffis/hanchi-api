@@ -30,9 +30,51 @@ export function publicStorageKey(
   return `${purpose}/${userId}/${mediaId}.${ext}`;
 }
 
+let ensuredBuckets = new Set<string>();
+
+/**
+ * Ensure the media bucket exists and is public (idempotent, best-effort).
+ * Prefer creating `hanchi-media` once in the Supabase dashboard if this fails.
+ */
+async function ensurePublicBucket(bucket: string): Promise<void> {
+  if (ensuredBuckets.has(bucket)) return;
+  const supabase = getSupabaseAdmin();
+
+  const { data: existing, error: listErr } = await supabase.storage.listBuckets();
+  if (listErr) {
+    console.error("[mediaStorage] listBuckets:", listErr.message);
+    // Still try upload; may already exist.
+    return;
+  }
+
+  const found = existing?.find((b) => b.name === bucket);
+  if (!found) {
+    const { error: createErr } = await supabase.storage.createBucket(bucket, {
+      public: true,
+      fileSizeLimit: "10MB",
+      allowedMimeTypes: ["image/jpeg", "image/png", "image/webp"],
+    });
+    if (createErr) {
+      // Race: created elsewhere is fine; missing permission needs dashboard.
+      console.error("[mediaStorage] createBucket:", createErr.message);
+      return;
+    }
+    console.log(`[mediaStorage] created public bucket ${bucket}`);
+  } else if (!found.public) {
+    const { error: updateErr } = await supabase.storage.updateBucket(bucket, {
+      public: true,
+    });
+    if (updateErr) {
+      console.error("[mediaStorage] updateBucket public:", updateErr.message);
+    }
+  }
+
+  ensuredBuckets.add(bucket);
+}
+
 /**
  * Publish bytes to Supabase Storage as a public object (call only after moderation).
- * Create a public bucket named hanchi-media (or MEDIA_BUCKET) in the Supabase dashboard.
+ * Create a public bucket named hanchi-media (or MEDIA_BUCKET) in the Supabase dashboard if ensure fails.
  */
 export async function putPublicImage(input: {
   storageKey: string;
@@ -42,21 +84,28 @@ export async function putPublicImage(input: {
   const supabase = getSupabaseAdmin();
   const bucket = mediaBucket();
 
-  const { error } = await supabase.storage
-    .from(bucket)
-    .upload(input.storageKey, input.bytes, {
-      contentType: input.contentType,
-      upsert: true,
-      cacheControl: "3600",
-    });
+  await ensurePublicBucket(bucket);
+
+  // Uint8Array avoids flaky Node Buffer → fetch body conversion in supabase-js.
+  const body = new Uint8Array(input.bytes);
+
+  const { error } = await supabase.storage.from(bucket).upload(input.storageKey, body, {
+    contentType: input.contentType,
+    upsert: true,
+    cacheControl: "3600",
+  });
 
   if (error) {
+    console.error("[mediaStorage] upload:", error.message, {
+      bucket,
+      path: input.storageKey,
+      bytes: input.bytes.length,
+      contentType: input.contentType,
+    });
     throw new Error(error.message || "storage_upload_failed");
   }
 
-  const { data } = supabase.storage
-    .from(bucket)
-    .getPublicUrl(input.storageKey);
+  const { data } = supabase.storage.from(bucket).getPublicUrl(input.storageKey);
 
   if (!data?.publicUrl) {
     throw new Error("storage_public_url_failed");

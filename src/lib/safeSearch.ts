@@ -88,11 +88,21 @@ export async function moderateImageBytes(
         body: JSON.stringify(body),
       },
     );
-  } catch {
+  } catch (err) {
+    console.error(
+      "[safeSearch] Vision request failed:",
+      err instanceof Error ? err.message : err,
+    );
     return { ok: false, reason: "moderation_unavailable", labels: null };
   }
 
   if (!response.ok) {
+    const detail = await response.text().catch(() => "");
+    console.error(
+      "[safeSearch] Vision HTTP",
+      response.status,
+      detail.slice(0, 400),
+    );
     return { ok: false, reason: "moderation_unavailable", labels: null };
   }
 
@@ -105,6 +115,10 @@ export async function moderateImageBytes(
 
   const first = json.responses?.[0];
   if (!first || first.error) {
+    console.error(
+      "[safeSearch] Vision response error:",
+      first?.error?.message ?? "empty responses",
+    );
     return { ok: false, reason: "moderation_unavailable", labels: null };
   }
 
