@@ -68,6 +68,17 @@ function mapJournalEntry(entry: JournalWithPlace) {
   };
 }
 
+/** Passport stamp when a moment is tied to a community (create or edit). */
+async function stampCommunityVisit(userId: string, communityId: string) {
+  await prisma.stamp.upsert({
+    where: {
+      userId_communityId: { userId, communityId },
+    },
+    create: { userId, communityId },
+    update: {},
+  });
+}
+
 export async function createJournalHandler(
   req: Request,
   res: Response,
@@ -148,6 +159,14 @@ export async function createJournalHandler(
       },
       include: journalInclude,
     });
+
+    if (communityId) {
+      try {
+        await stampCommunityVisit(userId, communityId);
+      } catch (stampErr) {
+        console.error("[journal] auto-stamp failed:", stampErr);
+      }
+    }
 
     res.status(201).json(mapJournalEntry(entry));
   } catch (err) {
@@ -298,6 +317,14 @@ export async function updateJournalHandler(
       data,
       include: journalInclude,
     });
+
+    if (entry.communityId) {
+      try {
+        await stampCommunityVisit(userId, entry.communityId);
+      } catch (stampErr) {
+        console.error("[journal] auto-stamp failed:", stampErr);
+      }
+    }
 
     res.json(mapJournalEntry(entry));
   } catch (err) {
