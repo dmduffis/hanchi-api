@@ -178,3 +178,38 @@ export async function listUserJournalHandler(
     next(err);
   }
 }
+
+/** DELETE /journal/:id — owner only. */
+export async function deleteJournalHandler(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<void> {
+  try {
+    const { id } = req.params;
+    if (!id?.trim()) {
+      res.status(400).json({ error: "id is required" });
+      return;
+    }
+
+    const userId = (req as AuthenticatedRequest).userId;
+    const existing = await prisma.journalEntry.findUnique({
+      where: { id },
+      select: { id: true, userId: true, photoUrls: true, photoUrl: true },
+    });
+
+    if (!existing) {
+      res.status(404).json({ error: "Moment not found" });
+      return;
+    }
+    if (existing.userId !== userId) {
+      res.status(403).json({ error: "Forbidden" });
+      return;
+    }
+
+    await prisma.journalEntry.delete({ where: { id } });
+    res.json({ ok: true, id });
+  } catch (err) {
+    next(err);
+  }
+}
