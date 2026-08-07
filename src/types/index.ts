@@ -73,7 +73,17 @@ export interface JournalEntryDto {
   poiId: string | null;
   note: string;
   photoUrl: string | null;
+  photoUrls?: string[];
   createdAt: string;
+  communityName?: string | null;
+  poiName?: string | null;
+  poi?: {
+    id: string;
+    name: string;
+    communityId: string | null;
+    category: string;
+    ethnicities: string[];
+  } | null;
 }
 
 export interface RouteStopDto {
@@ -119,7 +129,12 @@ export interface CreateJournalBody {
   note: string;
   communityId?: string | null;
   poiId?: string | null;
+  /** @deprecated Free-form URLs rejected for UGC; use mediaIds. */
   photoUrl?: string | null;
+  /** @deprecated Use mediaIds for multi-photo. */
+  mediaId?: string | null;
+  /** Up to 6 approved /media asset ids (purpose moment). */
+  mediaIds?: string[] | null;
   /** Optional; defaults to authenticated stub user (x-user-id). */
   userId?: string;
 }

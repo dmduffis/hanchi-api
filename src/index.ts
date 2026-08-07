@@ -6,6 +6,7 @@ import { communitiesRouter } from "./routes/communities";
 import { favoritesRouter } from "./routes/favorites";
 import { collectionsRouter } from "./routes/collections";
 import { journalRouter } from "./routes/journal";
+import { mediaRouter } from "./routes/media";
 import { poisRouter } from "./routes/pois";
 import { routesRouter } from "./routes/routes";
 import { searchRouter } from "./routes/search";
@@ -17,7 +18,9 @@ const app = express();
 const port = Number(process.env.PORT) || 3000;
 
 app.use(cors());
-app.use(express.json());
+// Base64 JPEG payloads: binary limit + ~33% encoding + JSON wrapper.
+// Keep well above client compressed size; still capped by media handler.
+app.use(express.json({ limit: "15mb" }));
 
 app.get("/health", (_req, res) => {
   res.json({ ok: true, service: "hanchi-api" });
@@ -29,6 +32,7 @@ app.use("/stamps", stampsRouter);
 app.use("/favorites", favoritesRouter);
 app.use("/collections", collectionsRouter);
 app.use("/journal", journalRouter);
+app.use("/media", mediaRouter);
 app.use("/users", usersRouter);
 app.use("/routes", routesRouter);
 app.use("/search", searchRouter);
