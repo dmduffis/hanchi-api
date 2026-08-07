@@ -213,3 +213,94 @@ export async function deleteJournalHandler(
     next(err);
   }
 }
+
+/** PATCH /journal/:id — owner only; note / place. Photos unchanged. */
+export async function updateJournalHandler(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<void> {
+  try {
+    const { id } = req.params;
+    if (!id?.trim()) {
+      res.status(400).json({ error: "id is required" });
+      return;
+    }
+
+    const userId = (req as AuthenticatedRequest).userId;
+    const existing = await prisma.journalEntry.findUnique({ where: { id } });
+    if (!existing) {
+      res.status(404).json({ error: "Moment not found" });
+      return;
+    }
+    if (existing.userId !== userId) {
+      res.status(403).json({ error: "Forbidden" });
+      return;
+    }
+
+    const body = req.body as {
+      note?: string;
+      communityId?: string | null;
+      poiId?: string | null;
+    };
+
+    const data: {
+      note?: string;
+      communityId?: string | null;
+      poiId?: string | null;
+    } = {};
+
+    if (typeof body.note === "string") {
+      const note = body.note.trim();
+      if (!note) {
+        res.status(400).json({ error: "note is required" });
+        return;
+      }
+      data.note = note;
+    }
+
+    if ("communityId" in body) {
+      const communityId = body.communityId ?? null;
+      if (communityId) {
+        const community = await prisma.community.findUnique({
+          where: { id: communityId },
+        });
+        if (!community) {
+          res.status(404).json({ error: "Community not found" });
+          return;
+        }
+      }
+      data.communityId = communityId;
+    }
+
+    if ("poiId" in body) {
+      const poiId = body.poiId ?? null;
+      if (poiId) {
+        const poi = await prisma.poi.findUnique({ where: { id: poiId } });
+        if (!poi) {
+          res.status(404).json({ error: "POI not found" });
+          return;
+        }
+        if (!("communityId" in body) && poi.communityId && !data.communityId) {
+          data.communityId = poi.communityId;
+        }
+      }
+      data.poiId = poiId;
+    }
+
+    if (Object.keys(data).length === 0) {
+      res.status(400).json({ error: "No fields to update" });
+      return;
+    }
+
+    const entry = await prisma.journalEntry.update({
+      where: { id },
+      data,
+      include: journalInclude,
+    });
+
+    res.json(mapJournalEntry(entry));
+  } catch (err) {
+    next(err);
+  }
+}

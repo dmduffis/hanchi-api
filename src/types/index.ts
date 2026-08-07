@@ -139,6 +139,12 @@ export interface CreateJournalBody {
   userId?: string;
 }
 
+export interface UpdateJournalBody {
+  note?: string;
+  communityId?: string | null;
+  poiId?: string | null;
+}
+
 export interface ApiError {
   error: string;
 }
